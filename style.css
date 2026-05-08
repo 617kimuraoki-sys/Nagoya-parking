@@ -1,0 +1,221 @@
+/* リセット */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-text: #1f2937;
+  --color-text-sub: #6b7280;
+  --color-bg: #f3f4f6;
+  --color-card: #ffffff;
+  --color-border: #e5e7eb;
+  --color-accent: #ef4444;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ヘッダー */
+.header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 20px 16px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow);
+}
+
+.header__title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.header__subtitle {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+/* メイン */
+.main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* 並び替えバー */
+.sort-bar {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.sort-bar__label {
+  font-size: 12px;
+  color: var(--color-text-sub);
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.sort-bar__buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.sort-btn {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #f9fafb;
+  color: var(--color-text-sub);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.sort-btn:active {
+  transform: scale(0.97);
+}
+
+.sort-btn.is-active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* 一覧 */
+.parking-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* カード */
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.card__name {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.card__address {
+  font-size: 13px;
+  color: var(--color-text-sub);
+  margin-bottom: 4px;
+}
+
+.card__hours {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--color-text-sub);
+  background: #eef2ff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.card__rates {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.rate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.rate-row__label {
+  color: var(--color-text-sub);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rate-row__value {
+  font-weight: 700;
+  text-align: right;
+  word-break: break-word;
+}
+
+.rate-row__value .max {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.card__note {
+  font-size: 11px;
+  color: var(--color-text-sub);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.card__map-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.card__map-link:active {
+  background: var(--color-primary-dark);
+}
+
+.card__map-link::before {
+  content: "📍";
+  margin-right: 6px;
+}
+
+/* フッター */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-text-sub);
+  padding: 24px 16px 32px;
+}
+
+/* タブレット以上 */
+@media (min-width: 600px) {
+  .header__title { font-size: 26px; }
+  .parking-list { gap: 14px; }
+}
