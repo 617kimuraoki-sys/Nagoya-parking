@@ -3,31 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>栄パーキング - 栄周辺のコインパーキング料金比較</title>
+  <title>栄パーキング - 栄・名駅・伏見・大須のコインパーキング料金比較</title>
+
+  <!-- SEO -->
+  <meta name="description" content="名古屋・栄エリア107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="栄パーキング">
+  <meta property="og:title" content="栄パーキング | 栄・名駅・伏見・大須のコインパーキング料金比較">
+  <meta property="og:description" content="名古屋・栄エリア107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
+  <meta property="og:url" content="https://617kimuraoki-sys.github.io/Sakae-parking/">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="栄パーキング | 栄・名駅・伏見・大須のコインパーキング料金比較">
+  <meta name="twitter:description" content="名古屋・栄エリア107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
+
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>[hidden]{display:none!important}</style>
 </head>
 <body>
   <header class="header">
     <h1 class="header__title">栄パーキング</h1>
-    <p class="header__subtitle">栄周辺のコインパーキング料金比較</p>
+    <p class="header__subtitle">栄・名駅・伏見・大須のコインパーキング料金比較</p>
   </header>
 
   <main class="main">
-    <div class="sort-bar">
-      <span class="sort-bar__label">並び替え</span>
-      <div class="sort-bar__buttons">
-        <button class="sort-btn is-active" data-sort="price">料金が安い順</button>
-        <button class="sort-btn" data-sort="name">名前順</button>
+    <div class="controls">
+      <div class="control-group">
+        <span class="control-label">並び替え</span>
+        <div class="chip-row" id="sort-filters">
+          <button class="chip is-active" data-sort="price">料金が安い順</button>
+          <button class="chip" data-sort="name">名前順</button>
+          <button class="chip" data-sort="distance">📍 近い順</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">エリア <span class="control-count" id="result-count"></span></span>
+        <div class="chip-row" id="area-filters">
+          <button class="chip is-active" data-area="all">全件</button>
+          <button class="chip" data-area="栄">栄</button>
+          <button class="chip" data-area="錦・伏見">錦・伏見</button>
+          <button class="chip" data-area="名駅">名駅</button>
+          <button class="chip" data-area="大須">大須</button>
+          <button class="chip" data-area="久屋">久屋</button>
+          <button class="chip" data-area="金山">金山</button>
+          <button class="chip" data-area="favorites">❤️ お気に入り</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">料金モード</span>
+        <div class="chip-row" id="day-filters">
+          <button class="chip is-active" data-day="auto">自動</button>
+          <button class="chip" data-day="weekday">平日</button>
+          <button class="chip" data-day="holiday">休日</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">駐車時間で料金を試算 <span class="control-hint">タップで切替</span></span>
+        <div class="chip-row" id="duration-filters">
+          <button class="chip" data-hours="1">1時間</button>
+          <button class="chip" data-hours="2">2時間</button>
+          <button class="chip" data-hours="3">3時間</button>
+          <button class="chip" data-hours="6">半日(6h)</button>
+          <button class="chip" data-hours="12">12時間</button>
+          <button class="chip" data-hours="24">1日(24h)</button>
+        </div>
       </div>
     </div>
 
+    <!-- ビュー切り替えタブ -->
+    <div class="view-tabs" id="view-tabs">
+      <button class="view-tab is-active" data-view="list">📋 リスト</button>
+      <button class="view-tab" data-view="map">🗺️ 地図</button>
+    </div>
+
     <ul id="parking-list" class="parking-list"></ul>
+    <p id="empty-msg" class="empty-msg" hidden>該当する駐車場がありません</p>
+
+    <div id="map-view" hidden></div>
   </main>
 
   <footer class="footer">
     <p>※ 料金は変更される場合があります。最新情報は現地でご確認ください。</p>
+    <p>※ 試算は平日基準の通常料金と最大料金の安い方を採用しています（土日は休日最大を適用）。</p>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>

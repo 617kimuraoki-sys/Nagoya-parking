@@ -5,6 +5,9 @@
   padding: 0;
 }
 
+/* hidden 属性を確実に適用（display:flex 等に上書きされないよう !important） */
+[hidden] { display: none !important; }
+
 :root {
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
@@ -14,6 +17,10 @@
   --color-card: #ffffff;
   --color-border: #e5e7eb;
   --color-accent: #ef4444;
+  --color-cost-bg: #fef3c7;
+  --color-cost-text: #b45309;
+  --color-area-bg: #e0e7ff;
+  --color-area-text: #3730a3;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   --radius: 12px;
 }
@@ -30,7 +37,7 @@ body {
 .header {
   background: var(--color-primary);
   color: #fff;
-  padding: 20px 16px;
+  padding: 18px 16px;
   text-align: center;
   position: sticky;
   top: 0;
@@ -44,7 +51,7 @@ body {
 }
 
 .header__subtitle {
-  font-size: 13px;
+  font-size: 12px;
   opacity: 0.9;
   margin-top: 2px;
 }
@@ -53,50 +60,74 @@ body {
 .main {
   max-width: 600px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 14px;
 }
 
-/* 並び替えバー */
-.sort-bar {
+/* 操作パネル */
+.controls {
   background: var(--color-card);
   border-radius: var(--radius);
-  padding: 12px 14px;
+  padding: 14px;
   margin-bottom: 16px;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.sort-bar__label {
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-label {
   font-size: 12px;
   color: var(--color-text-sub);
-  display: block;
-  margin-bottom: 8px;
   font-weight: 600;
-}
-
-.sort-bar__buttons {
   display: flex;
-  gap: 8px;
+  align-items: baseline;
+  gap: 6px;
 }
 
-.sort-btn {
-  flex: 1;
-  padding: 10px 12px;
-  font-size: 14px;
+.control-count {
+  font-size: 11px;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.control-hint {
+  font-size: 10px;
+  color: var(--color-text-sub);
+  font-weight: 400;
+}
+
+/* チップ */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 7px 13px;
+  font-size: 13px;
   font-weight: 600;
   background: #f9fafb;
   color: var(--color-text-sub);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 999px;
   cursor: pointer;
-  transition: all 0.15s ease;
   font-family: inherit;
+  white-space: nowrap;
+  transition: all 0.12s ease;
 }
 
-.sort-btn:active {
-  transform: scale(0.97);
+.chip:active {
+  transform: scale(0.96);
 }
 
-.sort-btn.is-active {
+.chip.is-active {
   background: var(--color-primary);
   color: #fff;
   border-color: var(--color-primary);
@@ -118,14 +149,61 @@ body {
   box-shadow: var(--shadow);
 }
 
-.card__name {
-  font-size: 17px;
-  font-weight: 700;
+.card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
   margin-bottom: 4px;
 }
 
+.card__name {
+  font-size: 16px;
+  font-weight: 700;
+  flex: 1;
+  line-height: 1.35;
+}
+
+.card__area {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--color-area-bg);
+  color: var(--color-area-text);
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.card__header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.card__fav {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #d1d5db;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.15s, transform 0.1s;
+  font-family: inherit;
+}
+
+.card__fav:active {
+  transform: scale(1.3);
+}
+
+.card__fav.is-fav {
+  color: #ef4444;
+}
+
 .card__address {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--color-text-sub);
   margin-bottom: 4px;
 }
@@ -137,13 +215,63 @@ body {
   background: #eef2ff;
   padding: 2px 8px;
   border-radius: 999px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
+.card__dist {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #065f46;
+  background: #d1fae5;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+/* 試算結果 */
+.card__cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-cost-bg);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card__cost-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card__cost-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-cost-text);
+}
+
+.card__cost-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: #f59e0b;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.card__cost-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-cost-text);
+}
+
+/* 料金欄 */
 .card__rates {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   margin-bottom: 10px;
   padding: 10px 12px;
   background: #f9fafb;
@@ -206,16 +334,250 @@ body {
   margin-right: 6px;
 }
 
+/* 該当なし表示 */
+.empty-msg {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-text-sub);
+  font-size: 14px;
+}
+
 /* フッター */
 .footer {
   text-align: center;
   font-size: 11px;
   color: var(--color-text-sub);
   padding: 24px 16px 32px;
+  line-height: 1.7;
 }
+
+/* ビュー切り替えタブ */
+.view-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 4px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.view-tab {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--color-text-sub);
+  border: none;
+  border-radius: calc(var(--radius) - 4px);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.view-tab:active {
+  transform: scale(0.97);
+}
+
+.view-tab.is-active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* 地図コンテナ */
+#map-view {
+  height: 62vh;
+  min-height: 360px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+/* Leaflet ポップアップ上書き */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+}
+
+.leaflet-popup-tip-container {
+  margin-top: -1px;
+}
+
+/* ポップアップカード */
+.popup-card {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+  line-height: 1.5;
+  min-width: 220px;
+  max-width: 260px;
+  padding: 14px 14px 10px;
+}
+
+.popup-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.popup-area {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 5px;
+}
+
+.popup-meta {
+  font-size: 11px;
+  color: var(--color-text-sub);
+  margin-bottom: 3px;
+}
+
+.popup-rate {
+  font-size: 12px;
+  color: var(--color-text);
+  margin-bottom: 2px;
+  word-break: break-all;
+}
+
+.popup-max {
+  font-size: 12px;
+  color: var(--color-cost-text);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.popup-cost {
+  background: var(--color-cost-bg);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--color-cost-text);
+  margin-bottom: 8px;
+}
+
+.popup-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  background: #f59e0b;
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.popup-map-link {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.popup-map-link:active {
+  background: var(--color-primary-dark);
+}
+
+/* 凡例 */
+.map-legend {
+  background: rgba(255, 255, 255, 0.93);
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+/* 現在地マーカー */
+.user-location-dot {
+  width: 16px;
+  height: 16px;
+  background: #2563eb;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #2563eb;
+  position: relative;
+}
+
+.user-location-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  background: rgba(37, 99, 235, 0.22);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: loc-pulse 2s ease-out infinite;
+}
+
+@keyframes loc-pulse {
+  0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2);   opacity: 0; }
+}
+
+/* 地図の現在地ボタン */
+.locate-btn {
+  width: 34px;
+  height: 34px;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.12s;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.locate-btn:hover  { background: #f4f4f4; }
+.locate-btn:active { background: #e8e8e8; }
+.locate-btn:disabled { opacity: 0.6; cursor: default; }
 
 /* タブレット以上 */
 @media (min-width: 600px) {
   .header__title { font-size: 26px; }
   .parking-list { gap: 14px; }
+  .card__name { font-size: 17px; }
 }
