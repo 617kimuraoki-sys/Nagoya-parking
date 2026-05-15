@@ -3,103 +3,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>名古屋パーキング - 名古屋市中心部107か所のコインパーキング料金比較</title>
-
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="uAHIuDA5UZB0OazF6ytcR9Y-nBPArWV1-xlS-xgioIo" />
-
-  <!-- SEO -->
-  <meta name="description" content="名古屋市中心部107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
-
-  <!-- OGP -->
+  <title>CarMotiva | クルマ生活をもっと便利に</title>
+  <meta name="description" content="クルマ生活をもっと便利にするアプリを開発・発信するブランド CarMotiva。">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="名古屋パーキング">
-  <meta property="og:title" content="名古屋パーキング | 名古屋市中心部107か所のコインパーキング料金比較">
-  <meta property="og:description" content="名古屋市中心部107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
+  <meta property="og:site_name" content="CarMotiva">
+  <meta property="og:title" content="CarMotiva | クルマ生活をもっと便利に">
+  <meta property="og:description" content="クルマ生活をもっと便利にするアプリを開発・発信するブランド。">
   <meta property="og:url" content="https://car-motiva.com">
-  <meta property="og:locale" content="ja_JP">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, 'Hiragino Sans', sans-serif;
+      background: #f4f7fb;
+      color: #08101f;
+      min-height: 100svh;
+    }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="名古屋パーキング | 名古屋市中心部107か所のコインパーキング料金比較">
-  <meta name="twitter:description" content="名古屋市中心部107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
+    header {
+      background:
+        radial-gradient(ellipse 70% 80% at 110% -10%, rgba(59,130,246,.35) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at -10% 110%, rgba(29,78,216,.25) 0%, transparent 55%),
+        linear-gradient(160deg, #050e28 0%, #0c1a45 50%, #162255 100%);
+      padding: 64px 24px 56px;
+      text-align: center;
+    }
+    .brand-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #93b8fb;
+      opacity: .5;
+      margin-bottom: 20px;
+    }
+    .header-icon { font-size: 52px; margin-bottom: 14px; }
+    .header-title {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.05em;
+      margin-bottom: 10px;
+    }
+    .header-sub {
+      font-size: 14px;
+      font-weight: 500;
+      color: #93b8fb;
+      opacity: .65;
+    }
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <style>[hidden]{display:none!important}</style>
+    main {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 32px 16px 60px;
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 14px;
+      padding-left: 2px;
+    }
+    .app-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+
+    .app-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 2px 4px rgba(8,16,31,.04), 0 8px 24px rgba(8,16,31,.07);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .app-card:active { transform: scale(.98); }
+    .app-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .icon-parking { background: linear-gradient(135deg, #0c1a45, #2563eb); }
+    .icon-nenpi   { background: linear-gradient(135deg, #050e28, #1d4ed8); }
+    .app-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: #08101f;
+      letter-spacing: -.02em;
+      margin-bottom: 4px;
+    }
+    .app-desc {
+      font-size: 12px;
+      font-weight: 500;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    .app-arrow { color: #c4cfde; flex-shrink: 0; }
+
+    .coming-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      opacity: .45;
+      box-shadow: 0 2px 4px rgba(8,16,31,.04);
+    }
+    .icon-soon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      background: #e5e7eb;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .soon-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      background: #f3f4f6;
+      border-radius: 100px;
+      padding: 2px 8px;
+      margin-top: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 11px;
+      color: #c4cfde;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <h1 class="header__title">名古屋パーキング</h1>
-    <p class="header__subtitle">名古屋市中心部のコインパーキング料金比較</p>
+
+  <header>
+    <p class="brand-label">CarMotiva</p>
+    <div class="header-icon">🚗</div>
+    <p class="header-title">CarMotiva</p>
+    <p class="header-sub">クルマ生活をもっと便利に</p>
   </header>
 
-  <main class="main">
-    <div class="controls">
-      <div class="control-group">
-        <span class="control-label">並び替え</span>
-        <div class="chip-row" id="sort-filters">
-          <button class="chip is-active" data-sort="price">料金が安い順</button>
-          <button class="chip" data-sort="name">名前順</button>
-          <button class="chip" data-sort="distance">📍 近い順</button>
+  <main>
+    <p class="section-label">アプリ一覧</p>
+    <div class="app-grid">
+
+      <a class="app-card" href="/nagoya-parking/">
+        <div class="app-icon icon-parking">🅿️</div>
+        <div style="flex:1">
+          <p class="app-name">名古屋パーキング</p>
+          <p class="app-desc">名古屋市中心部107か所のコインパーキング料金を比較。エリア絞り込み・料金試算対応。</p>
+        </div>
+        <svg class="app-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a class="app-card" href="/nenpi-calc/">
+        <div class="app-icon icon-nenpi">⛽</div>
+        <div style="flex:1">
+          <p class="app-name">燃費カンリ</p>
+          <p class="app-desc">ODO計方式で正確・かんたんに燃費を記録。満タン基準方式で途中給油も対応。</p>
+        </div>
+        <svg class="app-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <div class="coming-card">
+        <div class="icon-soon">✨</div>
+        <div>
+          <p class="app-name" style="color:#9ca3af">Coming Soon</p>
+          <span class="soon-badge">準備中</span>
         </div>
       </div>
 
-      <div class="control-group">
-        <span class="control-label">エリア <span class="control-count" id="result-count"></span></span>
-        <div class="chip-row" id="area-filters">
-          <button class="chip is-active" data-area="all">全件</button>
-          <button class="chip" data-area="栄">栄</button>
-          <button class="chip" data-area="錦・伏見">錦・伏見</button>
-          <button class="chip" data-area="名駅">名駅</button>
-          <button class="chip" data-area="大須">大須</button>
-          <button class="chip" data-area="久屋">久屋</button>
-          <button class="chip" data-area="金山">金山</button>
-          <button class="chip" data-area="favorites">❤️ お気に入り</button>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <span class="control-label">料金モード</span>
-        <div class="chip-row" id="day-filters">
-          <button class="chip is-active" data-day="auto">自動</button>
-          <button class="chip" data-day="weekday">平日</button>
-          <button class="chip" data-day="holiday">休日</button>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <span class="control-label">駐車時間で料金を試算 <span class="control-hint">タップで切替</span></span>
-        <div class="chip-row" id="duration-filters">
-          <button class="chip" data-hours="1">1時間</button>
-          <button class="chip" data-hours="2">2時間</button>
-          <button class="chip" data-hours="3">3時間</button>
-          <button class="chip" data-hours="6">半日(6h)</button>
-          <button class="chip" data-hours="12">12時間</button>
-          <button class="chip" data-hours="24">1日(24h)</button>
-        </div>
-      </div>
     </div>
-
-    <!-- ビュー切り替えタブ -->
-    <div class="view-tabs" id="view-tabs">
-      <button class="view-tab is-active" data-view="list">📋 リスト</button>
-      <button class="view-tab" data-view="map">🗺️ 地図</button>
-    </div>
-
-    <ul id="parking-list" class="parking-list"></ul>
-    <p id="empty-msg" class="empty-msg" hidden>該当する駐車場がありません</p>
-
-    <div id="map-view" hidden></div>
   </main>
 
-  <footer class="footer">
-    <p>※ 料金は変更される場合があります。最新情報は現地でご確認ください。</p>
-    <p>※ 試算は平日基準の通常料金と最大料金の安い方を採用しています（土日は休日最大を適用）。</p>
-  </footer>
+  <footer>© 2025 CarMotiva</footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>
