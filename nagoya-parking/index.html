@@ -24,18 +24,132 @@
   <meta name="twitter:title" content="名古屋パーキング | 名古屋市中心部107か所のコインパーキング料金比較">
   <meta name="twitter:description" content="名古屋市中心部107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>[hidden]{display:none!important}</style>
 </head>
 <body>
+  <!-- ════ DRAWER OVERLAY ════ -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- ════ GUIDE DRAWER ════ -->
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head">
+      <span class="drawer-title">使い方ガイド</span>
+      <button class="drawer-close" id="drawer-close">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+
+      <div class="guide-hero">
+        <div class="guide-hero-icon">🅿️</div>
+        <p class="guide-hero-title">名古屋パーキング</p>
+        <p class="guide-hero-sub">名古屋市中心部107か所の<br>コインパーキング料金をかんたん比較</p>
+      </div>
+
+      <div class="guide-section">
+        <p class="guide-section-title">基本の使い方</p>
+
+        <div class="guide-step">
+          <div class="gs-num">1</div>
+          <div class="gs-body">
+            <p class="gs-title">エリアで絞り込む</p>
+            <p class="gs-desc">「絞り込み」ボタンを押してエリアを選ぶと、そのエリアの駐車場だけ表示されます。栄・名駅・大須など7エリアに対応しています。</p>
+          </div>
+        </div>
+        <div class="gs-connector"></div>
+        <div class="guide-step">
+          <div class="gs-num">2</div>
+          <div class="gs-body">
+            <p class="gs-title">駐車時間を入力して料金を試算</p>
+            <p class="gs-desc">「絞り込み」→「駐車時間で料金を試算」から駐車予定の時間を選ぶと、各駐車場の目安料金が自動計算されます。</p>
+          </div>
+        </div>
+        <div class="gs-connector"></div>
+        <div class="guide-step">
+          <div class="gs-num">3</div>
+          <div class="gs-body">
+            <p class="gs-title">地図で場所を確認する</p>
+            <p class="gs-desc">「🗺️ 地図」タブに切り替えると、駐車場の位置をマップで確認できます。マーカーをタップすると料金も表示されます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <p class="guide-section-title">便利な機能</p>
+        <div class="guide-tips-list">
+          <div class="tip-item tip-important">
+            <span class="tip-icon">❤️</span>
+            <span><strong>マイパーキング</strong>ボタンでよく使う駐車場をお気に入り登録。カードのハートマークをタップして登録できます</span>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">📍</span>
+            <span>「近い順」を選ぶと現在地から近い駐車場が上に表示されます</span>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">🗓️</span>
+            <span>「料金モード」で平日・休日を手動切替できます。「自動」は曜日を自動判定します</span>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">💡</span>
+            <span>料金は変更される場合があります。最新情報は現地の看板でご確認ください</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <p class="guide-section-title">対応エリア</p>
+        <div class="area-guide-grid">
+          <div class="area-guide-chip">栄</div>
+          <div class="area-guide-chip">錦・伏見</div>
+          <div class="area-guide-chip">名駅</div>
+          <div class="area-guide-chip">大須</div>
+          <div class="area-guide-chip">久屋</div>
+          <div class="area-guide-chip">金山</div>
+        </div>
+      </div>
+
+      <div class="guide-footer">
+        <p>CarMotiva — 名古屋パーキング</p>
+        <p>クルマ生活をもっと便利に</p>
+      </div>
+
+    </div>
+  </aside>
+
   <header class="header">
+    <div class="header__bar">
+      <p class="header__brand"><a href="/" class="header__brand-link">CarMotiva</a></p>
+      <button class="menu-btn" id="menu-btn" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
     <h1 class="header__title">名古屋パーキング</h1>
-    <p class="header__subtitle">名古屋市中心部のコインパーキング料金比較</p>
+    <p class="header__subtitle">名古屋市中心部 107か所のコインパーキング料金比較</p>
   </header>
 
   <main class="main">
-    <div class="controls">
+    <div class="filter-bar">
+      <div class="filter-bar-left">
+        <button class="filter-toggle-btn" id="filter-toggle-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>絞り込み</span>
+          <span class="filter-badge hidden" id="filter-badge">0</span>
+          <svg class="filter-arrow" id="filter-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="my-parking-btn" id="my-parking-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 3 13.5 3 8a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-9 13-9 13z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span>マイパーキング</span>
+        </button>
+      </div>
+      <span class="filter-result-count" id="filter-result-count"></span>
+    </div>
+
+    <div class="controls" id="controls-panel">
       <div class="control-group">
         <span class="control-label">並び替え</span>
         <div class="chip-row" id="sort-filters">
@@ -55,7 +169,6 @@
           <button class="chip" data-area="大須">大須</button>
           <button class="chip" data-area="久屋">久屋</button>
           <button class="chip" data-area="金山">金山</button>
-          <button class="chip" data-area="favorites">❤️ お気に入り</button>
         </div>
       </div>
 
@@ -101,5 +214,73 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script>
+    // 絞り込みパネル開閉
+    const filterBtn   = document.getElementById('filter-toggle-btn');
+    const controlsEl  = document.getElementById('controls-panel');
+    const filterBadge = document.getElementById('filter-badge');
+    const resultCount = document.getElementById('filter-result-count');
+
+    filterBtn.addEventListener('click', () => {
+      const isOpen = controlsEl.classList.toggle('is-open');
+      filterBtn.classList.toggle('is-open', isOpen);
+    });
+
+    // チップが変わるたびにバッジ件数を更新
+    function updateFilterBadge() {
+      let count = 0;
+      const sortActive = document.querySelector('#sort-filters .chip.is-active');
+      const areaActive = document.querySelector('#area-filters .chip.is-active');
+      const dayActive  = document.querySelector('#day-filters .chip.is-active');
+      const durActive  = document.querySelector('#duration-filters .chip.is-active');
+      if (sortActive && sortActive.dataset.sort !== 'price')   count++;
+      if (areaActive && areaActive.dataset.area  !== 'all')    count++;
+      if (dayActive  && dayActive.dataset.day    !== 'auto')   count++;
+      if (durActive) count++;
+      filterBadge.textContent = count;
+      filterBadge.classList.toggle('hidden', count === 0);
+    }
+
+    // 結果件数を filter-result-count に反映
+    const observer = new MutationObserver(() => {
+      const countEl = document.getElementById('result-count');
+      if (countEl) resultCount.textContent = countEl.textContent;
+      updateFilterBadge();
+    });
+    const countEl = document.getElementById('result-count');
+    if (countEl) observer.observe(countEl, { childList: true, characterData: true, subtree: true });
+
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => setTimeout(updateFilterBadge, 50));
+    });
+
+    // ドロワー開閉
+    const drawer        = document.getElementById('drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    function openDrawer()  { drawer.classList.add('open'); drawerOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeDrawer() { drawer.classList.remove('open'); drawerOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('menu-btn').addEventListener('click', openDrawer);
+    document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    // マイパーキングボタン
+    const myParkingBtn = document.getElementById('my-parking-btn');
+    const favChip = document.querySelector('#area-filters [data-area="favorites"]');
+    myParkingBtn.addEventListener('click', () => {
+      favChip.click();
+      const isActive = favChip.classList.contains('is-active');
+      myParkingBtn.classList.toggle('is-active', isActive);
+      setTimeout(updateFilterBadge, 50);
+    });
+    // エリアチップが変わったときもマイパーキングボタンの状態を同期
+    document.querySelectorAll('#area-filters .chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        setTimeout(() => {
+          const isActive = favChip.classList.contains('is-active');
+          myParkingBtn.classList.toggle('is-active', isActive);
+        }, 50);
+      });
+    });
+  </script>
 </body>
 </html>
