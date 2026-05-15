@@ -1,0 +1,22 @@
+{
+  "name": "燃費カンリ",
+  "short_name": "燃費カンリ",
+  "description": "ODO計方式で正確・かんたんに燃費を記録するアプリ",
+  "start_url": "/nenpi-calc/",
+  "display": "standalone",
+  "background_color": "#050e28",
+  "theme_color": "#060d2e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

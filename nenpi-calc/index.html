@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>燃費カンリ | CarMotiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#060d2e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="燃費カンリ">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- ════ HEADER ════ -->
+  <header>
+    <div class="header-bar">
+      <p class="brand-label">CarMotiva</p>
+      <button class="menu-btn" id="menu-btn" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="header-content">
+      <h1>燃費カンリ</h1>
+      <div class="header-kpi">
+        <span class="kpi-num" id="header-avg">--</span>
+        <div class="kpi-meta">
+          <span class="kpi-unit">km/L</span>
+          <span class="kpi-label">平均燃費</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════ DRAWER OVERLAY ════ -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- ════ GUIDE DRAWER ════ -->
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head">
+      <span class="drawer-title">使い方ガイド</span>
+      <button class="drawer-close" id="drawer-close">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+
+      <!-- Hero -->
+      <div class="guide-hero">
+        <div class="guide-hero-icon">⛽</div>
+        <p class="guide-hero-title">燃費カンリ</p>
+        <p class="guide-hero-sub">ODO計方式で正確・かんたんに<br>燃費を記録するアプリです</p>
+      </div>
+
+      <!-- Section 1: 基本の流れ -->
+      <div class="guide-section">
+        <p class="guide-section-title">基本の使い方</p>
+
+        <div class="guide-step">
+          <div class="gs-num">1</div>
+          <div class="gs-body">
+            <p class="gs-title">車両を登録する</p>
+            <p class="gs-desc">まず「車両」タブで自分のクルマを登録します。車両名・車種・目標燃費（任意）を入力するだけです。</p>
+            <div class="gs-illust">
+              <div class="illust-car">
+                <span class="illust-car-icon">🚗</span>
+                <div class="illust-car-info">
+                  <div class="illust-field"><span>車両名</span><span>マイカー</span></div>
+                  <div class="illust-field"><span>車種</span><span>N-BOX</span></div>
+                  <div class="illust-field"><span>目標燃費</span><span>15.0 km/L</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gs-connector"></div>
+
+        <div class="guide-step">
+          <div class="gs-num">2</div>
+          <div class="gs-body">
+            <p class="gs-title">満タンにして初回ODOを記録</p>
+            <p class="gs-desc">ガソリンスタンドで満タンにしたら、「計算」タブを開いてダッシュボードのODO計の数値を入力します。この記録が「基準」になります。</p>
+            <div class="gs-illust">
+              <div class="odo-display">
+                <div class="odo-screen">
+                  <span class="odo-label">ODO</span>
+                  <span class="odo-num">45,230<small>km</small></span>
+                </div>
+                <p class="odo-caption">↑ ダッシュボードに常時表示</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gs-connector"></div>
+
+        <div class="guide-step">
+          <div class="gs-num">3</div>
+          <div class="gs-body">
+            <p class="gs-title">次の給油時に記録するだけ</p>
+            <p class="gs-desc">次にガソリンスタンドへ行ったら、また満タンにして、新しいODO計の値と給油量を入力。アプリが自動で走行距離を計算して燃費を出します。</p>
+            <div class="gs-illust">
+              <div class="calc-demo">
+                <div class="calc-row"><span>前回ODO</span><span class="calc-val">45,230 km</span></div>
+                <div class="calc-row"><span>今回ODO</span><span class="calc-val">45,530 km</span></div>
+                <div class="calc-divider"></div>
+                <div class="calc-row"><span>走行距離</span><span class="calc-val">300 km（自動）</span></div>
+                <div class="calc-row"><span>給油量</span><span class="calc-val">25 L</span></div>
+                <div class="calc-result">燃費 = 300 ÷ 25 = <strong>12.0 km/L</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: ODO計とは -->
+      <div class="guide-section">
+        <p class="guide-section-title">ODO計（積算距離計）とは？</p>
+        <p class="guide-text">クルマのダッシュボードに常時表示されている「総走行距離」のことです。エンジンをかければいつでも確認でき、リセット不要です。</p>
+
+        <div class="dashboard-illust">
+          <div class="dash-bg">
+            <div class="dash-speedo">
+              <svg viewBox="0 0 100 60" fill="none">
+                <path d="M10 50 A40 40 0 0 1 90 50" stroke="rgba(255,255,255,0.1)" stroke-width="6" stroke-linecap="round"/>
+                <path d="M10 50 A40 40 0 0 1 65 15" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="63" y2="17" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="4" fill="#2563eb"/>
+                <text x="50" y="46" text-anchor="middle" fill="white" font-size="10" font-weight="bold">68</text>
+                <text x="50" y="55" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="5">km/h</text>
+              </svg>
+            </div>
+            <div class="dash-odo-box">
+              <span class="dash-odo-lbl">ODO</span>
+              <span class="dash-odo-val">45,230 km</span>
+              <div class="dash-odo-arrow">← ここ！</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-tips-list">
+          <div class="tip-item">
+            <span class="tip-icon">✅</span>
+            <span>エンジンON後すぐ確認できる</span>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">✅</span>
+            <span>リセット操作は一切不要</span>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">✅</span>
+            <span>差分が自動で走行距離になる</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: 各タブの説明 -->
+      <div class="guide-section">
+        <p class="guide-section-title">各タブの説明</p>
+
+        <div class="tab-guide-card">
+          <div class="tgc-icon">✏️</div>
+          <div>
+            <p class="tgc-name">計算タブ</p>
+            <p class="tgc-desc">給油のたびにODO計・給油量を入力して燃費を記録します。ガソリン単価を入れると給油コストも計算されます。</p>
+          </div>
+        </div>
+        <div class="tab-guide-card">
+          <div class="tgc-icon">📋</div>
+          <div>
+            <p class="tgc-name">記録タブ</p>
+            <p class="tgc-desc">過去の給油記録を一覧で確認できます。燃費が高い順に緑・黄・赤で色分けされます。</p>
+          </div>
+        </div>
+        <div class="tab-guide-card">
+          <div class="tgc-icon">🚗</div>
+          <div>
+            <p class="tgc-name">車両タブ</p>
+            <p class="tgc-desc">複数の車を登録・管理できます。目標燃費を設定すると、記録ごとに達成状況が表示されます。</p>
+          </div>
+        </div>
+        <div class="tab-guide-card">
+          <div class="tgc-icon">📈</div>
+          <div>
+            <p class="tgc-name">分析タブ</p>
+            <p class="tgc-desc">最高・平均・最低燃費などの統計、燃費推移グラフ、月別のコスト・走行距離サマリーを確認できます。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: コツ -->
+      <div class="guide-section">
+        <p class="guide-section-title">使うときのコツ</p>
+        <div class="guide-tips-list">
+          <div class="tip-item tip-important">
+            <span class="tip-icon">⛽</span>
+            <span>燃費計算は<strong>満タン給油</strong>が基準です。途中給油は「½ 途中給油」で記録すると次の満タン時にまとめて計算されます</span>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">💡</span>
+            <span>ガソリン単価を入力すると月々のガソリン代が分析タブで確認できます</span>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">🎯</span>
+            <span>目標燃費を設定すると、記録ごとに達成・未達成が一目でわかります</span>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">📊</span>
+            <span>記録が3回以上たまると、分析タブのグラフが見やすくなります</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-footer">
+        <p>CarMotiva — 燃費カンリ</p>
+        <p>クルマ生活をもっと便利に</p>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ════ MAIN ════ -->
+  <main>
+
+    <!-- 計算 -->
+    <section id="tab-calc" class="tab-content active">
+      <div class="form-card">
+        <div class="how-to">
+          <span>⛽ 満タン</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>🚗 走行</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>📱 ODO計を見て入力</span>
+        </div>
+        <div class="form-section">
+          <div class="form-field">
+            <label>給油タイプ</label>
+            <div class="fill-toggle" id="fill-toggle">
+              <button class="ft-btn active" data-type="full">⛽ 満タン</button>
+              <button class="ft-btn" data-type="partial">½ 途中給油</button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>車両</label>
+            <div class="select-wrap">
+              <select id="calc-car-select"><option value="">選択してください</option></select>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>日付</label>
+            <input class="f-input" type="date" id="calc-date">
+          </div>
+          <div class="form-field">
+            <label>ODO計（積算距離）<span class="label-hint">ダッシュボードの総走行距離</span></label>
+            <div class="unit-wrap">
+              <input class="f-input" type="number" id="calc-odo" placeholder="45230" step="1" min="0">
+              <span class="unit">km</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>給油量<span class="label-hint">満タンで</span></label>
+              <div class="unit-wrap">
+                <input class="f-input" type="number" id="calc-fuel" placeholder="30.0" step="0.01" min="0">
+                <span class="unit">L</span>
+              </div>
+            </div>
+            <div class="form-field">
+              <label>単価<span class="label-hint">任意</span></label>
+              <div class="unit-wrap">
+                <input class="f-input" type="number" id="calc-price" placeholder="170" step="1" min="0">
+                <span class="unit">円</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="submit-btn" id="calc-btn">記 録 す る</button>
+      </div>
+
+      <div class="result-panel result-baseline hidden" id="result-baseline">
+        <p class="result-tag">BASE ODO REGISTERED</p>
+        <div class="result-num-row">
+          <span class="result-num" id="result-odo-val">--</span>
+          <span class="result-unit">km</span>
+        </div>
+        <p class="result-desc">次回の給油から燃費が自動計算されます</p>
+      </div>
+
+      <div class="result-panel result-baseline hidden" id="result-partial">
+        <p class="result-tag">PARTIAL FILL RECORDED</p>
+        <div class="result-num-row">
+          <span class="result-num" id="result-partial-fuel">--</span>
+          <span class="result-unit">L</span>
+        </div>
+        <p class="result-desc">途中給油を記録しました。次の満タン時にまとめて燃費を計算します</p>
+      </div>
+
+      <div class="result-panel hidden" id="result-card">
+        <p class="result-tag">FUEL EFFICIENCY</p>
+        <div class="result-num-row">
+          <span class="result-num" id="result-efficiency">--</span>
+          <span class="result-unit">km/L</span>
+        </div>
+        <div class="result-chips" id="result-meta"></div>
+      </div>
+    </section>
+
+    <!-- 記録 -->
+    <section id="tab-records" class="tab-content">
+      <div id="stats-strip"></div>
+      <div class="filter-wrap">
+        <div class="select-wrap">
+          <select id="records-car-filter"><option value="">すべての車両</option></select>
+          <svg viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div id="records-list"></div>
+    </section>
+
+    <!-- 車両 -->
+    <section id="tab-cars" class="tab-content">
+      <div class="form-card">
+        <p class="section-title">新しい車両を追加</p>
+        <div class="form-section">
+          <div class="form-field">
+            <label>車両名</label>
+            <input class="f-input" type="text" id="car-name" placeholder="例：マイカー">
+          </div>
+          <div class="form-field">
+            <label>車種</label>
+            <input class="f-input" type="text" id="car-type" placeholder="例：N-BOX、プリウス">
+          </div>
+          <div class="form-field">
+            <label>目標燃費<span class="label-hint">任意</span></label>
+            <div class="unit-wrap">
+              <input class="f-input" type="number" id="car-target" placeholder="15.0" step="0.1" min="0">
+              <span class="unit">km/L</span>
+            </div>
+          </div>
+        </div>
+        <button class="submit-btn" id="add-car-btn">追 加 す る</button>
+      </div>
+      <div id="cars-list"></div>
+    </section>
+
+    <!-- 分析 -->
+    <section id="tab-analysis" class="tab-content">
+      <div class="filter-wrap">
+        <div class="select-wrap">
+          <select id="analysis-car-filter"><option value="">すべての車両</option></select>
+          <svg viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div id="analysis-stats"></div>
+      <div class="chart-card">
+        <canvas id="efficiency-chart" style="display:none;"></canvas>
+        <div class="empty-state" id="graph-empty">
+          <div class="empty-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="30" width="10" height="14" rx="2" fill="#dbeafe"/><rect x="19" y="20" width="10" height="24" rx="2" fill="#93c5fd"/><rect x="34" y="10" width="10" height="34" rx="2" fill="#3b82f6"/></svg>
+          </div>
+          <p>車両を選択してください</p>
+        </div>
+      </div>
+      <div id="monthly-list"></div>
+    </section>
+
+  </main>
+
+  <!-- ════ TAB BAR ════ -->
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="calc">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 12h8M8 8h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>計算</span>
+    </button>
+    <button class="tab-btn" data-tab="records">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="3" width="6" height="4" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>記録</span>
+    </button>
+    <button class="tab-btn" data-tab="cars">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 17H3v-5l2.5-6h11L19 12v5h-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="17.5" r="2" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="17.5" r="2" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 17.5h5" stroke="currentColor" stroke-width="1.8"/></svg>
+      <span>車両</span>
+    </button>
+    <button class="tab-btn" data-tab="analysis">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 20h18M5 20V12m4 8V8m4 12V4m4 16v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>分析</span>
+    </button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
