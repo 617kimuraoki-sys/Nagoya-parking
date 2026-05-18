@@ -75,6 +75,10 @@
     "大須":   "#d97706",
     "久屋":   "#0891b2",
     "金山":   "#dc2626",
+    "熱田":   "#c2410c",
+    "ドーム": "#db2777",
+    "矢場町": "#6366f1",
+    "今池":   "#0d9488",
     "その他": "#6b7280"
   };
 
@@ -277,7 +281,11 @@
     if (a.includes("大須") || a.includes("上前津") || a.includes("門前町")) return "大須";
     if (/丸の内|東桜/.test(a) || /中区栄3丁目5(?!\d)/.test(a)) return "久屋";
     if (/中区錦|中区栄1[\-丁]/.test(a)) return "錦・伏見";
+    if (a.includes("中区矢場町") || /中区栄[45]丁目/.test(a)) return "矢場町";
     if (a.includes("中区栄") || a.includes("中区新栄")) return "栄";
+    if (a.includes("熱田区")) return "熱田";
+    if (a.includes("東区大幸") || a.includes("東区矢田") || a.includes("東区古出来") || a.includes("千種区萱場") || a.includes("北区大曽根")) return "ドーム";
+    if (a.includes("千種区今池")) return "今池";
     return "その他";
   }
 

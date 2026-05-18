@@ -1160,5 +1160,308 @@ const parkingData = [
     maxRate: { weekday: 700, holiday: null },
     hours: "24時間",
     note: "平日07:00-19:00最大700円"
+  },
+
+  // ===== 熱田神宮エリア =====
+  {
+    name: "熱田神宮 無料駐車場（東門）",
+    address: "愛知県名古屋市熱田区神宮1丁目1-1",
+    lat: 35.1278,
+    lng: 136.9115,
+    hourlyRate: 0,
+    rates: { weekday: "無料", holiday: "無料" },
+    maxRate: { weekday: null, holiday: null },
+    hours: "7:00-17:00",
+    note: "約300台収容の公式無料駐車場。年末年始・大型祭事時は閉鎖"
+  },
+  {
+    name: "名鉄協商パーキング 神宮前駅西PB",
+    address: "愛知県名古屋市熱田区神宮3丁目6",
+    lat: 35.1249,
+    lng: 136.9067,
+    hourlyRate: 200,
+    rates: { weekday: "60分 200円", holiday: "60分 200円" },
+    maxRate: { weekday: 800, holiday: 800 },
+    hours: "24時間"
+  },
+  {
+    name: "名鉄協商パーキング 神宮前第6",
+    address: "愛知県名古屋市熱田区神宮3丁目",
+    lat: 35.1252,
+    lng: 136.9079,
+    hourlyRate: 300,
+    rates: { weekday: "40分 200円", holiday: "40分 200円" },
+    maxRate: { weekday: 700, holiday: 700 },
+    hours: "24時間",
+    note: "17:00-8:00 最大300円"
+  },
+  {
+    name: "名鉄協商パーキング 熱田神宮西",
+    address: "愛知県名古屋市熱田区白鳥2丁目12-16",
+    lat: 35.1263,
+    lng: 136.9031,
+    hourlyRate: 400,
+    rates: { weekday: "30分 200円", holiday: "20分 200円" },
+    maxRate: { weekday: 600, holiday: 800 },
+    hours: "24時間"
+  },
+  {
+    name: "タイムズ熱田神宮北",
+    address: "愛知県名古屋市熱田区森後町6",
+    lat: 35.1296,
+    lng: 136.9092,
+    hourlyRate: 330,
+    rates: { weekday: "40分 220円", holiday: "40分 220円" },
+    maxRate: { weekday: 550, holiday: 550 },
+    hours: "24時間",
+    note: "19:00-8:00 最大330円"
+  },
+  {
+    name: "タイムズ神宮前駅北",
+    address: "愛知県名古屋市熱田区三本松町1",
+    lat: 35.1256,
+    lng: 136.9087,
+    hourlyRate: 330,
+    rates: { weekday: "40分 220円", holiday: "40分 220円" },
+    maxRate: { weekday: 550, holiday: 550 },
+    hours: "24時間",
+    note: "19:00-8:00 最大330円"
+  },
+  {
+    name: "三井のリパーク 熱田神宮西駅前",
+    address: "愛知県名古屋市熱田区旗屋町507",
+    lat: 35.1238,
+    lng: 136.9054,
+    hourlyRate: 200,
+    rates: { weekday: "60分 200円", holiday: "60分 200円" },
+    maxRate: { weekday: 500, holiday: 500 },
+    hours: "24時間",
+    note: "19:00-8:00 最大300円"
+  },
+  {
+    name: "三井のリパーク 熱田駅前",
+    address: "愛知県名古屋市熱田区旗屋町",
+    lat: 35.1219,
+    lng: 136.9117,
+    hourlyRate: 200,
+    rates: { weekday: "60分 200円", holiday: "60分 200円" },
+    maxRate: { weekday: 600, holiday: 600 },
+    hours: "24時間",
+    note: "19:00-8:00 最大400円"
+  },
+  {
+    name: "三井のリパーク 名古屋神宮2丁目",
+    address: "愛知県名古屋市熱田区神宮2丁目",
+    lat: 35.1245,
+    lng: 136.9094,
+    hourlyRate: 200,
+    rates: { weekday: "30分 100円", holiday: "30分 100円" },
+    maxRate: { weekday: 800, holiday: 800 },
+    hours: "24時間"
+  },
+  {
+    name: "三井のリパーク 名古屋神宮2丁目第3",
+    address: "愛知県名古屋市熱田区神宮2丁目",
+    lat: 35.1242,
+    lng: 136.9090,
+    hourlyRate: 200,
+    rates: {
+      weekday: "昼(8-20時) 60分 200円 / 夜(20-8時) 60分 100円",
+      holiday: "昼(8-20時) 60分 200円 / 夜(20-8時) 60分 100円"
+    },
+    maxRate: { weekday: 800, holiday: 800 },
+    hours: "24時間"
+  },
+
+  // ===== 矢場町エリア追加分 =====
+  {
+    name: "矢場公園駐車場",
+    address: "愛知県名古屋市中区栄4丁目16-1",
+    lat: 35.1609,
+    lng: 136.9111,
+    hourlyRate: 540,
+    rates: { weekday: "30分 270円", holiday: "30分 270円" },
+    maxRate: { weekday: 1300, holiday: 1700 },
+    hours: "24時間",
+    note: "平日6:00-22:00最大1300円 / 休日6:00-22:00最大1700円 / 夜間22:00-6:00最大500円"
+  },
+  {
+    name: "タイムズ名古屋ゼロゲート",
+    address: "愛知県名古屋市中区栄3丁目28",
+    lat: 35.1637,
+    lng: 136.9082,
+    hourlyRate: 600,
+    rates: { weekday: "30分 300円", holiday: "30分 300円" },
+    maxRate: { weekday: 1000, holiday: 1700 },
+    hours: "24時間",
+    note: "平日8:00-17:00最大1000円 / 休日8:00-17:00最大1700円 / 夜間17:00-8:00最大500円"
+  },
+
+  // ===== バンテリンドームエリア =====
+  {
+    name: "タイムズナゴヤドーム駅前",
+    address: "愛知県名古屋市東区大幸3丁目1",
+    lat: 35.1857,
+    lng: 136.9479,
+    hourlyRate: 200,
+    rates: { weekday: "昼(8-0時) 30分 100円 / 夜(0-8時) 60分 100円", holiday: "昼(8-0時) 30分 100円 / 夜(0-8時) 60分 100円" },
+    maxRate: { weekday: 500, holiday: 500 },
+    hours: "24時間",
+    note: "イベント開催日は料金が変わります。現地カレンダーを確認推奨"
+  },
+  {
+    name: "タイムズナゴヤドーム駅前第3",
+    address: "愛知県名古屋市東区大幸4丁目1",
+    lat: 35.1872,
+    lng: 136.9490,
+    hourlyRate: 200,
+    rates: { weekday: "昼(8-22時) 30分 100円 / 夜(22-8時) 60分 100円", holiday: "昼(8-22時) 30分 100円 / 夜(22-8時) 60分 100円" },
+    maxRate: { weekday: 500, holiday: 500 },
+    hours: "24時間",
+    note: "イベント開催日は料金が変わります。現地カレンダーを確認推奨"
+  },
+  {
+    name: "タイムズナゴヤドーム駅前第5",
+    address: "愛知県名古屋市東区大幸4丁目14",
+    lat: 35.1876,
+    lng: 136.9504,
+    hourlyRate: 200,
+    rates: { weekday: "昼(8-22時) 30分 100円 / 夜(22-8時) 60分 100円", holiday: "昼(8-22時) 30分 100円 / 夜(22-8時) 60分 100円" },
+    maxRate: { weekday: 500, holiday: 500 },
+    hours: "24時間",
+    note: "イベント開催日は料金が変わります。現地カレンダーを確認推奨"
+  },
+  {
+    name: "名鉄協商パーキング 古出来町",
+    address: "愛知県名古屋市東区古出来2丁目2",
+    lat: 35.1831,
+    lng: 136.9440,
+    hourlyRate: 200,
+    rates: { weekday: "60分 200円", holiday: "60分 200円" },
+    maxRate: { weekday: 600, holiday: 600 },
+    hours: "24時間"
+  },
+  {
+    name: "三井のリパーク ナゴヤドーム前",
+    address: "愛知県名古屋市東区矢田南2丁目13-10",
+    lat: 35.1839,
+    lng: 136.9472,
+    hourlyRate: 200,
+    rates: { weekday: "昼(8-22時) 30分 100円 / 夜(22-8時) 60分 100円", holiday: "昼(8-22時) 30分 100円 / 夜(22-8時) 60分 100円" },
+    maxRate: { weekday: 300, holiday: 300 },
+    hours: "24時間",
+    note: "イベント開催日は最大3,000円。現地カレンダーを確認推奨"
+  },
+  {
+    name: "三井のリパーク 矢田南",
+    address: "愛知県名古屋市東区矢田南2丁目12-12",
+    lat: 35.1837,
+    lng: 136.9467,
+    hourlyRate: 200,
+    rates: { weekday: "昼(8-22時) 30分 100円 / 夜(22-8時) 60分 100円", holiday: "昼(8-22時) 30分 100円 / 夜(22-8時) 60分 100円" },
+    maxRate: { weekday: 300, holiday: 300 },
+    hours: "24時間",
+    note: "イベント開催日は最大2,500円。現地カレンダーを確認推奨"
+  },
+  {
+    name: "三井のリパーク ナゴヤドーム南",
+    address: "愛知県名古屋市千種区萱場2丁目14-22",
+    lat: 35.1800,
+    lng: 136.9491,
+    hourlyRate: 200,
+    rates: { weekday: "30分 100円", holiday: "30分 100円" },
+    maxRate: { weekday: 400, holiday: 400 },
+    hours: "24時間",
+    note: "イベント開催日は最大2,500円。現地カレンダーを確認推奨"
+  },
+  {
+    name: "三井のリパーク 大曽根第2",
+    address: "愛知県名古屋市北区大曽根3丁目",
+    lat: 35.1940,
+    lng: 136.9445,
+    hourlyRate: 200,
+    rates: { weekday: "30分 100円", holiday: "30分 100円" },
+    maxRate: { weekday: 750, holiday: 750 },
+    hours: "24時間",
+    note: "夜間(20-8時)最大400円"
+  },
+
+  // ===== 今池エリア =====
+  {
+    name: "名鉄協商パーキング 今池1丁目",
+    address: "愛知県名古屋市千種区今池1丁目",
+    lat: 35.1627,
+    lng: 136.9323,
+    hourlyRate: 400,
+    rates: { weekday: "30分 200円", holiday: "30分 200円" },
+    maxRate: { weekday: 1100, holiday: 1100 },
+    hours: "24時間",
+    note: "8:00-18:00最大1100円 / 18:00-8:00最大800円"
+  },
+  {
+    name: "タイムズ今池第11",
+    address: "愛知県名古屋市千種区今池1丁目29-15",
+    lat: 35.1622,
+    lng: 136.9318,
+    hourlyRate: 500,
+    rates: { weekday: "30分 250円", holiday: "30分 250円" },
+    maxRate: { weekday: 1000, holiday: 1000 },
+    hours: "24時間",
+    note: "駐車後6時間以内最大1000円"
+  },
+  {
+    name: "名鉄協商パーキング 今池3丁目第2",
+    address: "愛知県名古屋市千種区今池3丁目37",
+    lat: 35.1606,
+    lng: 136.9335,
+    hourlyRate: 200,
+    rates: { weekday: "60分 200円", holiday: "60分 200円" },
+    maxRate: { weekday: 600, holiday: 600 },
+    hours: "24時間",
+    note: "18:00-8:00最大300円"
+  },
+  {
+    name: "三井のリパーク 今池3丁目",
+    address: "愛知県名古屋市千種区今池3丁目",
+    lat: 35.1604,
+    lng: 136.9342,
+    hourlyRate: 400,
+    rates: { weekday: "30分 200円", holiday: "30分 200円" },
+    maxRate: { weekday: 700, holiday: 700 },
+    hours: "24時間",
+    note: "20:00-8:00最大300円"
+  },
+  {
+    name: "三井のリパーク 今池第20",
+    address: "愛知県名古屋市千種区今池2丁目",
+    lat: 35.1619,
+    lng: 136.9330,
+    hourlyRate: 400,
+    rates: { weekday: "30分 200円", holiday: "30分 200円" },
+    maxRate: { weekday: 1000, holiday: 1000 },
+    hours: "24時間",
+    note: "入庫後12時間以内最大1000円"
+  },
+  {
+    name: "三井のリパーク 今池5丁目第3",
+    address: "愛知県名古屋市千種区今池5丁目",
+    lat: 35.1579,
+    lng: 136.9337,
+    hourlyRate: 500,
+    rates: { weekday: "30分 250円", holiday: "30分 250円" },
+    maxRate: { weekday: 900, holiday: 900 },
+    hours: "24時間",
+    note: "19:00-7:00最大600円"
+  },
+  {
+    name: "JTP今池No.3",
+    address: "愛知県名古屋市千種区今池4丁目10",
+    lat: 35.1594,
+    lng: 136.9340,
+    hourlyRate: 400,
+    rates: { weekday: "30分 200円", holiday: "30分 200円" },
+    maxRate: { weekday: 700, holiday: 700 },
+    hours: "24時間",
+    note: "最大料金は6時間毎に適用"
   }
 ];
