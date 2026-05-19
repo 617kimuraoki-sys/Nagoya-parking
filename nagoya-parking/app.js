@@ -5,7 +5,7 @@
   const mapViewEl = document.getElementById("map-view");
 
   let currentSort = "price";
-  let currentArea = "all";
+  let selectedAreas = new Set(); // 空 = 全件
   let currentDuration = null;
   let currentView = "list";
   let currentDayMode = "auto"; // "auto" | "weekday" | "holiday"
@@ -69,17 +69,29 @@
   let userMarker = null;
 
   const AREA_COLORS = {
-    "栄":     "#2563eb",
+    "栄":       "#2563eb",
     "錦・伏見": "#059669",
-    "名駅":   "#7c3aed",
-    "大須":   "#d97706",
-    "久屋":   "#0891b2",
-    "金山":   "#dc2626",
-    "熱田":   "#c2410c",
-    "ドーム": "#db2777",
-    "矢場町": "#6366f1",
-    "今池":   "#0d9488",
-    "その他": "#6b7280"
+    "名駅":     "#7c3aed",
+    "大須":     "#d97706",
+    "久屋":     "#0891b2",
+    "金山":     "#dc2626",
+    "熱田":     "#c2410c",
+    "ドーム":   "#db2777",
+    "矢場町":   "#6366f1",
+    "今池":     "#0d9488",
+    "鶴舞":     "#e11d48",
+    "覚王山":   "#b45309",
+    "千種":     "#0e7490",
+    "星ヶ丘":   "#be185d",
+    "名古屋港": "#1d4ed8",
+    "八事":     "#065f46",
+    "名古屋城": "#78350f",
+    "円頓寺":   "#4a044e",
+    "高岳":     "#1e40af",
+    "黒川":     "#166534",
+    "藤が丘":   "#7c2d12",
+    "山王":     "#713f12",
+    "その他":   "#6b7280"
   };
 
   function initMap() {
@@ -170,13 +182,24 @@
     const legend = L.control({ position: "bottomright" });
     legend.onAdd = function () {
       const div = L.DomUtil.create("div", "map-legend");
-      div.innerHTML = Object.entries(AREA_COLORS)
+      const items = Object.entries(AREA_COLORS)
         .filter(([area]) => area !== "その他")
         .map(([area, color]) =>
           `<div class="legend-item">
              <span class="legend-dot" style="background:${color}"></span>${area}
            </div>`
         ).join("");
+      div.innerHTML = `
+        <button class="legend-toggle" id="legend-toggle">凡例 ▼</button>
+        <div class="legend-grid" id="legend-content" hidden>${items}</div>
+      `;
+      L.DomEvent.on(div.querySelector("#legend-toggle"), "click", function (e) {
+        L.DomEvent.stopPropagation(e);
+        const content = div.querySelector("#legend-content");
+        const isHidden = content.hasAttribute("hidden");
+        content.toggleAttribute("hidden", !isHidden);
+        div.querySelector("#legend-toggle").textContent = isHidden ? "凡例 ▲" : "凡例 ▼";
+      });
       return div;
     };
     legend.addTo(leafletMap);
@@ -284,8 +307,20 @@
     if (a.includes("中区矢場町") || /中区栄[45]丁目/.test(a)) return "矢場町";
     if (a.includes("中区栄") || a.includes("中区新栄")) return "栄";
     if (a.includes("熱田区")) return "熱田";
-    if (a.includes("東区大幸") || a.includes("東区矢田") || a.includes("東区古出来") || a.includes("千種区萱場") || a.includes("北区大曽根")) return "ドーム";
+    if (a.includes("東区大幸") || a.includes("東区矢田") || a.includes("東区古出来") || a.includes("千種区萱場") || a.includes("北区大曽根") || a.includes("東区砂田橋")) return "ドーム";
     if (a.includes("千種区今池")) return "今池";
+    if (a.includes("中区鶴舞") || a.includes("中区千代田") || a.includes("昭和区鶴舞") || a.includes("昭和区御器所") || a.includes("昭和区川名") || a.includes("昭和区檀渓通")) return "鶴舞";
+    if (a.includes("千種区覚王山") || a.includes("千種区末盛") || a.includes("千種区山門") || a.includes("千種区観月町")) return "覚王山";
+    if (a.includes("千種区千種") || a.includes("千種区吹上") || a.includes("千種区池下") || a.includes("千種区四谷通") || a.includes("千種区春岡")) return "千種";
+    if (a.includes("千種区星が丘") || a.includes("千種区井上町") || a.includes("千種区本山") || a.includes("千種区見附町") || a.includes("千種区稲舟通") || a.includes("千種区橋本町") || a.includes("千種区山添")) return "星ヶ丘";
+    if (a.includes("港区")) return "名古屋港";
+    if (a.includes("昭和区八事") || a.includes("天白区八事") || a.includes("昭和区山手通") || a.includes("昭和区山花") || a.includes("昭和区広路")) return "八事";
+    if (a.includes("西区名城") || a.includes("西区二の丸") || a.includes("西区城西") || a.includes("西区浅間") || a.includes("北区名城")) return "名古屋城";
+    if (a.includes("西区那古野") || a.includes("西区花の木") || a.includes("西区栄生")) return "円頓寺";
+    if (a.includes("東区泉") || a.includes("東区葵") || a.includes("東区筒井")) return "高岳";
+    if (a.includes("北区黒川") || a.includes("北区田幡")) return "黒川";
+    if (a.includes("名東区藤が丘") || a.includes("名東区藤見が丘") || a.includes("名東区上社") || a.includes("名東区一社")) return "藤が丘";
+    if (a.includes("南区山王") || a.includes("南区笠寺") || a.includes("南区笠寺町") || a.includes("南区立脇町") || a.includes("南区呼続")) return "山王";
     return "その他";
   }
 
@@ -320,7 +355,8 @@
       const name = encodeURIComponent(p.name);
       return `https://www.google.com/maps/place/${name}/data=!4m2!3m1!1s${p.placeFid}`;
     }
-    const query = encodeURIComponent(`${p.name} ${p.address}`);
+    // 住所のみで検索（名前検索は複数候補が出るため住所で1か所に絞る）
+    const query = encodeURIComponent(p.address);
     return `https://www.google.com/maps/search/?api=1&query=${query}`;
   }
 
@@ -355,8 +391,8 @@
 
     if (showFavOnly) {
       list = list.filter((p) => favorites.has(p.name));
-    } else if (currentArea !== "all") {
-      list = list.filter((p) => getArea(p) === currentArea);
+    } else if (selectedAreas.size > 0) {
+      list = list.filter((p) => selectedAreas.has(getArea(p)));
     }
 
     list = [...list];
@@ -532,23 +568,41 @@
   document.querySelectorAll("#area-filters .chip").forEach((btn) => {
     btn.addEventListener("click", () => {
       const area = btn.dataset.area;
+      const allBtn = document.querySelector("#area-filters [data-area='all']");
+      const favBtn = document.querySelector("#area-filters [data-area='favorites']");
 
       if (area === "favorites") {
         const wasActive = btn.classList.contains("is-active");
         if (wasActive) {
           // もう一度タップで解除 → 全件に戻す
           showFavOnly = false;
-          setActive(document.getElementById("area-filters"),
-            document.querySelector("#area-filters [data-area='all']"));
+          selectedAreas.clear();
+          document.querySelectorAll("#area-filters .chip").forEach(b => b.classList.remove("is-active"));
+          allBtn.classList.add("is-active");
         } else {
           showFavOnly = true;
-          currentArea = "all";
-          setActive(document.getElementById("area-filters"), btn);
+          selectedAreas.clear();
+          document.querySelectorAll("#area-filters .chip").forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
         }
-      } else {
+      } else if (area === "all") {
         showFavOnly = false;
-        currentArea = area;
-        setActive(document.getElementById("area-filters"), btn);
+        selectedAreas.clear();
+        document.querySelectorAll("#area-filters .chip").forEach(b => b.classList.remove("is-active"));
+        allBtn.classList.add("is-active");
+      } else {
+        // 複数選択トグル
+        showFavOnly = false;
+        favBtn.classList.remove("is-active");
+        if (selectedAreas.has(area)) {
+          selectedAreas.delete(area);
+          btn.classList.remove("is-active");
+        } else {
+          selectedAreas.add(area);
+          btn.classList.add("is-active");
+        }
+        // 何も選ばれていなければ「全件」をアクティブに
+        allBtn.classList.toggle("is-active", selectedAreas.size === 0);
       }
 
       render();

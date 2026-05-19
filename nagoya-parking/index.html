@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>名古屋パーキング - 名古屋市中心部107か所のコインパーキング料金比較</title>
+  <title>名古屋パーキング - 名古屋市中心部400か所のコインパーキング料金比較</title>
 
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="uAHIuDA5UZB0OazF6ytcR9Y-nBPArWV1-xlS-xgioIo" />
 
   <!-- SEO -->
-  <meta name="description" content="名古屋市中心部107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
+  <meta name="description" content="名古屋市中心部400か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
 
   <!-- OGP -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="名古屋パーキング">
-  <meta property="og:title" content="名古屋パーキング | 名古屋市中心部107か所のコインパーキング料金比較">
-  <meta property="og:description" content="名古屋市中心部107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
+  <meta property="og:title" content="名古屋パーキング | 名古屋市中心部400か所のコインパーキング料金比較">
+  <meta property="og:description" content="名古屋市中心部400か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
   <meta property="og:url" content="https://car-motiva.com/nagoya-parking/">
   <meta property="og:locale" content="ja_JP">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="名古屋パーキング | 名古屋市中心部107か所のコインパーキング料金比較">
-  <meta name="twitter:description" content="名古屋市中心部107か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
+  <meta name="twitter:title" content="名古屋パーキング | 名古屋市中心部400か所のコインパーキング料金比較">
+  <meta name="twitter:description" content="名古屋市中心部400か所のコインパーキング料金を一覧比較。エリア絞り込み・時間指定の料金試算・地図表示・現在地ソート対応。">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6350822748465611" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
       <div class="guide-hero">
         <div class="guide-hero-icon">🅿️</div>
         <p class="guide-hero-title">名古屋パーキング</p>
-        <p class="guide-hero-sub">名古屋市中心部107か所の<br>コインパーキング料金をかんたん比較</p>
+        <p class="guide-hero-sub">名古屋市中心部400か所の<br>コインパーキング料金をかんたん比較</p>
       </div>
 
       <div class="guide-section">
@@ -115,6 +115,18 @@
           <div class="area-guide-chip">ドーム</div>
           <div class="area-guide-chip">矢場町</div>
           <div class="area-guide-chip">今池</div>
+          <div class="area-guide-chip">鶴舞</div>
+          <div class="area-guide-chip">覚王山</div>
+          <div class="area-guide-chip">千種</div>
+          <div class="area-guide-chip">星ヶ丘</div>
+          <div class="area-guide-chip">名古屋港</div>
+          <div class="area-guide-chip">八事</div>
+          <div class="area-guide-chip">名古屋城</div>
+          <div class="area-guide-chip">円頓寺</div>
+          <div class="area-guide-chip">高岳</div>
+          <div class="area-guide-chip">黒川</div>
+          <div class="area-guide-chip">藤が丘</div>
+          <div class="area-guide-chip">山王</div>
         </div>
       </div>
 
@@ -134,7 +146,7 @@
       </button>
     </div>
     <h1 class="header__title">名古屋パーキング</h1>
-    <p class="header__subtitle">名古屋市中心部 134か所のコインパーキング料金比較</p>
+    <p class="header__subtitle">名古屋市中心部 400か所のコインパーキング料金比較</p>
   </header>
 
   <main class="main">
@@ -166,19 +178,58 @@
 
       <div class="control-group">
         <span class="control-label">エリア <span class="control-count" id="result-count"></span></span>
-        <div class="chip-row" id="area-filters">
-          <button class="chip is-active" data-area="all">全件</button>
-          <button class="chip" data-area="栄">栄</button>
-          <button class="chip" data-area="錦・伏見">錦・伏見</button>
-          <button class="chip" data-area="名駅">名駅</button>
-          <button class="chip" data-area="大須">大須</button>
-          <button class="chip" data-area="久屋">久屋</button>
-          <button class="chip" data-area="金山">金山</button>
-          <button class="chip" data-area="熱田">熱田</button>
-          <button class="chip" data-area="ドーム">ドーム</button>
-          <button class="chip" data-area="矢場町">矢場町</button>
-          <button class="chip" data-area="今池">今池</button>
-          <button class="chip" data-area="favorites" style="display:none"></button>
+        <div id="area-filters">
+          <div class="chip-row">
+            <button class="chip is-active" data-area="all">全件</button>
+            <button class="chip" data-area="favorites" style="display:none"></button>
+          </div>
+          <div class="area-zone-group">
+            <span class="zone-lbl">中心部</span>
+            <div class="chip-row">
+              <button class="chip" data-area="栄">栄</button>
+              <button class="chip" data-area="錦・伏見">錦・伏見</button>
+              <button class="chip" data-area="名駅">名駅</button>
+              <button class="chip" data-area="久屋">久屋</button>
+              <button class="chip" data-area="矢場町">矢場町</button>
+              <button class="chip" data-area="高岳">高岳</button>
+            </div>
+          </div>
+          <div class="area-zone-group">
+            <span class="zone-lbl">中部</span>
+            <div class="chip-row">
+              <button class="chip" data-area="大須">大須</button>
+              <button class="chip" data-area="鶴舞">鶴舞</button>
+              <button class="chip" data-area="今池">今池</button>
+              <button class="chip" data-area="金山">金山</button>
+              <button class="chip" data-area="熱田">熱田</button>
+            </div>
+          </div>
+          <div class="area-zone-group">
+            <span class="zone-lbl">東部</span>
+            <div class="chip-row">
+              <button class="chip" data-area="千種">千種</button>
+              <button class="chip" data-area="覚王山">覚王山</button>
+              <button class="chip" data-area="星ヶ丘">星ヶ丘</button>
+              <button class="chip" data-area="藤が丘">藤が丘</button>
+            </div>
+          </div>
+          <div class="area-zone-group">
+            <span class="zone-lbl">北・西</span>
+            <div class="chip-row">
+              <button class="chip" data-area="ドーム">ドーム</button>
+              <button class="chip" data-area="黒川">黒川</button>
+              <button class="chip" data-area="名古屋城">名古屋城</button>
+              <button class="chip" data-area="円頓寺">円頓寺</button>
+            </div>
+          </div>
+          <div class="area-zone-group">
+            <span class="zone-lbl">南・港</span>
+            <div class="chip-row">
+              <button class="chip" data-area="八事">八事</button>
+              <button class="chip" data-area="山王">山王</button>
+              <button class="chip" data-area="名古屋港">名古屋港</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -240,12 +291,14 @@
     function updateFilterBadge() {
       let count = 0;
       const sortActive = document.querySelector('#sort-filters .chip.is-active');
-      const areaActive = document.querySelector('#area-filters .chip.is-active');
       const dayActive  = document.querySelector('#day-filters .chip.is-active');
       const durActive  = document.querySelector('#duration-filters .chip.is-active');
-      if (sortActive && sortActive.dataset.sort !== 'price')   count++;
-      if (areaActive && areaActive.dataset.area  !== 'all')    count++;
-      if (dayActive  && dayActive.dataset.day    !== 'auto')   count++;
+      const activeAreaChips = document.querySelectorAll('#area-filters .chip.is-active:not([data-area="all"]):not([data-area="favorites"])');
+      const favActive = document.querySelector('#area-filters [data-area="favorites"].is-active');
+      if (sortActive && sortActive.dataset.sort !== 'price') count++;
+      count += activeAreaChips.length;
+      if (favActive) count++;
+      if (dayActive  && dayActive.dataset.day  !== 'auto')   count++;
       if (durActive) count++;
       filterBadge.textContent = count;
       filterBadge.classList.toggle('hidden', count === 0);

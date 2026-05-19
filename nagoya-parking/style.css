@@ -243,6 +243,23 @@ body {
   gap: 6px;
 }
 
+/* ── Area Zone Groups ────────────────────────── */
+.area-zone-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 6px;
+}
+.zone-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-left: 2px;
+  opacity: 0.65;
+}
+
 .chip {
   padding: 7px 14px;
   font-size: 12px;
@@ -614,16 +631,35 @@ body {
 /* ── Map Legend ──────────────────────────────── */
 .map-legend {
   background: rgba(255,255,255,.95);
-  padding: 8px 12px;
+  padding: 7px 10px;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(8,16,31,.15);
   font-size: 11px;
   font-family: 'Inter', -apple-system, sans-serif;
   font-weight: 700;
+  max-width: 180px;
 }
-.legend-item { display: flex; align-items: center; gap: 6px; margin: 4px 0; }
+.legend-toggle {
+  background: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--ink-2);
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+.legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px 8px;
+  margin-top: 6px;
+}
+.legend-item { display: flex; align-items: center; gap: 5px; }
 .legend-dot {
-  width: 10px; height: 10px;
+  width: 9px; height: 9px;
   border-radius: 50%;
   display: inline-block;
   border: 2px solid #fff;
