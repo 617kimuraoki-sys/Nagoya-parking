@@ -355,8 +355,8 @@
       const name = encodeURIComponent(p.name);
       return `https://www.google.com/maps/place/${name}/data=!4m2!3m1!1s${p.placeFid}`;
     }
-    // 住所のみで検索（名前検索は複数候補が出るため住所で1か所に絞る）
-    const query = encodeURIComponent(p.address);
+    // 駐車場名＋住所で検索（名前がGoogleマップ登録名と一致すれば1件だけ表示される）
+    const query = encodeURIComponent(p.name + " " + p.address);
     return `https://www.google.com/maps/search/?api=1&query=${query}`;
   }
 

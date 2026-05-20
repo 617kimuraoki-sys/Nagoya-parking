@@ -2176,7 +2176,7 @@ const parkingData = [
     note: "昼間（8:00-22:00）最大660円、夜間最大330円"
   },
   {
-    name: "リパーク 鶴舞２丁目",
+    name: "三井のリパーク 鶴舞２丁目",
     address: "愛知県名古屋市昭和区鶴舞2丁目15-9",
     lat: 35.1548, lng: 136.9070,
     hourlyRate: 400,
@@ -2195,7 +2195,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "名鉄協商パーキング 鶴舞３丁目第２",
+    name: "名鉄協商パーキング 鶴舞3丁目第2",
     address: "愛知県名古屋市昭和区鶴舞3-4",
     lat: 35.1510, lng: 136.9050,
     hourlyRate: 400,
@@ -2334,7 +2334,7 @@ const parkingData = [
     note: "平日昼間（7:00-18:00）最大1500円、休日昼間最大800円、夜間最大200円"
   },
   {
-    name: "リパーク 覚王山駅前第４",
+    name: "三井のリパーク 覚王山駅前第4",
     address: "愛知県名古屋市千種区山門町2丁目22",
     lat: 35.1630, lng: 136.9438,
     hourlyRate: 800,
@@ -2464,7 +2464,7 @@ const parkingData = [
     note: "12時間最大1200円"
   },
   {
-    name: "リパーク 池下１丁目",
+    name: "三井のリパーク 池下１丁目",
     address: "愛知県名古屋市千種区池下1丁目4-3",
     lat: 35.1705, lng: 136.9270,
     hourlyRate: 600,
@@ -2595,7 +2595,7 @@ const parkingData = [
     note: "夜間（19:00-8:00）60分110円、夜間最大300円"
   },
   {
-    name: "リパーク 星ヶ丘駅前",
+    name: "三井のリパーク 星ヶ丘駅前",
     address: "愛知県名古屋市千種区井上町126",
     lat: 35.1645, lng: 136.9635,
     hourlyRate: 400,
@@ -2726,7 +2726,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "リパーク 名古屋港水族館前",
+    name: "三井のリパーク 名古屋港水族館前",
     address: "愛知県名古屋市港区入船2丁目3-22",
     lat: 35.0892, lng: 136.8830,
     hourlyRate: 800,
@@ -2840,7 +2840,7 @@ const parkingData = [
     note: "夜間（19:00-8:00）最大300円"
   },
   {
-    name: "リパーク 八事石坂",
+    name: "三井のリパーク 八事石坂",
     address: "愛知県名古屋市昭和区広路町字石坂28-3",
     lat: 35.1375, lng: 136.9425,
     hourlyRate: 400,
@@ -2970,7 +2970,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "リパーク 名古屋城西第８",
+    name: "三井のリパーク 名古屋城西第８",
     address: "愛知県名古屋市西区城西1丁目11-13",
     lat: 35.1855, lng: 136.8985,
     hourlyRate: 440,
@@ -3081,7 +3081,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "リパーク 那古野２丁目",
+    name: "三井のリパーク 那古野２丁目",
     address: "愛知県名古屋市西区那古野2丁目23",
     lat: 35.1775, lng: 136.8900,
     hourlyRate: 440,
@@ -3100,7 +3100,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "名鉄協商パーキング 那古野１丁目",
+    name: "名鉄協商パーキング 那古野1丁目",
     address: "愛知県名古屋市西区那古野1-5",
     lat: 35.1768, lng: 136.8878,
     hourlyRate: 300,
@@ -3175,7 +3175,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "リパーク 葵第１２",
+    name: "三井のリパーク 葵第12",
     address: "愛知県名古屋市東区葵3丁目13-22",
     lat: 35.1738, lng: 136.9205,
     hourlyRate: 600,
@@ -3286,7 +3286,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "リパーク 黒川駅南",
+    name: "三井のリパーク 黒川駅南",
     address: "愛知県名古屋市北区田幡2丁目15",
     lat: 35.1968, lng: 136.9045,
     hourlyRate: 375,
@@ -3471,7 +3471,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "リパーク 藤が丘",
+    name: "三井のリパーク 藤が丘",
     address: "愛知県名古屋市名東区藤見が丘43",
     lat: 35.1708, lng: 136.9982,
     hourlyRate: 400,
@@ -3654,7 +3654,7 @@ const parkingData = [
     hours: "24時間"
   },
   {
-    name: "リパーク 笠寺観音前",
+    name: "三井のリパーク 笠寺観音前",
     address: "愛知県名古屋市南区笠寺町字上新町82",
     lat: 35.1295, lng: 136.8950,
     hourlyRate: 300,
