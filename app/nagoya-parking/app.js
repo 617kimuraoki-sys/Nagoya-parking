@@ -94,16 +94,28 @@
     "その他":   "#6b7280"
   };
 
+  let tileLayer = null;
+
+  function getTileUrl() {
+    return (document.documentElement.getAttribute('data-theme') === 'light')
+      ? "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+      : "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+  }
+
   function initMap() {
     if (leafletMap) return;
     leafletMap = L.map(mapViewEl, { zoomControl: true }).setView([35.168, 136.906], 14);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    tileLayer = L.tileLayer(getTileUrl(), {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, © <a href="https://carto.com/">CARTO</a>',
       maxZoom: 19
     }).addTo(leafletMap);
     addMapLegend();
     addLocateControl();
   }
+
+  document.documentElement.addEventListener('cm-theme', function () {
+    if (tileLayer) tileLayer.setUrl(getTileUrl());
+  });
 
   function addLocateControl() {
     const LocateControl = L.Control.extend({

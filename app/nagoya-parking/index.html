@@ -39,6 +39,12 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>[hidden]{display:none!important}</style>
+  <script>
+    (function(){
+      var t = localStorage.getItem('cm-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
   <!-- ════ DRAWER OVERLAY ════ -->
@@ -149,9 +155,12 @@
   <header class="header">
     <div class="header__bar">
       <p class="header__brand"><a href="/" class="header__brand-link">CarMotiva</a></p>
-      <button class="menu-btn" id="menu-btn" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header__bar-right">
+        <button class="theme-btn" id="theme-btn" aria-label="テーマ切替">☀️</button>
+        <button class="menu-btn" id="menu-btn" aria-label="メニュー">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
     <h1 class="header__title">名古屋パーキング</h1>
     <p class="header__subtitle">名古屋市中心部 400か所のコインパーキング料金比較</p>
@@ -323,6 +332,21 @@
 
     document.querySelectorAll('.chip').forEach(chip => {
       chip.addEventListener('click', () => setTimeout(updateFilterBadge, 50));
+    });
+
+    // テーマ切替
+    const themeBtn = document.getElementById('theme-btn');
+    function syncThemeBtn(t) {
+      themeBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+    }
+    syncThemeBtn(document.documentElement.getAttribute('data-theme') || 'dark');
+    themeBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('cm-theme', next);
+      syncThemeBtn(next);
+      document.documentElement.dispatchEvent(new CustomEvent('cm-theme'));
     });
 
     // ドロワー開閉
