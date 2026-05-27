@@ -38,35 +38,84 @@
     .btn-primary:hover{background:var(--green-light);transform:translateY(-2px);}
     .btn-secondary{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--text-sub);background:transparent;border:1px solid rgba(255,255,255,.15);padding:14px 28px;border-radius:999px;text-decoration:none;transition:color .15s,border-color .15s;}
     .btn-secondary:hover{color:#fff;border-color:rgba(255,255,255,.35);}
-    section{padding:72px 24px;}
-    .section-inner{max-width:800px;margin:0 auto;}
+    /* ── COMMON ── */
+    section{padding:80px 24px;position:relative;}
+    .section-inner{max-width:800px;margin:0 auto;position:relative;z-index:1;}
     .section-label{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);margin-bottom:12px;}
     .section-title{font-size:clamp(24px,4.5vw,36px);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:12px;}
     .section-desc{font-size:15px;font-weight:500;color:var(--text-sub);line-height:1.8;max-width:500px;margin-bottom:40px;}
+    /* ── FEATURES ── */
+    #features{
+      background:
+        radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px),
+        radial-gradient(ellipse 70% 50% at 0% 100%,rgba(16,185,129,.1) 0%,transparent 55%),
+        var(--navy-deep);
+      background-size:28px 28px,auto,auto;
+    }
     .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
     @media(max-width:600px){.feature-grid{grid-template-columns:1fr;}}
-    .feature-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:background .2s;}
-    .feature-card:hover{background:rgba(255,255,255,.07);}
-    .feature-icon{font-size:28px;margin-bottom:14px;}
-    .feature-card h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px;}
-    .feature-card p{font-size:13px;color:var(--text-sub);line-height:1.7;}
-    .step-list{display:flex;flex-direction:column;gap:16px;}
-    .step-item{display:flex;gap:16px;align-items:flex-start;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;}
-    .step-num{width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:28px 22px;transition:background .25s,border-color .25s,transform .25s;position:relative;overflow:hidden;}
+    .feature-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,transparent,var(--green-light),transparent);opacity:0;transition:opacity .25s;}
+    .feature-card:hover{background:rgba(16,185,129,.07);border-color:rgba(52,211,153,.3);transform:translateY(-4px);}
+    .feature-card:hover::after{opacity:1;}
+    .feature-icon{width:44px;height:44px;border-radius:12px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.25);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;}
+    .feature-card h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em;}
+    .feature-card p{font-size:13px;color:var(--text-sub);line-height:1.75;}
+    /* ── HOW TO USE ── */
+    .how-section{
+      background:
+        repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px),
+        radial-gradient(ellipse 60% 50% at 100% 50%,rgba(16,185,129,.07) 0%,transparent 55%),
+        var(--navy-deep);
+    }
+    .step-list{display:flex;flex-direction:column;gap:14px;position:relative;}
+    .step-list::before{content:'';position:absolute;left:18px;top:38px;bottom:38px;width:2px;background:linear-gradient(180deg,rgba(16,185,129,.7),rgba(16,185,129,.05));pointer-events:none;}
+    .step-item{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-md);padding:20px;transition:background .2s,border-color .2s,transform .2s;}
+    .step-item:hover{background:rgba(16,185,129,.06);border-color:rgba(52,211,153,.22);transform:translateX(5px);}
+    .step-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-light));box-shadow:0 0 18px rgba(16,185,129,.45);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;}
     .step-body h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;}
-    .step-body p{font-size:13px;color:var(--text-sub);margin:0;}
+    .step-body p{font-size:13px;color:var(--text-sub);margin:0;line-height:1.7;}
+    /* ── INFO / METHOD ── */
+    .info-section{
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 110%,rgba(16,185,129,.15) 0%,transparent 55%),
+        linear-gradient(180deg,var(--navy-deep) 0%,var(--navy-mid) 100%);
+      overflow:hidden;
+    }
+    .info-section::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(16,185,129,.07);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+    .info-section::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(16,185,129,.1);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+    .info-block{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.18);border-radius:var(--radius-md);padding:20px 24px;margin-bottom:14px;transition:background .2s,border-color .2s;}
+    .info-block:hover{background:rgba(16,185,129,.1);border-color:rgba(52,211,153,.3);}
+    .info-block h3{font-size:15px;font-weight:700;color:var(--green-light);margin-bottom:8px;}
+    .info-block p{font-size:14px;color:var(--text-sub);margin:0;line-height:1.75;}
+    /* ── FAQ ── */
+    .faq-section{
+      background:
+        radial-gradient(ellipse 55% 40% at 0% 50%,rgba(16,185,129,.08) 0%,transparent 55%),
+        radial-gradient(ellipse 55% 40% at 100% 50%,rgba(52,211,153,.05) 0%,transparent 55%),
+        var(--navy-mid);
+    }
     .faq-list{display:flex;flex-direction:column;gap:12px;}
-    .faq-item{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px 24px;}
+    .faq-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-md);padding:22px 24px;transition:background .2s,border-color .2s;position:relative;overflow:hidden;}
+    .faq-item::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(52,211,153,.6),transparent);opacity:0;transition:opacity .2s;}
+    .faq-item:hover{background:rgba(16,185,129,.05);border-color:rgba(52,211,153,.2);}
+    .faq-item:hover::before{opacity:1;}
     .faq-q{font-size:15px;font-weight:700;color:#fff;margin-bottom:10px;display:flex;gap:10px;}
     .faq-q::before{content:'Q';color:var(--green-light);flex-shrink:0;font-weight:800;}
     .faq-a{font-size:14px;color:var(--text-sub);line-height:1.75;display:flex;gap:10px;}
     .faq-a::before{content:'A';color:#60a5fa;flex-shrink:0;font-weight:800;}
-    .info-block{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-md);padding:20px 24px;margin-bottom:16px;}
-    .info-block h3{font-size:15px;font-weight:700;color:var(--green-light);margin-bottom:8px;}
-    .info-block p{font-size:14px;color:var(--text-sub);margin:0;line-height:1.75;}
-    .cta-section{background:var(--navy-mid);}
-    .cta-inner{max-width:600px;margin:0 auto;text-align:center;}
-    .cta-inner h2{font-size:clamp(24px,5vw,36px);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:16px;}
+    /* ── CTA ── */
+    .cta-section{
+      background:
+        radial-gradient(ellipse 90% 90% at 50% 50%,rgba(16,185,129,.25) 0%,transparent 60%),
+        radial-gradient(ellipse 60% 50% at 50% 110%,rgba(52,211,153,.12) 0%,transparent 60%),
+        var(--navy-mid);
+      overflow:hidden;
+    }
+    .cta-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
+    .cta-inner{max-width:560px;margin:0 auto;text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(52,211,153,.22);border-radius:28px;padding:56px 40px;position:relative;z-index:1;}
+    @media(max-width:600px){.cta-inner{padding:40px 24px;}}
+    .cta-inner h2{font-size:clamp(22px,5vw,32px);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:14px;}
     .cta-inner p{font-size:15px;color:var(--text-sub);margin-bottom:28px;line-height:1.8;}
     footer{background:var(--navy-deep);border-top:1px solid var(--border);padding:40px 24px;text-align:center;}
     .footer-logo{font-size:18px;font-weight:900;color:#fff;letter-spacing:-.03em;margin-bottom:6px;}
@@ -107,32 +156,32 @@
       <p class="section-desc">燃費管理に必要な機能だけをシンプルに。スマホのブラウザからすぐ使えます。</p>
       <div class="feature-grid">
         <div class="feature-card">
-          <div class="feature-icon">📊</div>
+          <div class="feature-icon" style="display:flex;">📊</div>
           <h3>燃費の自動計算</h3>
           <p>ODO計（走行距離計）の値と給油量を入力するだけで、燃費（km/L）を自動計算します。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📝</div>
+          <div class="feature-icon" style="display:flex;">📝</div>
           <h3>給油記録の管理</h3>
           <p>給油日・ODO計の値・給油量を記録。履歴として保存され、過去の燃費もすぐに確認できます。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📈</div>
+          <div class="feature-icon" style="display:flex;">📈</div>
           <h3>燃費推移グラフ</h3>
           <p>記録した燃費データをグラフで表示。愛車の燃費の傾向や変化を視覚的に把握できます。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">⛽</div>
+          <div class="feature-icon" style="display:flex;">⛽</div>
           <h3>途中給油にも対応</h3>
           <p>満タン基準方式を採用しているため、満タンにしなかった途中給油でも正確に燃費を計算できます。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">💾</div>
+          <div class="feature-icon" style="display:flex;">💾</div>
           <h3>データをローカルに保存</h3>
           <p>入力したデータはお使いの端末に保存されます。アカウント登録やサーバーへの送信は不要です。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📱</div>
+          <div class="feature-icon" style="display:flex;">📱</div>
           <h3>スマホ最適化</h3>
           <p>給油所でもサッと入力できるモバイルファーストのUI設計。片手でも快適に操作できます。</p>
         </div>
@@ -140,7 +189,7 @@
     </div>
   </section>
 
-  <section style="background:var(--navy-mid);">
+  <section class="info-section">
     <div class="section-inner">
       <p class="section-label">Methods</p>
       <h2 class="section-title">2つの計算方式に対応</h2>
@@ -156,7 +205,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="how-section">
     <div class="section-inner">
       <p class="section-label">How to use</p>
       <h2 class="section-title">使い方</h2>
@@ -182,7 +231,7 @@
     </div>
   </section>
 
-  <section style="background:var(--navy-mid);">
+  <section class="faq-section">
     <div class="section-inner">
       <p class="section-label">FAQ</p>
       <h2 class="section-title">よくある質問</h2>

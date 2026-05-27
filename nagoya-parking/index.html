@@ -43,49 +43,104 @@
     .btn-primary:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 0 48px rgba(37,99,235,.55);}
     .btn-secondary{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--text-sub);background:transparent;border:1px solid rgba(255,255,255,.15);padding:14px 28px;border-radius:999px;text-decoration:none;transition:color .15s,border-color .15s;}
     .btn-secondary:hover{color:#fff;border-color:rgba(255,255,255,.35);}
-    /* FEATURES */
-    section{padding:72px 24px;}
-    .section-inner{max-width:800px;margin:0 auto;}
+    /* ── COMMON SECTIONS ── */
+    section{padding:80px 24px;position:relative;}
+    .section-inner{max-width:800px;margin:0 auto;position:relative;z-index:1;}
     .section-label{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-light);margin-bottom:12px;}
     .section-title{font-size:clamp(24px,4.5vw,36px);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:12px;}
     .section-desc{font-size:15px;font-weight:500;color:var(--text-sub);line-height:1.8;max-width:500px;margin-bottom:40px;}
+
+    /* ── FEATURES ── */
+    #features{
+      background:
+        radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px),
+        radial-gradient(ellipse 70% 50% at 100% 0%,rgba(37,99,235,.1) 0%,transparent 55%),
+        var(--navy-deep);
+      background-size:28px 28px,auto,auto;
+    }
     .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
     @media(max-width:600px){.feature-grid{grid-template-columns:1fr;}}
-    .feature-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:background .2s;}
-    .feature-card:hover{background:rgba(255,255,255,.07);}
-    .feature-icon{font-size:28px;margin-bottom:14px;}
-    .feature-card h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px;}
-    .feature-card p{font-size:13px;color:var(--text-sub);line-height:1.7;}
-    /* AREA */
-    .area-section{background:var(--navy-mid);}
+    .feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:28px 22px;transition:background .25s,border-color .25s,transform .25s;position:relative;overflow:hidden;}
+    .feature-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,transparent,var(--blue-light),transparent);opacity:0;transition:opacity .25s;}
+    .feature-card:hover{background:rgba(37,99,235,.07);border-color:rgba(59,130,246,.3);transform:translateY(-4px);}
+    .feature-card:hover::after{opacity:1;}
+    .feature-icon{width:44px;height:44px;border-radius:12px;background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.25);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;}
+    .feature-card h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em;}
+    .feature-card p{font-size:13px;color:var(--text-sub);line-height:1.75;}
+
+    /* ── AREA ── */
+    .area-section{
+      background:
+        radial-gradient(ellipse 100% 80% at 50% 110%,rgba(37,99,235,.2) 0%,transparent 55%),
+        linear-gradient(180deg,var(--navy-deep) 0%,var(--navy-mid) 100%);
+      overflow:hidden;
+    }
+    .area-section::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(37,99,235,.07);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+    .area-section::after{content:'';position:absolute;width:350px;height:350px;border-radius:50%;border:1px solid rgba(37,99,235,.1);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
     .area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
-    .area-tag{font-size:14px;font-weight:600;color:var(--text);background:var(--card-bg);border:1px solid var(--border);border-radius:999px;padding:8px 18px;}
-    /* HOW */
-    .step-list{display:flex;flex-direction:column;gap:16px;}
-    .step-item{display:flex;gap:16px;align-items:flex-start;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;}
-    .step-num{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .area-tag{font-size:14px;font-weight:600;color:var(--text);background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.22);border-radius:999px;padding:9px 20px;transition:background .2s,border-color .2s,transform .2s;cursor:default;}
+    .area-tag:hover{background:rgba(37,99,235,.16);border-color:rgba(59,130,246,.45);transform:translateY(-2px);}
+
+    /* ── HOW TO USE ── */
+    .how-section{
+      background:
+        repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px),
+        radial-gradient(ellipse 60% 50% at 0% 50%,rgba(37,99,235,.07) 0%,transparent 55%),
+        var(--navy-deep);
+    }
+    .step-list{display:flex;flex-direction:column;gap:14px;position:relative;}
+    .step-list::before{content:'';position:absolute;left:18px;top:38px;bottom:38px;width:2px;background:linear-gradient(180deg,rgba(37,99,235,.7),rgba(37,99,235,.05));pointer-events:none;}
+    .step-item{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-md);padding:20px;transition:background .2s,border-color .2s,transform .2s;}
+    .step-item:hover{background:rgba(37,99,235,.06);border-color:rgba(59,130,246,.22);transform:translateX(5px);}
+    .step-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-light));box-shadow:0 0 18px rgba(37,99,235,.45);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;}
     .step-body h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;}
-    .step-body p{font-size:13px;color:var(--text-sub);margin:0;}
-    /* FAQ */
+    .step-body p{font-size:13px;color:var(--text-sub);margin:0;line-height:1.7;}
+
+    /* ── FAQ ── */
+    .faq-section{
+      background:
+        radial-gradient(ellipse 55% 40% at 0% 50%,rgba(37,99,235,.08) 0%,transparent 55%),
+        radial-gradient(ellipse 55% 40% at 100% 50%,rgba(59,130,246,.06) 0%,transparent 55%),
+        var(--navy-mid);
+    }
     .faq-list{display:flex;flex-direction:column;gap:12px;}
-    .faq-item{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px 24px;}
+    .faq-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-md);padding:22px 24px;transition:background .2s,border-color .2s;position:relative;overflow:hidden;}
+    .faq-item::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,.6),transparent);opacity:0;transition:opacity .2s;}
+    .faq-item:hover{background:rgba(37,99,235,.05);border-color:rgba(59,130,246,.2);}
+    .faq-item:hover::before{opacity:1;}
     .faq-q{font-size:15px;font-weight:700;color:#fff;margin-bottom:10px;display:flex;gap:10px;}
     .faq-q::before{content:'Q';color:var(--blue-light);flex-shrink:0;font-weight:800;}
     .faq-a{font-size:14px;color:var(--text-sub);line-height:1.75;display:flex;gap:10px;}
     .faq-a::before{content:'A';color:#4ade80;flex-shrink:0;font-weight:800;}
-    /* CTA */
-    .cta-section{background:var(--navy-mid);}
-    .cta-inner{max-width:600px;margin:0 auto;text-align:center;}
-    .cta-inner h2{font-size:clamp(24px,5vw,36px);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:16px;}
-    .cta-inner p{font-size:15px;color:var(--text-sub);margin-bottom:28px;line-height:1.8;}
-    /* COLUMN */
+
+    /* ── COLUMN ── */
+    .col-section{
+      background:
+        radial-gradient(circle,rgba(255,255,255,.02) 1px,transparent 1px),
+        var(--navy-deep);
+      background-size:40px 40px,auto;
+    }
     .col-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
     @media(max-width:600px){.col-grid{grid-template-columns:1fr;}}
-    .col-card{display:flex;gap:14px;align-items:center;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-decoration:none;color:inherit;transition:background .2s;}
-    .col-card:hover{background:rgba(255,255,255,.07);}
-    .col-card span{font-size:28px;flex-shrink:0;}
-    .col-card-body p{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
-    .col-card-body small{font-size:12px;color:var(--text-sub);}
+    .col-card{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-md);padding:18px;text-decoration:none;color:inherit;transition:background .2s,border-color .2s,transform .2s;}
+    .col-card:hover{background:rgba(37,99,235,.07);border-color:rgba(59,130,246,.3);transform:translateY(-3px);}
+    .col-icon{width:44px;height:44px;border-radius:12px;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .col-card-body p{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;line-height:1.5;}
+    .col-card-body small{font-size:11px;color:var(--blue-light);font-weight:600;letter-spacing:.05em;}
+
+    /* ── CTA ── */
+    .cta-section{
+      background:
+        radial-gradient(ellipse 90% 90% at 50% 50%,rgba(37,99,235,.28) 0%,transparent 60%),
+        radial-gradient(ellipse 60% 50% at 50% 110%,rgba(59,130,246,.15) 0%,transparent 60%),
+        var(--navy-mid);
+      overflow:hidden;
+    }
+    .cta-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
+    .cta-inner{max-width:560px;margin:0 auto;text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(59,130,246,.25);border-radius:28px;padding:56px 40px;position:relative;z-index:1;}
+    @media(max-width:600px){.cta-inner{padding:40px 24px;}}
+    .cta-inner h2{font-size:clamp(22px,5vw,32px);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:14px;}
+    .cta-inner p{font-size:15px;color:var(--text-sub);margin-bottom:28px;line-height:1.8;}
     footer{background:var(--navy-deep);border-top:1px solid var(--border);padding:40px 24px;text-align:center;}
     .footer-logo{font-size:18px;font-weight:900;color:#fff;letter-spacing:-.03em;margin-bottom:6px;}
     .footer-logo span{color:var(--blue-light);}
@@ -127,32 +182,32 @@
       <p class="section-desc">必要な機能だけをシンプルに。スマホのブラウザからすぐ使えます。</p>
       <div class="feature-grid">
         <div class="feature-card">
-          <div class="feature-icon">📋</div>
+          <div class="feature-icon" style="display:flex;">📋</div>
           <h3>料金一覧比較</h3>
           <p>400か所以上の駐車場を料金の安い順・名前順・現在地順で並べ替え。一目で比較できます。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🔍</div>
+          <div class="feature-icon" style="display:flex;">🔍</div>
           <h3>エリア絞り込み</h3>
           <p>栄・錦伏見・名駅・大須・久屋・金山など主要エリアでフィルタリング。目的地周辺だけを表示。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🧮</div>
+          <div class="feature-icon" style="display:flex;">🧮</div>
           <h3>料金試算</h3>
           <p>1h・2h・3h・6h・12h・24hの駐車時間を指定して、各駐車場の料金を自動計算。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🗺️</div>
+          <div class="feature-icon" style="display:flex;">🗺️</div>
           <h3>地図表示</h3>
           <p>Leafletマップで駐車場の位置を地図上に表示。現在地からの距離もわかります。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📍</div>
+          <div class="feature-icon" style="display:flex;">📍</div>
           <h3>現在地ソート</h3>
           <p>GPS機能を使って現在地から近い順に並べ替え。目的地に着いてからもすぐ使えます。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">⭐</div>
+          <div class="feature-icon" style="display:flex;">⭐</div>
           <h3>お気に入り保存</h3>
           <p>よく使う駐車場をお気に入りに登録。次回から素早くアクセスできます。</p>
         </div>
@@ -178,7 +233,7 @@
   </section>
 
   <!-- HOW TO USE -->
-  <section>
+  <section class="how-section">
     <div class="section-inner">
       <p class="section-label">How to use</p>
       <h2 class="section-title">使い方</h2>
@@ -217,7 +272,7 @@
   </section>
 
   <!-- FAQ -->
-  <section style="background:var(--navy-mid);">
+  <section class="faq-section">
     <div class="section-inner">
       <p class="section-label">FAQ</p>
       <h2 class="section-title">よくある質問</h2>
@@ -248,16 +303,16 @@
   </section>
 
   <!-- COLUMN -->
-  <section>
+  <section class="col-section">
     <div class="section-inner">
       <p class="section-label">Column</p>
       <h2 class="section-title">関連コラム</h2>
       <p class="section-desc">名古屋の駐車場・お出かけに役立つ情報をまとめました。</p>
       <div class="col-grid">
-        <a class="col-card" href="/column/nagoya-parking-tips/"><span>🅿️</span><div class="col-card-body"><p>名古屋中心部で駐車場を安く止める5つのコツ</p><small>駐車場ガイド</small></div></a>
-        <a class="col-card" href="/column/sakae-parking-guide/"><span>🏙️</span><div class="col-card-body"><p>栄エリア 駐車場ガイド【最大料金ありで安心】</p><small>栄エリア</small></div></a>
-        <a class="col-card" href="/column/nagoya-port-parking/"><span>🐬</span><div class="col-card-body"><p>名古屋港水族館 周辺の安い駐車場まとめ</p><small>名古屋港エリア</small></div></a>
-        <a class="col-card" href="/column/osu-parking-guide/"><span>🏮</span><div class="col-card-body"><p>大須商店街 駐車場ガイド</p><small>大須エリア</small></div></a>
+        <a class="col-card" href="/column/nagoya-parking-tips/"><div class="col-icon">🅿️</div><div class="col-card-body"><p>名古屋中心部で駐車場を安く止める5つのコツ</p><small>駐車場ガイド</small></div></a>
+        <a class="col-card" href="/column/sakae-parking-guide/"><div class="col-icon">🏙️</div><div class="col-card-body"><p>栄エリア 駐車場ガイド【最大料金ありで安心】</p><small>栄エリア</small></div></a>
+        <a class="col-card" href="/column/nagoya-port-parking/"><div class="col-icon">🐬</div><div class="col-card-body"><p>名古屋港水族館 周辺の安い駐車場まとめ</p><small>名古屋港エリア</small></div></a>
+        <a class="col-card" href="/column/osu-parking-guide/"><div class="col-icon">🏮</div><div class="col-card-body"><p>大須商店街 駐車場ガイド</p><small>大須エリア</small></div></a>
       </div>
     </div>
   </section>
