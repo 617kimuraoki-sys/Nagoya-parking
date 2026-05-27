@@ -31,7 +31,9 @@
     @media(max-width:600px){.article-grid{grid-template-columns:1fr;}}
     .article-card{display:flex;flex-direction:column;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);text-decoration:none;color:inherit;transition:background .2s,transform .2s,border-color .2s;overflow:hidden;}
     .article-card:hover{background:rgba(255,255,255,.07);border-color:rgba(37,99,235,.3);transform:translateY(-3px);}
-    .article-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:52px;}
+    .article-thumb{height:140px;overflow:hidden;}
+    .article-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+    .article-card:hover .article-thumb img{transform:scale(1.05);}
     .article-body{padding:20px;flex:1;display:flex;flex-direction:column;}
     .article-cat{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light);background:rgba(37,99,235,.15);border-radius:999px;padding:3px 9px;display:inline-block;margin-bottom:10px;}
     .article-title{font-size:16px;font-weight:800;color:#fff;line-height:1.4;letter-spacing:-.02em;margin-bottom:8px;}
@@ -68,7 +70,7 @@
     <div class="article-grid">
 
       <a class="article-card" href="/column/nagoya-parking-tips/">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#0a1640,#1d4ed8);">🅿️</div>
+        <div class="article-thumb"><img src="/column/nagoya-parking-tips/thumb.jpg" alt="名古屋の駐車場" loading="lazy"></div>
         <div class="article-body">
           <span class="article-cat">駐車場ガイド</span>
           <h2 class="article-title">名古屋中心部で駐車場を安く止める5つのコツ</h2>
@@ -78,7 +80,7 @@
       </a>
 
       <a class="article-card" href="/column/sakae-parking-guide/">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#0f2460,#2563eb);">🏙️</div>
+        <div class="article-thumb"><img src="/column/sakae-parking-guide/thumb.jpg" alt="名古屋栄エリア" loading="lazy"></div>
         <div class="article-body">
           <span class="article-cat">栄エリア</span>
           <h2 class="article-title">栄エリア 駐車場ガイド【最大料金ありで安心】</h2>
@@ -88,7 +90,7 @@
       </a>
 
       <a class="article-card" href="/column/nagoya-port-parking/">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#042040,#0284c7);">🐬</div>
+        <div class="article-thumb"><img src="/column/nagoya-port-parking/thumb.jpg" alt="名古屋港水族館" loading="lazy"></div>
         <div class="article-body">
           <span class="article-cat">名古屋港</span>
           <h2 class="article-title">名古屋港水族館 周辺の安い駐車場まとめ</h2>
@@ -98,7 +100,7 @@
       </a>
 
       <a class="article-card" href="/column/higashiyama-zoo-parking/">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#042b14,#16a34a);">🦁</div>
+        <div class="article-thumb"><img src="/column/higashiyama-zoo-parking/thumb.jpg" alt="東山動植物園" loading="lazy"></div>
         <div class="article-body">
           <span class="article-cat">東山</span>
           <h2 class="article-title">東山動植物園 駐車場 完全ガイド【混雑・料金・穴場】</h2>
@@ -108,7 +110,7 @@
       </a>
 
       <a class="article-card" href="/column/osu-parking-guide/">
-        <div class="article-thumb" style="background:linear-gradient(135deg,#2d1506,#d97706);">🏮</div>
+        <div class="article-thumb"><img src="/column/osu-parking-guide/thumb.jpg" alt="大須商店街" loading="lazy"></div>
         <div class="article-body">
           <span class="article-cat">大須</span>
           <h2 class="article-title">大須商店街 駐車場ガイド【安い・近い・最大料金あり】</h2>

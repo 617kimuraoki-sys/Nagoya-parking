@@ -479,11 +479,16 @@
     }
     .column-thumb {
       height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 44px;
+      overflow: hidden;
     }
+    .column-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .column-card:hover .column-thumb img { transform: scale(1.05); }
     .column-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
     .column-cat {
       font-size: 10px;
@@ -838,7 +843,7 @@
       </div>
       <div class="column-grid">
         <a class="column-card fade-up" href="/column/nagoya-parking-tips/">
-          <div class="column-thumb" style="background:linear-gradient(135deg,#0a1640,#1d4ed8);">🅿️</div>
+          <div class="column-thumb"><img src="/column/nagoya-parking-tips/thumb.jpg" alt="名古屋の駐車場" loading="lazy"></div>
           <div class="column-body">
             <span class="column-cat">駐車場ガイド</span>
             <p class="column-title">名古屋中心部で駐車場を安く止める5つのコツ</p>
@@ -846,7 +851,7 @@
           </div>
         </a>
         <a class="column-card fade-up fade-up-delay-1" href="/column/sakae-parking-guide/">
-          <div class="column-thumb" style="background:linear-gradient(135deg,#0f2460,#2563eb);">🏙️</div>
+          <div class="column-thumb"><img src="/column/sakae-parking-guide/thumb.jpg" alt="名古屋栄エリア" loading="lazy"></div>
           <div class="column-body">
             <span class="column-cat">栄エリア</span>
             <p class="column-title">栄エリア 駐車場ガイド【最大料金ありで安心】</p>
@@ -854,7 +859,7 @@
           </div>
         </a>
         <a class="column-card fade-up" href="/column/nagoya-port-parking/">
-          <div class="column-thumb" style="background:linear-gradient(135deg,#042040,#0284c7);">🐬</div>
+          <div class="column-thumb"><img src="/column/nagoya-port-parking/thumb.jpg" alt="名古屋港水族館" loading="lazy"></div>
           <div class="column-body">
             <span class="column-cat">名古屋港</span>
             <p class="column-title">名古屋港水族館 周辺の安い駐車場まとめ</p>
@@ -862,7 +867,7 @@
           </div>
         </a>
         <a class="column-card fade-up fade-up-delay-1" href="/column/osu-parking-guide/">
-          <div class="column-thumb" style="background:linear-gradient(135deg,#2d1506,#d97706);">🏮</div>
+          <div class="column-thumb"><img src="/column/osu-parking-guide/thumb.jpg" alt="大須商店街" loading="lazy"></div>
           <div class="column-body">
             <span class="column-cat">大須</span>
             <p class="column-title">大須商店街 駐車場ガイド【安い・近い・最大料金あり】</p>
