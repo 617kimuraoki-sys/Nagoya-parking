@@ -279,48 +279,98 @@
     /* ─── CONCEPT ─── */
     .concept {
       background:
-        radial-gradient(ellipse 60% 50% at 0% 50%, rgba(37,99,235,.1) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(37,99,235,.12) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 0% 30%, rgba(37,99,235,.08) 0%, transparent 50%),
         var(--navy-mid);
+      position: relative;
+      overflow: hidden;
     }
-    .concept-header { margin-bottom: 48px; }
+    .concept::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .concept-header { margin-bottom: 56px; }
 
     .concept-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 20px;
+      position: relative;
     }
     @media (max-width: 600px) {
       .concept-grid { grid-template-columns: 1fr; }
     }
 
     .concept-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--radius-lg);
-      padding: 28px 24px;
-      transition: background .2s, transform .2s;
+      padding: 36px 28px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s, border-color .25s, background .25s;
+    }
+    .concept-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(37,99,235,.8), transparent);
+      opacity: 0;
+      transition: opacity .25s;
     }
     .concept-card:hover {
-      background: var(--card-hover);
-      transform: translateY(-3px);
+      background: rgba(255,255,255,.055);
+      border-color: rgba(59,130,246,.35);
+      transform: translateY(-5px);
     }
-    .concept-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
+    .concept-card:hover::before { opacity: 1; }
+
+    .concept-num {
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      background: linear-gradient(135deg, rgba(37,99,235,.35), rgba(59,130,246,.15));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 20px;
       display: block;
     }
+    .concept-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(37,99,235,.15);
+      border: 1px solid rgba(37,99,235,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .concept-icon-wrap svg {
+      width: 24px;
+      height: 24px;
+      color: var(--blue-light);
+    }
     .concept-card h3 {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 800;
       color: #fff;
       letter-spacing: -.03em;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .concept-card p {
       font-size: 13px;
       font-weight: 500;
       color: var(--text-sub);
-      line-height: 1.75;
+      line-height: 1.85;
     }
 
     /* ─── APPS ─── */
@@ -774,17 +824,26 @@
       </div>
       <div class="concept-grid">
         <div class="concept-card fade-up">
-          <span class="concept-icon">🎯</span>
+          <span class="concept-num">01</span>
+          <div class="concept-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
           <h3>目的に特化</h3>
           <p>余計な機能は一切なし。必要なことだけをシンプルに、すぐ使える形で届けます。</p>
         </div>
         <div class="concept-card fade-up fade-up-delay-1">
-          <span class="concept-icon">📱</span>
+          <span class="concept-num">02</span>
+          <div class="concept-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
           <h3>スマホ最適化</h3>
           <p>信号待ちでも、駐車場の前でも。片手で素早く操作できる設計にこだわっています。</p>
         </div>
         <div class="concept-card fade-up fade-up-delay-2">
-          <span class="concept-icon">🆓</span>
+          <span class="concept-num">03</span>
+          <div class="concept-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
           <h3>完全無料</h3>
           <p>登録不要。アプリインストール不要。ブラウザを開けばすぐ使えます。</p>
         </div>
