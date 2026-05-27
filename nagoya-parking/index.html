@@ -77,8 +77,11 @@
     }
     .area-section::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(37,99,235,.22);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
     .area-section::after{content:'';position:absolute;width:350px;height:350px;border-radius:50%;border:1px solid rgba(37,99,235,.35);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
-    .area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
-    .area-tag{font-size:14px;font-weight:600;color:var(--text);background:rgba(37,99,235,.14);border:1px solid rgba(37,99,235,.38);border-radius:999px;padding:9px 20px;transition:background .2s,border-color .2s,transform .2s;cursor:default;}
+    .area-groups{display:flex;flex-direction:column;gap:20px;margin-top:28px;}
+    .area-group-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-light);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+    .area-group-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(59,130,246,.35),transparent);}
+    .area-tags{display:flex;flex-wrap:wrap;gap:8px;}
+    .area-tag{font-size:13px;font-weight:600;color:var(--text);background:rgba(37,99,235,.14);border:1px solid rgba(37,99,235,.38);border-radius:999px;padding:7px 16px;transition:background .2s,border-color .2s,transform .2s;cursor:default;}
     .area-tag:hover{background:rgba(37,99,235,.28);border-color:rgba(59,130,246,.65);transform:translateY(-2px);}
 
     /* ── HOW TO USE ── */
@@ -222,13 +225,54 @@
       <p class="section-label">Areas</p>
       <h2 class="section-title">対応エリア</h2>
       <p class="section-desc">名古屋市中心部の主要エリアに対応。400か所以上のデータを掲載しています。</p>
-      <div class="area-tags">
-        <span class="area-tag">🏙️ 栄</span>
-        <span class="area-tag">🏢 錦・伏見</span>
-        <span class="area-tag">🚉 名古屋駅周辺</span>
-        <span class="area-tag">🏮 大須</span>
-        <span class="area-tag">🌿 久屋大通</span>
-        <span class="area-tag">🎵 金山</span>
+      <div class="area-groups">
+        <div>
+          <p class="area-group-label">中心部</p>
+          <div class="area-tags">
+            <span class="area-tag">栄</span>
+            <span class="area-tag">錦・伏見</span>
+            <span class="area-tag">名駅</span>
+            <span class="area-tag">久屋</span>
+            <span class="area-tag">矢場町</span>
+            <span class="area-tag">高岳</span>
+          </div>
+        </div>
+        <div>
+          <p class="area-group-label">中部</p>
+          <div class="area-tags">
+            <span class="area-tag">大須</span>
+            <span class="area-tag">鶴舞</span>
+            <span class="area-tag">今池</span>
+            <span class="area-tag">金山</span>
+            <span class="area-tag">熱田</span>
+          </div>
+        </div>
+        <div>
+          <p class="area-group-label">東部</p>
+          <div class="area-tags">
+            <span class="area-tag">千種</span>
+            <span class="area-tag">覚王山</span>
+            <span class="area-tag">星ヶ丘</span>
+            <span class="area-tag">藤が丘</span>
+          </div>
+        </div>
+        <div>
+          <p class="area-group-label">北・西</p>
+          <div class="area-tags">
+            <span class="area-tag">ドーム</span>
+            <span class="area-tag">黒川</span>
+            <span class="area-tag">名古屋城</span>
+            <span class="area-tag">円頓寺</span>
+          </div>
+        </div>
+        <div>
+          <p class="area-group-label">南・港</p>
+          <div class="area-tags">
+            <span class="area-tag">八事</span>
+            <span class="area-tag">山王</span>
+            <span class="area-tag">名古屋港</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
