@@ -1,9 +1,229 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5DJKRQDPD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y5DJKRQDPD');</script>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/app/nenpi-calc/">
-  <title>燃費カンリ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>燃費カンリ | かんたん燃費記録・管理ツール</title>
+  <meta name="description" content="ODO計方式で正確・かんたんに燃費を記録・管理できる無料Webツール。満タン基準方式で途中給油にも対応。スマホのブラウザからすぐ使えます。登録不要・完全無料。">
+  <link rel="canonical" href="https://car-motiva.com/nenpi-calc/">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6350822748465611" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--navy-deep:#03081a;--navy-mid:#080f2a;--blue:#2563eb;--blue-light:#3b82f6;--green:#10b981;--green-light:#34d399;--text:#f0f4ff;--text-sub:#8aa0c8;--border:rgba(255,255,255,.07);--card-bg:rgba(255,255,255,.04);--radius-lg:20px;--radius-md:14px;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',-apple-system,'Hiragino Sans',sans-serif;background:var(--navy-deep);color:var(--text);min-height:100svh;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,8,26,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-size:17px;font-weight:900;letter-spacing:-.03em;color:#fff;text-decoration:none;}
+    .nav-logo span{color:var(--blue-light);}
+    .nav-links{display:flex;align-items:center;gap:20px;}
+    .nav-links a{font-size:13px;font-weight:600;color:var(--text-sub);text-decoration:none;transition:color .15s;}
+    .nav-links a:hover{color:#fff;}
+    .nav-cta{font-size:12px!important;font-weight:700!important;color:#fff!important;background:var(--green);padding:7px 14px;border-radius:999px;transition:background .15s!important;}
+    .nav-cta:hover{background:var(--green-light)!important;}
+    .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(16,185,129,.2) 0%,transparent 60%);pointer-events:none;}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);border-radius:999px;padding:6px 14px;margin-bottom:28px;position:relative;}
+    .hero h1{font-size:clamp(36px,8vw,64px);font-weight:900;letter-spacing:-.04em;line-height:1.1;color:#fff;margin-bottom:20px;position:relative;}
+    .hero h1 .accent{background:linear-gradient(135deg,#34d399,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hero-sub{font-size:clamp(14px,3.5vw,17px);font-weight:500;color:var(--text-sub);line-height:1.8;max-width:460px;margin:0 auto 36px;position:relative;}
+    .hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;position:relative;}
+    .btn-primary{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:#fff;background:var(--green);padding:14px 28px;border-radius:999px;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s;box-shadow:0 0 32px rgba(16,185,129,.35);}
+    .btn-primary:hover{background:var(--green-light);transform:translateY(-2px);}
+    .btn-secondary{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--text-sub);background:transparent;border:1px solid rgba(255,255,255,.15);padding:14px 28px;border-radius:999px;text-decoration:none;transition:color .15s,border-color .15s;}
+    .btn-secondary:hover{color:#fff;border-color:rgba(255,255,255,.35);}
+    section{padding:72px 24px;}
+    .section-inner{max-width:800px;margin:0 auto;}
+    .section-label{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);margin-bottom:12px;}
+    .section-title{font-size:clamp(24px,4.5vw,36px);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:12px;}
+    .section-desc{font-size:15px;font-weight:500;color:var(--text-sub);line-height:1.8;max-width:500px;margin-bottom:40px;}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    @media(max-width:600px){.feature-grid{grid-template-columns:1fr;}}
+    .feature-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:background .2s;}
+    .feature-card:hover{background:rgba(255,255,255,.07);}
+    .feature-icon{font-size:28px;margin-bottom:14px;}
+    .feature-card h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px;}
+    .feature-card p{font-size:13px;color:var(--text-sub);line-height:1.7;}
+    .step-list{display:flex;flex-direction:column;gap:16px;}
+    .step-item{display:flex;gap:16px;align-items:flex-start;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;}
+    .step-num{width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .step-body h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;}
+    .step-body p{font-size:13px;color:var(--text-sub);margin:0;}
+    .faq-list{display:flex;flex-direction:column;gap:12px;}
+    .faq-item{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px 24px;}
+    .faq-q{font-size:15px;font-weight:700;color:#fff;margin-bottom:10px;display:flex;gap:10px;}
+    .faq-q::before{content:'Q';color:var(--green-light);flex-shrink:0;font-weight:800;}
+    .faq-a{font-size:14px;color:var(--text-sub);line-height:1.75;display:flex;gap:10px;}
+    .faq-a::before{content:'A';color:#60a5fa;flex-shrink:0;font-weight:800;}
+    .info-block{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-md);padding:20px 24px;margin-bottom:16px;}
+    .info-block h3{font-size:15px;font-weight:700;color:var(--green-light);margin-bottom:8px;}
+    .info-block p{font-size:14px;color:var(--text-sub);margin:0;line-height:1.75;}
+    .cta-section{background:var(--navy-mid);}
+    .cta-inner{max-width:600px;margin:0 auto;text-align:center;}
+    .cta-inner h2{font-size:clamp(24px,5vw,36px);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:16px;}
+    .cta-inner p{font-size:15px;color:var(--text-sub);margin-bottom:28px;line-height:1.8;}
+    footer{background:var(--navy-deep);border-top:1px solid var(--border);padding:40px 24px;text-align:center;}
+    .footer-logo{font-size:18px;font-weight:900;color:#fff;letter-spacing:-.03em;margin-bottom:6px;}
+    .footer-logo span{color:var(--blue-light);}
+    .footer-tagline{font-size:12px;color:var(--text-sub);margin-bottom:20px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:20px;}
+    .footer-links a{font-size:13px;color:var(--text-sub);text-decoration:none;}
+    .footer-links a:hover{color:#fff;}
+    .footer-copy{font-size:12px;color:var(--text-sub);opacity:.5;}
+    @media(max-width:600px){.nav-links .hide-sp{display:none;}}
+  </style>
 </head>
-<body></body>
+<body>
+  <nav>
+    <a class="nav-logo" href="/">Car<span>Motiva</span></a>
+    <div class="nav-links">
+      <a class="hide-sp" href="/nagoya-parking/">駐車場</a>
+      <a class="hide-sp" href="/">トップ</a>
+      <a class="nav-cta" href="/app/nenpi-calc/">アプリを開く →</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <span class="hero-eyebrow">⛽ 無料Webツール</span>
+    <h1>燃費を、<br><span class="accent">かんたんに管理。</span></h1>
+    <p class="hero-sub">ODO計方式で正確・かんたんに燃費を記録。給油のたびに入力するだけで、愛車の燃費推移がわかります。</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="/app/nenpi-calc/">アプリを無料で使う →</a>
+      <a class="btn-secondary" href="#features">詳しく見る ↓</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="section-inner">
+      <p class="section-label">Features</p>
+      <h2 class="section-title">主な機能</h2>
+      <p class="section-desc">燃費管理に必要な機能だけをシンプルに。スマホのブラウザからすぐ使えます。</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>燃費の自動計算</h3>
+          <p>ODO計（走行距離計）の値と給油量を入力するだけで、燃費（km/L）を自動計算します。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>給油記録の管理</h3>
+          <p>給油日・ODO計の値・給油量を記録。履歴として保存され、過去の燃費もすぐに確認できます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>燃費推移グラフ</h3>
+          <p>記録した燃費データをグラフで表示。愛車の燃費の傾向や変化を視覚的に把握できます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⛽</div>
+          <h3>途中給油にも対応</h3>
+          <p>満タン基準方式を採用しているため、満タンにしなかった途中給油でも正確に燃費を計算できます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💾</div>
+          <h3>データをローカルに保存</h3>
+          <p>入力したデータはお使いの端末に保存されます。アカウント登録やサーバーへの送信は不要です。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>スマホ最適化</h3>
+          <p>給油所でもサッと入力できるモバイルファーストのUI設計。片手でも快適に操作できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--navy-mid);">
+    <div class="section-inner">
+      <p class="section-label">Methods</p>
+      <h2 class="section-title">2つの計算方式に対応</h2>
+      <p class="section-desc">燃費カンリは正確な燃費計算のために2つの方式に対応しています。</p>
+      <div class="info-block">
+        <h3>ODO計方式（推奨）</h3>
+        <p>走行距離計（ODOメーター）の値を給油のたびに記録し、前回との差分から正確な走行距離を算出します。給油量のバラつきに影響されず、最も精度の高い燃費計算が可能です。</p>
+      </div>
+      <div class="info-block">
+        <h3>満タン基準方式</h3>
+        <p>前回満タンにして今回も満タンにすることで、その間に消費したガソリン量から燃費を計算します。途中給油があってもこの方式なら正確に計算できます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <p class="section-label">How to use</p>
+      <h2 class="section-title">使い方</h2>
+      <p class="section-desc">給油のたびに数値を入力するだけ。難しい操作は一切ありません。</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-body"><h3>アプリを開く</h3><p>スマートフォンのブラウザでアプリにアクセス。インストール不要で即利用できます。</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-body"><h3>給油時にODOメーターを記録</h3><p>給油のたびにODOメーター（走行距離計）の値をアプリに入力します。</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-body"><h3>給油量を入力する</h3><p>給油したガソリンの量（リットル）を入力。レシートを見ながらでOKです。</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-body"><h3>燃費が自動計算される</h3><p>入力した値から燃費（km/L）を自動計算。履歴として保存され、グラフでも確認できます。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--navy-mid);">
+    <div class="section-inner">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">よくある質問</h2>
+      <p class="section-desc"></p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">無料で使えますか？</p>
+          <p class="faq-a">はい、完全無料です。アカウント登録も不要です。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">データはどこに保存されますか？</p>
+          <p class="faq-a">データはお使いのスマートフォン・PCのブラウザ（localStorage）に保存されます。外部サーバーへの送信はありません。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">複数の車を管理できますか？</p>
+          <p class="faq-a">現在は1台分の記録に対応しています。複数台対応については今後の機能追加として検討中です。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">途中給油（満タンにしない場合）でも使えますか？</p>
+          <p class="faq-a">はい、ODO計方式を使えば途中給油でも正確に燃費を計算できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>今すぐ燃費を記録してみる</h2>
+      <p>登録不要・完全無料。次の給油から燃費管理を始めましょう。</p>
+      <a class="btn-primary" href="/app/nenpi-calc/">アプリを開く →</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-logo">Car<span>Motiva</span></p>
+    <p class="footer-tagline">クルマ生活をもっと便利に</p>
+    <div class="footer-links">
+      <a href="/">トップ</a>
+      <a href="/column/">コラム</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">お問い合わせ</a>
+      <a href="/nagoya-parking/">名古屋パーキング</a>
+      <a href="/privacy-policy/">プライバシーポリシー</a>
+    </div>
+    <p class="footer-copy">© 2025 CarMotiva</p>
+  </footer>
+</body>
 </html>
