@@ -45,7 +45,8 @@
     .app-grid{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
     .app-item{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;text-decoration:none;color:inherit;transition:background .2s;}
     .app-item:hover{background:rgba(255,255,255,.06);}
-    .app-item-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#0a1640,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+    .app-item-icon{width:52px;height:52px;border-radius:14px;overflow:hidden;flex-shrink:0;}
+    .app-item-icon img{width:100%;height:100%;object-fit:cover;display:block;}
     .app-item-body h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;}
     .app-item-body p{font-size:13px;color:var(--text-sub);}
     footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:40px 24px;text-align:center;}
@@ -91,14 +92,14 @@
       <p>現在、以下の2つのアプリを無料で提供しています。</p>
       <div class="app-grid">
         <a class="app-item" href="/nagoya-parking/">
-          <div class="app-item-icon">🅿️</div>
+          <div class="app-item-icon"><img src="../app/nagoya-parking/icon-512.png" alt="名古屋パーキング"></div>
           <div class="app-item-body">
             <h3>名古屋パーキング</h3>
             <p>名古屋市中心部400か所のコインパーキング料金比較ツール。エリア絞り込み・料金試算・地図表示対応。</p>
           </div>
         </a>
         <a class="app-item" href="/nenpi-calc/">
-          <div class="app-item-icon">⛽</div>
+          <div class="app-item-icon"><img src="../app/nenpi-calc/icon-192.png" alt="燃費カンリ"></div>
           <div class="app-item-body">
             <h3>燃費カンリ</h3>
             <p>ODO計方式で正確・かんたんに燃費を記録・管理できるツール。給油記録も手軽に管理できます。</p>
