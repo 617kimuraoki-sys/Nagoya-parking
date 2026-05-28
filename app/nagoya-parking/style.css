@@ -175,6 +175,141 @@ body {
   padding: 16px 14px;
 }
 
+/* ── Search Bar ──────────────────────────────── */
+.search-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.search-bar-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0 16px;
+  gap: 10px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.search-bar-wrap:focus-within {
+  border-color: rgba(34,211,238,.45);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.08);
+}
+
+.search-bar-icon { color: var(--tx-3); flex-shrink: 0; }
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--tx-1);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 0;
+  min-width: 0;
+  -webkit-appearance: none;
+}
+.search-input::placeholder { color: var(--tx-3); }
+.search-input::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+.search-clear-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  background: var(--glass-2);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--tx-3);
+  flex-shrink: 0;
+  transition: all .15s;
+}
+.search-clear-btn:active { transform: scale(.9); }
+
+/* Facility Badge */
+.search-facility-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(34,211,238,.22);
+  border-radius: 100px;
+  padding: 5px 14px;
+  margin-bottom: 10px;
+  width: fit-content;
+  max-width: 100%;
+}
+.sfb-sub { color: var(--tx-3); font-weight: 500; }
+
+/* Search Dropdown */
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0; right: 0;
+  background: #0d1020;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-md);
+  box-shadow: 0 8px 40px rgba(0,0,0,.85);
+  z-index: 50;
+  overflow: hidden;
+  max-height: 360px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.search-section-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--tx-3);
+  padding: 10px 14px 4px;
+}
+
+.search-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 14px;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  cursor: pointer;
+  transition: background .15s;
+}
+.search-suggestion:last-child { border-bottom: none; }
+.search-suggestion:active,
+.search-suggestion:hover { background: rgba(34,211,238,.08); }
+
+.suggestion-icon { font-size: 15px; flex-shrink: 0; }
+.suggestion-text {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tx-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.suggestion-sub {
+  font-size: 11px;
+  color: var(--tx-3);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.search-no-result {
+  padding: 18px 14px;
+  font-size: 13px;
+  color: var(--tx-3);
+  font-weight: 500;
+  text-align: center;
+}
+
 /* ── Filter Bar ──────────────────────────────── */
 .filter-bar {
   display: flex;
@@ -779,6 +914,17 @@ body {
   flex-shrink: 0;
 }
 
+/* ── Facility Pin ────────────────────────────── */
+.facility-pin {
+  width: 36px; height: 36px;
+  background: rgba(34,211,238,.9);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 0 0 3px rgba(34,211,238,.4), 0 4px 16px rgba(0,0,0,.6);
+}
+
 /* ── Location Dot ────────────────────────────── */
 .user-location-dot {
   width: 16px; height: 16px;
@@ -1224,6 +1370,30 @@ html[data-theme="light"] .area-guide-chip {
 }
 html[data-theme="light"] .guide-footer p { color: #8a9ab5; }
 html[data-theme="light"] .footer { border-top-color: rgba(8,16,31,.08); }
+
+/* Search — light theme */
+html[data-theme="light"] .search-bar-wrap {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(8,16,31,.06), 0 0 0 1px rgba(8,16,31,.08);
+}
+html[data-theme="light"] .search-bar-wrap:focus-within {
+  border-color: rgba(2,132,199,.5);
+  box-shadow: 0 0 0 3px rgba(2,132,199,.08);
+}
+html[data-theme="light"] .search-dropdown {
+  background: #ffffff;
+  border-color: rgba(8,16,31,.10);
+  box-shadow: 0 8px 32px rgba(8,16,31,.15);
+}
+html[data-theme="light"] .search-suggestion { border-bottom-color: rgba(8,16,31,.05); }
+html[data-theme="light"] .search-suggestion:active,
+html[data-theme="light"] .search-suggestion:hover { background: rgba(2,132,199,.07); }
+html[data-theme="light"] .suggestion-text { color: #08101f; }
+html[data-theme="light"] .search-facility-badge {
+  background: rgba(2,132,199,.10);
+  border-color: rgba(2,132,199,.25);
+  color: #0284c7;
+}
 
 /* ── Tablet+ ─────────────────────────────────── */
 @media (min-width: 600px) {

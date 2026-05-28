@@ -14,6 +14,162 @@
   let favorites = new Set(JSON.parse(localStorage.getItem("sakae-favs") || "[]"));
   let showFavOnly = false;
 
+  // ---- 検索 ----
+
+  let searchText = "";
+  let searchFacility = null; // { name, lat, lng } | null
+
+  const FACILITIES = [
+    { name: "東山動植物園",             alt: ["東山動物園","東山植物園"],           lat: 35.1526, lng: 136.9485 },
+    { name: "大須商店街",               alt: ["大須観音","大須"],                   lat: 35.1608, lng: 136.9030 },
+    { name: "名古屋城",                 alt: ["名城公園","名城"],                   lat: 35.1855, lng: 136.8994 },
+    { name: "名古屋港水族館",           alt: ["水族館","名古屋港"],                 lat: 35.0934, lng: 136.8823 },
+    { name: "オアシス21",               alt: ["オアシス"],                          lat: 35.1695, lng: 136.9095 },
+    { name: "名古屋駅",                 alt: ["名駅","JR名古屋","ナゴヤ駅"],        lat: 35.1709, lng: 136.8815 },
+    { name: "栄",                       alt: ["さかえ","サカエ"],                   lat: 35.1679, lng: 136.9085 },
+    { name: "久屋大通パーク",           alt: ["久屋大通","久屋"],                   lat: 35.1726, lng: 136.9101 },
+    { name: "松坂屋名古屋店",           alt: ["松坂屋"],                            lat: 35.1671, lng: 136.9090 },
+    { name: "バンテリンドームナゴヤ",   alt: ["ナゴヤドーム","中日ドーム","ドーム"], lat: 35.1856, lng: 136.9487 },
+    { name: "金山駅",                   alt: ["金山"],                              lat: 35.1420, lng: 136.9026 },
+    { name: "熱田神宮",                 alt: ["熱田"],                              lat: 35.1284, lng: 136.9083 },
+    { name: "覚王山日泰寺",             alt: ["日泰寺","覚王山"],                   lat: 35.1640, lng: 136.9549 },
+    { name: "星ヶ丘テラス",             alt: ["星ヶ丘"],                            lat: 35.1641, lng: 136.9795 },
+    { name: "鶴舞公園",                 alt: ["鶴舞"],                              lat: 35.1508, lng: 136.9090 },
+    { name: "今池",                     alt: [],                                    lat: 35.1626, lng: 136.9312 },
+    { name: "名古屋市科学館",           alt: ["科学館","プラネタリウム"],            lat: 35.1668, lng: 136.9023 },
+    { name: "ミッドランドスクエア",     alt: ["ミッドランド"],                       lat: 35.1694, lng: 136.8842 },
+    { name: "名古屋国際会議場",         alt: ["白鳥公園","白鳥"],                   lat: 35.1395, lng: 136.9067 },
+    { name: "矢場町",                   alt: ["矢場とん"],                          lat: 35.1634, lng: 136.9046 },
+    { name: "中部電力MIRAI TOWER",      alt: ["テレビ塔","名古屋テレビ塔","mirai tower"], lat: 35.1725, lng: 136.9099 },
+    { name: "錦三丁目",                 alt: ["錦三","にしき"],                     lat: 35.1730, lng: 136.9070 },
+    { name: "名古屋市美術館",           alt: ["美術館"],                            lat: 35.1617, lng: 136.9020 },
+    { name: "ポートメッセなごや",       alt: ["ポートメッセ"],                       lat: 35.0876, lng: 136.8837 },
+  ];
+
+  function matchFacilities(q) {
+    if (!q.trim()) return [];
+    const lq = q.toLowerCase();
+    return FACILITIES.filter(f => {
+      return f.name.toLowerCase().includes(lq) ||
+             f.alt.some(a => a.toLowerCase().includes(lq));
+    }).slice(0, 6);
+  }
+
+  function matchParkings(q) {
+    if (!q.trim()) return [];
+    const lq = q.toLowerCase();
+    return parkingData.filter(p => p.name.toLowerCase().includes(lq)).slice(0, 4);
+  }
+
+  function updateFacilityBadge() {
+    const badge = document.getElementById("search-facility-badge");
+    const nameEl = document.getElementById("search-facility-name");
+    if (searchFacility) {
+      nameEl.textContent = searchFacility.name;
+      badge.hidden = false;
+    } else {
+      badge.hidden = true;
+    }
+  }
+
+  function renderSuggestions(q) {
+    const dropdown = document.getElementById("search-dropdown");
+    if (!q.trim()) { dropdown.hidden = true; return; }
+
+    const facilities = matchFacilities(q);
+    const parkings   = matchParkings(q);
+
+    if (facilities.length === 0 && parkings.length === 0) {
+      dropdown.innerHTML = '<div class="search-no-result">候補が見つかりません</div>';
+      dropdown.hidden = false;
+      return;
+    }
+
+    let html = "";
+    if (facilities.length > 0) {
+      html += '<div class="search-section-label">施設</div>';
+      facilities.forEach(f => {
+        html += `<button class="search-suggestion" data-type="facility" data-name="${f.name}" data-lat="${f.lat}" data-lng="${f.lng}">
+          <span class="suggestion-icon">🏛️</span>
+          <span class="suggestion-text">${f.name}</span>
+          <span class="suggestion-sub">近くの駐車場を表示</span>
+        </button>`;
+      });
+    }
+    if (parkings.length > 0) {
+      html += '<div class="search-section-label">駐車場</div>';
+      parkings.forEach(p => {
+        html += `<button class="search-suggestion" data-type="parking" data-name="${p.name}">
+          <span class="suggestion-icon">🅿️</span>
+          <span class="suggestion-text">${p.name}</span>
+          <span class="suggestion-sub">${getArea(p)}</span>
+        </button>`;
+      });
+    }
+
+    dropdown.innerHTML = html;
+    dropdown.hidden = false;
+
+    dropdown.querySelectorAll(".search-suggestion").forEach(btn => {
+      btn.addEventListener("click", e => {
+        e.preventDefault();
+        const input = document.getElementById("search-input");
+        const clearBtn = document.getElementById("search-clear-btn");
+
+        if (btn.dataset.type === "facility") {
+          searchFacility = { name: btn.dataset.name, lat: +btn.dataset.lat, lng: +btn.dataset.lng };
+          searchText = btn.dataset.name;
+          input.value = btn.dataset.name;
+        } else {
+          searchFacility = null;
+          searchText = btn.dataset.name;
+          input.value = btn.dataset.name;
+        }
+
+        clearBtn.hidden = false;
+        dropdown.hidden = true;
+        updateFacilityBadge();
+        render();
+      });
+    });
+  }
+
+  // 検索入力イベント
+  const searchInput   = document.getElementById("search-input");
+  const searchClearBtn = document.getElementById("search-clear-btn");
+  const searchDropdown = document.getElementById("search-dropdown");
+
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value;
+    searchClearBtn.hidden = !q;
+    searchFacility = null;
+    searchText = q;
+    updateFacilityBadge();
+    renderSuggestions(q);
+    render();
+  });
+
+  searchInput.addEventListener("focus", () => {
+    if (searchInput.value) renderSuggestions(searchInput.value);
+  });
+
+  searchClearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    searchText = "";
+    searchFacility = null;
+    searchClearBtn.hidden = true;
+    searchDropdown.hidden = true;
+    updateFacilityBadge();
+    render();
+    searchInput.focus();
+  });
+
+  document.addEventListener("click", e => {
+    if (!e.target.closest("#search-container")) {
+      searchDropdown.hidden = true;
+    }
+  });
+
   // ---- 現在地・距離 ----
 
   function calcDistance(lat1, lng1, lat2, lng2) {
@@ -67,6 +223,7 @@
   let leafletMap = null;
   let mapMarkers = [];
   let userMarker = null;
+  let facilityMarker = null;
 
   const AREA_COLORS = {
     "栄":       "#2563eb",
@@ -255,6 +412,22 @@
       </div>`;
   }
 
+  function updateFacilityMarker() {
+    if (facilityMarker) { facilityMarker.remove(); facilityMarker = null; }
+    if (!leafletMap || !searchFacility) return;
+
+    const icon = L.divIcon({
+      className: "",
+      html: '<div class="facility-pin">🏛️</div>',
+      iconSize: [36, 36],
+      iconAnchor: [18, 18],
+      popupAnchor: [0, -20]
+    });
+    facilityMarker = L.marker([searchFacility.lat, searchFacility.lng], { icon, zIndexOffset: 900 });
+    facilityMarker.bindPopup(`<div class="popup-card"><div class="popup-name">${searchFacility.name}</div></div>`, { maxWidth: 200 });
+    facilityMarker.addTo(leafletMap);
+  }
+
   function renderMap() {
     if (!leafletMap) return;
 
@@ -283,19 +456,25 @@
         autoPanPaddingTopLeft: [10, 80]
       });
 
-      // タップ／クリックでポップアップを開く
       marker.on("click", function () { this.openPopup(); });
 
       marker.addTo(leafletMap);
       mapMarkers.push(marker);
     });
 
-    // フィルター後の件数に合わせてズーム
-    if (mapMarkers.length > 0) {
-      leafletMap.fitBounds(
-        L.featureGroup(mapMarkers).getBounds().pad(0.12),
-        { maxZoom: 16, animate: false }
-      );
+    // 施設検索中 → 施設を中心にズーム
+    if (searchFacility) {
+      leafletMap.setView([searchFacility.lat, searchFacility.lng], 15, { animate: true });
+      updateFacilityMarker();
+    } else {
+      // 通常 → フィルター後の件数に合わせてズーム
+      updateFacilityMarker(); // 施設マーカーを消す
+      if (mapMarkers.length > 0) {
+        leafletMap.fitBounds(
+          L.featureGroup(mapMarkers).getBounds().pad(0.12),
+          { maxZoom: 16, animate: false }
+        );
+      }
     }
 
     // カウント更新
@@ -401,14 +580,28 @@
   function filterAndSort(data) {
     let list = data;
 
-    if (showFavOnly) {
-      list = list.filter((p) => favorites.has(p.name));
-    } else if (selectedAreas.size > 0) {
-      list = list.filter((p) => selectedAreas.has(getArea(p)));
+    if (searchFacility) {
+      if (showFavOnly) list = list.filter((p) => favorites.has(p.name));
+    } else if (searchText.trim()) {
+      const lq = searchText.trim().toLowerCase();
+      list = list.filter((p) => p.name.toLowerCase().includes(lq));
+    } else {
+      if (showFavOnly) {
+        list = list.filter((p) => favorites.has(p.name));
+      } else if (selectedAreas.size > 0) {
+        list = list.filter((p) => selectedAreas.has(getArea(p)));
+      }
     }
 
     list = [...list];
-    if (currentSort === "price") {
+
+    if (searchFacility) {
+      list.sort((a, b) => {
+        const da = (a.lat && a.lng) ? calcDistance(searchFacility.lat, searchFacility.lng, a.lat, a.lng) : Infinity;
+        const db = (b.lat && b.lng) ? calcDistance(searchFacility.lat, searchFacility.lng, b.lat, b.lng) : Infinity;
+        return da - db;
+      });
+    } else if (currentSort === "price") {
       if (currentDuration) {
         list.sort((a, b) => {
           const ca = calcCost(a, currentDuration).cost;
@@ -453,7 +646,10 @@
     const heartHtml = `<button class="card__fav${isFav ? " is-fav" : ""}" data-name="${p.name}" aria-label="${isFav ? "お気に入り解除" : "お気に入り追加"}">♥</button>`;
 
     let distHtml = "";
-    if (currentSort === "distance" && userLat !== null && p.lat && p.lng) {
+    if (searchFacility && p.lat && p.lng) {
+      const d = calcDistance(searchFacility.lat, searchFacility.lng, p.lat, p.lng);
+      distHtml = `<span class="card__dist">🏛️ ${formatDistance(d)}</span>`;
+    } else if (currentSort === "distance" && userLat !== null && p.lat && p.lng) {
       const d = calcDistance(userLat, userLng, p.lat, p.lng);
       distHtml = `<span class="card__dist">📍 ${formatDistance(d)}</span>`;
     }
