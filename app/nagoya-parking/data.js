@@ -1904,8 +1904,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 熱田駅前",
     "address": "愛知県名古屋市熱田区旗屋町",
-    "lat": 35.1219,
-    "lng": 136.9117,
+    "lat": 35.1314437,
+    "lng": 136.9053023,
     "hourlyRate": 200,
     "rates": {
       "weekday": "60分 200円",
@@ -2088,8 +2088,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 大曽根第2",
     "address": "愛知県名古屋市北区大曽根3丁目",
-    "lat": 35.194,
-    "lng": 136.9445,
+    "lat": 35.1895088,
+    "lng": 136.9356159,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -2190,8 +2190,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 今池5丁目第3",
     "address": "愛知県名古屋市千種区今池5丁目",
-    "lat": 35.1579,
-    "lng": 136.9337,
+    "lat": 35.1677918,
+    "lng": 136.9360031,
     "hourlyRate": 500,
     "rates": {
       "weekday": "30分 250円",
@@ -2608,8 +2608,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 新栄2丁目",
     "address": "愛知県名古屋市中区新栄2丁目3",
-    "lat": 35.162,
-    "lng": 136.918,
+    "lat": 35.1665211,
+    "lng": 136.9196787,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -2688,8 +2688,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 金山南",
     "address": "愛知県名古屋市熱田区金山町1丁目12",
-    "lat": 35.142,
-    "lng": 136.8908,
+    "lat": 35.1414188,
+    "lng": 136.9014371,
     "hourlyRate": 300,
     "rates": {
       "weekday": "20分 100円",
@@ -2720,8 +2720,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 金山2丁目",
     "address": "愛知県名古屋市中区金山2丁目5",
-    "lat": 35.144,
-    "lng": 136.8918,
+    "lat": 35.1443723,
+    "lng": 136.905833,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -3120,8 +3120,8 @@ const parkingData = [
   {
     "name": "タイムズ鶴舞３丁目",
     "address": "愛知県名古屋市昭和区鶴舞3-17",
-    "lat": 35.1552,
-    "lng": 136.9062,
+    "lat": 35.150842,
+    "lng": 136.919719,
     "hourlyRate": 220,
     "rates": {
       "weekday": "30分 110円",
@@ -3154,8 +3154,8 @@ const parkingData = [
   {
     "name": "タイムズ川名",
     "address": "愛知県名古屋市昭和区檀渓通1-38",
-    "lat": 35.152,
-    "lng": 136.9055,
+    "lat": 35.146983,
+    "lng": 136.947217,
     "hourlyRate": 330,
     "rates": {
       "weekday": "20分 110円",
@@ -3204,8 +3204,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 鶴舞3丁目第2",
     "address": "愛知県名古屋市昭和区鶴舞3-4",
-    "lat": 35.151,
-    "lng": 136.905,
+    "lat": 35.1522877,
+    "lng": 136.9164418,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -3284,8 +3284,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 御器所",
     "address": "愛知県名古屋市昭和区御器所4丁目5",
-    "lat": 35.148,
-    "lng": 136.902,
+    "lat": 35.1472595,
+    "lng": 136.9269554,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -3316,8 +3316,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 川名",
     "address": "愛知県名古屋市昭和区川名2丁目5",
-    "lat": 35.1485,
-    "lng": 136.8978,
+    "lat": 35.1517536,
+    "lng": 136.9470926,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -3415,8 +3415,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 覚王山",
     "address": "愛知県名古屋市千種区観月町1-55-2",
-    "lat": 35.1622,
-    "lng": 136.9425,
+    "lat": 35.1663104,
+    "lng": 136.9526898,
     "hourlyRate": 600,
     "rates": {
       "weekday": "20分 200円",
@@ -3479,8 +3479,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 末盛",
     "address": "愛知県名古屋市千種区末盛通4丁目2",
-    "lat": 35.1605,
-    "lng": 136.9402,
+    "lat": 35.1646219,
+    "lng": 136.9608492,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -3495,8 +3495,8 @@ const parkingData = [
   {
     "name": "タイムズ池下",
     "address": "愛知県名古屋市千種区池下1-10",
-    "lat": 35.1698,
-    "lng": 136.9278,
+    "lat": 35.168194,
+    "lng": 136.944119,
     "hourlyRate": 500,
     "rates": {
       "weekday": "30分 250円",
@@ -3545,8 +3545,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 池下",
     "address": "愛知県名古屋市千種区春岡1-5",
-    "lat": 35.171,
-    "lng": 136.9265,
+    "lat": 35.166805,
+    "lng": 136.9460156,
     "hourlyRate": 800,
     "rates": {
       "weekday": "15分 200円",
@@ -3673,8 +3673,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 池下",
     "address": "愛知県名古屋市千種区四谷通1丁目5",
-    "lat": 35.166,
-    "lng": 136.9355,
+    "lat": 35.1686988,
+    "lng": 136.9448337,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -3853,8 +3853,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 本山",
     "address": "愛知県名古屋市千種区本山4丁目5",
-    "lat": 35.1605,
-    "lng": 136.9515,
+    "lat": 35.1632523,
+    "lng": 136.9623259,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -3885,8 +3885,8 @@ const parkingData = [
   {
     "name": "タイムズ名港",
     "address": "愛知県名古屋市港区名港1-2",
-    "lat": 35.0878,
-    "lng": 136.8815,
+    "lat": 35.098397,
+    "lng": 136.885269,
     "hourlyRate": 300,
     "rates": {
       "weekday": "20分 100円",
@@ -4292,8 +4292,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 浅間町駅前",
     "address": "愛知県名古屋市西区浅間1-2",
-    "lat": 35.1848,
-    "lng": 136.901,
+    "lat": 35.183884,
+    "lng": 136.890684,
     "hourlyRate": 300,
     "rates": {
       "weekday": "40分 200円",
@@ -5033,8 +5033,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 上社",
     "address": "愛知県名古屋市名東区上社3丁目3",
-    "lat": 35.1748,
-    "lng": 136.9835,
+    "lat": 35.1739097,
+    "lng": 137.0051539,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -5353,8 +5353,8 @@ const parkingData = [
   {
     "name": "タイムズ新栄3丁目",
     "address": "愛知県名古屋市中区新栄3丁目5",
-    "lat": 35.1608,
-    "lng": 136.9225,
+    "lat": 35.169461,
+    "lng": 136.926397,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -6105,8 +6105,8 @@ const parkingData = [
   {
     "name": "タイムズ狭間町",
     "address": "愛知県名古屋市昭和区狭間町１丁目",
-    "lat": 35.152,
-    "lng": 136.9095,
+    "lat": 35.155308,
+    "lng": 136.924911,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -6377,8 +6377,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 今池南",
     "address": "愛知県名古屋市千種区今池南２８－１１",
-    "lat": 35.1588,
-    "lng": 136.9293,
+    "lat": 35.1631021,
+    "lng": 136.9380123,
     "hourlyRate": 300,
     "rates": {
       "weekday": "40分 200円",
@@ -6425,8 +6425,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 今池４丁目",
     "address": "愛知県名古屋市千種区今池４丁目１５",
-    "lat": 35.1598,
-    "lng": 136.9302,
+    "lat": 35.1692292,
+    "lng": 136.9401952,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -6441,8 +6441,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 今池２丁目",
     "address": "愛知県名古屋市千種区今池２丁目８",
-    "lat": 35.1595,
-    "lng": 136.929,
+    "lat": 35.167081,
+    "lng": 136.9317051,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
