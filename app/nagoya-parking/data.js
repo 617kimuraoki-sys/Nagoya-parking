@@ -4098,8 +4098,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 八事第2",
     "address": "愛知県名古屋市天白区八事山1丁目5",
-    "lat": 35.1368,
-    "lng": 136.943,
+    "lat": 35.136135,
+    "lng": 136.969131,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -4130,8 +4130,8 @@ const parkingData = [
   {
     "name": "NPC24H 八事",
     "address": "愛知県名古屋市昭和区山花町2丁目5",
-    "lat": 35.1358,
-    "lng": 136.9402,
+    "lat": 35.152603,
+    "lng": 136.950729,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -4872,8 +4872,8 @@ const parkingData = [
   {
     "name": "タイムズ藤が丘第2",
     "address": "愛知県名古屋市名東区藤が丘1丁目5",
-    "lat": 35.1722,
-    "lng": 136.9968,
+    "lat": 35.184807,
+    "lng": 137.01825,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -4888,8 +4888,8 @@ const parkingData = [
   {
     "name": "タイムズ藤が丘第3",
     "address": "愛知県名古屋市名東区藤が丘2丁目8",
-    "lat": 35.1715,
-    "lng": 136.9975,
+    "lat": 35.184807,
+    "lng": 137.01825,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -4920,8 +4920,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 藤が丘第2",
     "address": "愛知県名古屋市名東区藤が丘4丁目5",
-    "lat": 35.1702,
-    "lng": 136.9988,
+    "lat": 35.184807,
+    "lng": 137.01825,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -4969,8 +4969,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 藤が丘第3",
     "address": "愛知県名古屋市名東区藤が丘3丁目15",
-    "lat": 35.1705,
-    "lng": 136.9985,
+    "lat": 35.184807,
+    "lng": 137.01825,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -4985,8 +4985,8 @@ const parkingData = [
   {
     "name": "タイムズ藤が丘東",
     "address": "愛知県名古屋市名東区藤が丘6丁目5",
-    "lat": 35.1688,
-    "lng": 136.9995,
+    "lat": 35.184879,
+    "lng": 137.019592,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -5209,8 +5209,8 @@ const parkingData = [
   {
     "name": "タイムズ笠寺第2",
     "address": "愛知県名古屋市南区笠寺町1丁目5",
-    "lat": 35.113,
-    "lng": 136.9025,
+    "lat": 35.096527,
+    "lng": 136.936584,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -5225,8 +5225,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 笠寺",
     "address": "愛知県名古屋市南区笠寺町2丁目8",
-    "lat": 35.1122,
-    "lng": 136.903,
+    "lat": 35.096527,
+    "lng": 136.936584,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -5609,8 +5609,8 @@ const parkingData = [
   {
     "name": "タイムズ八事第4",
     "address": "愛知県名古屋市昭和区八事本町6丁目3",
-    "lat": 35.1352,
-    "lng": 136.9388,
+    "lat": 35.140572,
+    "lng": 136.963211,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
