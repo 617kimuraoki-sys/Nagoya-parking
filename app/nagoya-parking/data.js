@@ -422,8 +422,8 @@ const parkingData = [
   {
     "name": "タイムズ栄竪三蔵通",
     "address": "愛知県名古屋市中区栄1-3",
-    "lat": 35.167058,
-    "lng": 136.893836,
+    "lat": 35.16753,
+    "lng": 136.894257,
     "hourlyRate": 1000,
     "rates": {
       "weekday": "15分 250円",
@@ -534,8 +534,8 @@ const parkingData = [
   {
     "name": "タイムズ錦2丁目",
     "address": "愛知県名古屋市中区錦2-8",
-    "lat": 35.171744,
-    "lng": 136.898278,
+    "lat": 35.171577,
+    "lng": 136.897766,
     "hourlyRate": 1400,
     "rates": {
       "weekday": "15分 350円",
@@ -566,8 +566,8 @@ const parkingData = [
   {
     "name": "タイムズ錦長島町",
     "address": "愛知県名古屋市中区錦2-6",
-    "lat": 35.171667,
-    "lng": 136.899611,
+    "lat": 35.171734,
+    "lng": 136.900101,
     "hourlyRate": 1400,
     "rates": {
       "weekday": "15分 350円",
@@ -694,8 +694,8 @@ const parkingData = [
   {
     "name": "タイムズ名古屋駅前",
     "address": "愛知県名古屋市中村区名駅3-26",
-    "lat": 35.172283,
-    "lng": 136.885236,
+    "lat": 35.172089,
+    "lng": 136.885483,
     "hourlyRate": 2400,
     "rates": {
       "weekday": "10分 400円",
@@ -1046,8 +1046,8 @@ const parkingData = [
   {
     "name": "タイムズ金山",
     "address": "愛知県名古屋市中区金山2-12",
-    "lat": 35.142136,
-    "lng": 136.908483,
+    "lat": 35.145252,
+    "lng": 136.90538,
     "hourlyRate": 220,
     "rates": {
       "weekday": "30分 110円",
@@ -1079,8 +1079,8 @@ const parkingData = [
   {
     "name": "タイムズ金山２丁目",
     "address": "愛知県名古屋市中区金山2-10",
-    "lat": 35.141969,
-    "lng": 136.907097,
+    "lat": 35.145065,
+    "lng": 136.904251,
     "hourlyRate": 440,
     "rates": {
       "weekday": "30分 220円",
@@ -1111,8 +1111,8 @@ const parkingData = [
   {
     "name": "タイムズ金山町",
     "address": "愛知県名古屋市熱田区金山町2-3",
-    "lat": 35.137703,
-    "lng": 136.906678,
+    "lat": 35.14093,
+    "lng": 136.903458,
     "hourlyRate": 220,
     "rates": {
       "weekday": "60分 220円",
@@ -1439,8 +1439,8 @@ const parkingData = [
   {
     "name": "タイムズ丸の内３丁目",
     "address": "愛知県名古屋市中区丸の内3-17",
-    "lat": 35.17185,
-    "lng": 136.908925,
+    "lat": 35.175068,
+    "lng": 136.905655,
     "hourlyRate": 1250,
     "rates": {
       "weekday": "12分 250円",
@@ -1703,8 +1703,8 @@ const parkingData = [
   {
     "name": "タイムズ大津通",
     "address": "愛知県名古屋市中区丸の内3-4",
-    "lat": 35.173708,
-    "lng": 136.908539,
+    "lat": 35.177502,
+    "lng": 136.90538,
     "hourlyRate": 750,
     "rates": {
       "weekday": "20分 250円",
@@ -1804,8 +1804,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 神宮前駅西PB",
     "address": "愛知県名古屋市熱田区神宮3丁目6",
-    "lat": 35.1249,
-    "lng": 136.9067,
+    "lat": 35.124577,
+    "lng": 136.912155,
     "hourlyRate": 200,
     "rates": {
       "weekday": "60分 200円",
@@ -1953,8 +1953,8 @@ const parkingData = [
   {
     "name": "矢場公園駐車場",
     "address": "愛知県名古屋市中区栄4丁目16-1",
-    "lat": 35.1609,
-    "lng": 136.9111,
+    "lat": 35.166573,
+    "lng": 136.909561,
     "hourlyRate": 540,
     "rates": {
       "weekday": "30分 270円",
@@ -2021,8 +2021,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 古出来町",
     "address": "愛知県名古屋市東区古出来2丁目2",
-    "lat": 35.1831,
-    "lng": 136.944,
+    "lat": 35.181709,
+    "lng": 136.940552,
     "hourlyRate": 200,
     "rates": {
       "weekday": "60分 200円",
@@ -2105,8 +2105,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 今池1丁目",
     "address": "愛知県名古屋市千種区今池1丁目",
-    "lat": 35.1627,
-    "lng": 136.9323,
+    "lat": 35.168449,
+    "lng": 136.933624,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -2156,8 +2156,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 今池3丁目",
     "address": "愛知県名古屋市千種区今池3丁目",
-    "lat": 35.1604,
-    "lng": 136.9342,
+    "lat": 35.165161,
+    "lng": 136.934204,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -2173,8 +2173,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 今池第20",
     "address": "愛知県名古屋市千種区今池2丁目",
-    "lat": 35.1619,
-    "lng": 136.933,
+    "lat": 35.167156,
+    "lng": 136.930222,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -2256,8 +2256,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 名駅4丁目",
     "address": "愛知県名古屋市中村区名駅4丁目2",
-    "lat": 35.1686,
-    "lng": 136.8817,
+    "lat": 35.171474,
+    "lng": 136.888031,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -2320,8 +2320,8 @@ const parkingData = [
   {
     "name": "タイムズ名駅南2丁目",
     "address": "愛知県名古屋市中村区名駅南2丁目14",
-    "lat": 35.1645,
-    "lng": 136.8862,
+    "lat": 35.165234,
+    "lng": 136.886276,
     "hourlyRate": 300,
     "rates": {
       "weekday": "20分 100円",
@@ -2336,8 +2336,8 @@ const parkingData = [
   {
     "name": "タイムズ名駅1丁目",
     "address": "愛知県名古屋市中村区名駅1丁目16",
-    "lat": 35.1718,
-    "lng": 136.883,
+    "lat": 35.170776,
+    "lng": 136.882492,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -2384,8 +2384,8 @@ const parkingData = [
   {
     "name": "タイムズ那古野1丁目",
     "address": "愛知県名古屋市中村区那古野1丁目30",
-    "lat": 35.174,
-    "lng": 136.8855,
+    "lat": 35.173122,
+    "lng": 136.89151,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -2400,8 +2400,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 名駅3丁目",
     "address": "愛知県名古屋市中村区名駅3丁目5",
-    "lat": 35.1695,
-    "lng": 136.882,
+    "lat": 35.173775,
+    "lng": 136.888138,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -2480,8 +2480,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 栄4丁目",
     "address": "愛知県名古屋市中区栄4丁目3",
-    "lat": 35.164,
-    "lng": 136.908,
+    "lat": 35.168224,
+    "lng": 136.91124,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -2496,8 +2496,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 栄5丁目",
     "address": "愛知県名古屋市中区栄5丁目3",
-    "lat": 35.1625,
-    "lng": 136.9105,
+    "lat": 35.165333,
+    "lng": 136.911438,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -2624,8 +2624,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 栄2丁目",
     "address": "愛知県名古屋市中区栄2丁目5",
-    "lat": 35.1692,
-    "lng": 136.9065,
+    "lat": 35.166969,
+    "lng": 136.902023,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -2640,8 +2640,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 栄3丁目",
     "address": "愛知県名古屋市中区栄3丁目20",
-    "lat": 35.1649,
-    "lng": 136.9088,
+    "lat": 35.165363,
+    "lng": 136.903091,
     "hourlyRate": 750,
     "rates": {
       "weekday": "20分 250円",
@@ -2800,8 +2800,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 大須4丁目",
     "address": "愛知県名古屋市中区大須4丁目5",
-    "lat": 35.1582109,
-    "lng": 136.9091742,
+    "lat": 35.160179,
+    "lng": 136.909836,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -3056,8 +3056,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 錦1丁目",
     "address": "愛知県名古屋市中区錦1丁目15",
-    "lat": 35.1705,
-    "lng": 136.899,
+    "lat": 35.168743,
+    "lng": 136.892395,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -3104,8 +3104,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 東桜",
     "address": "愛知県名古屋市中区東桜1丁目12",
-    "lat": 35.1718,
-    "lng": 136.9138,
+    "lat": 35.169834,
+    "lng": 136.917816,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -3171,8 +3171,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 鶴舞２丁目",
     "address": "愛知県名古屋市昭和区鶴舞2丁目15-9",
-    "lat": 35.1548,
-    "lng": 136.907,
+    "lat": 35.151237,
+    "lng": 136.914352,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -4405,8 +4405,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 那古野1丁目",
     "address": "愛知県名古屋市西区那古野1-5",
-    "lat": 35.1750486,
-    "lng": 136.8920424,
+    "lat": 35.176556,
+    "lng": 136.89238,
     "hourlyRate": 300,
     "rates": {
       "weekday": "40分 200円",
@@ -5321,8 +5321,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 名駅4丁目",
     "address": "愛知県名古屋市中村区名駅4丁目20",
-    "lat": 35.1675,
-    "lng": 136.8822,
+    "lat": 35.169827,
+    "lng": 136.889114,
     "hourlyRate": 400,
     "rates": {
       "weekday": "30分 200円",
@@ -5369,8 +5369,8 @@ const parkingData = [
   {
     "name": "NPC24H 栄南",
     "address": "愛知県名古屋市中区栄3丁目8",
-    "lat": 35.166,
-    "lng": 136.9075,
+    "lat": 35.167469,
+    "lng": 136.905273,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -5385,8 +5385,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 新栄",
     "address": "愛知県名古屋市中区新栄2丁目15",
-    "lat": 35.1618,
-    "lng": 136.9215,
+    "lat": 35.166634,
+    "lng": 136.921066,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -5481,8 +5481,8 @@ const parkingData = [
   {
     "name": "タイムズ大須4丁目",
     "address": "愛知県名古屋市中区大須4丁目8",
-    "lat": 35.1568,
-    "lng": 136.9038,
+    "lat": 35.15905,
+    "lng": 136.908524,
     "hourlyRate": 200,
     "rates": {
       "weekday": "30分 100円",
@@ -5513,8 +5513,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 錦2丁目",
     "address": "愛知県名古屋市中区錦2丁目15",
-    "lat": 35.1715,
-    "lng": 136.9038,
+    "lat": 35.169815,
+    "lng": 136.899124,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -5529,8 +5529,8 @@ const parkingData = [
   {
     "name": "タイムズ錦1丁目",
     "address": "愛知県名古屋市中区錦1丁目8",
-    "lat": 35.1708,
-    "lng": 136.8995,
+    "lat": 35.170372,
+    "lng": 136.893707,
     "hourlyRate": 600,
     "rates": {
       "weekday": "30分 300円",
@@ -5705,8 +5705,8 @@ const parkingData = [
   {
     "name": "タイムズ城西",
     "address": "愛知県名古屋市西区城西２丁目１９",
-    "lat": 35.1869009,
-    "lng": 136.8940084,
+    "lat": 35.186726,
+    "lng": 136.893845,
     "hourlyRate": 440,
     "rates": {
       "weekday": "30分 220円",
@@ -5753,8 +5753,8 @@ const parkingData = [
   {
     "name": "三井のリパーク 栄１丁目",
     "address": "愛知県名古屋市中区栄１丁目１０－８",
-    "lat": 35.1689,
-    "lng": 136.9,
+    "lat": 35.166752,
+    "lng": 136.89595,
     "hourlyRate": 1200,
     "rates": {
       "weekday": "15分 300円",
@@ -5801,8 +5801,8 @@ const parkingData = [
   {
     "name": "名鉄協商パーキング 栄東",
     "address": "愛知県名古屋市中区栄４丁目３",
-    "lat": 35.166,
-    "lng": 136.9089,
+    "lat": 35.168224,
+    "lng": 136.91124,
     "hourlyRate": 800,
     "rates": {
       "weekday": "15分 200円",
