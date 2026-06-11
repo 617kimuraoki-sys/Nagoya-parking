@@ -112,6 +112,8 @@ GIT_SSH_COMMAND="ssh -i ~/.ssh/github_sakae" git push origin main
   placeCid: "123...",        // Google Maps Place CID（10進数）
   placeFid: "0x...:0x...",   // Google Maps FID（ピンポイントURL用）
   note: "補足（任意）",
+  capacity: 10,                    // 収容台数（台）
+  payment: { cash: true, credit: true, qr: true },  // 支払い方法
   source: "https://times-info.net/P23100xxxxxx/"  // 必須・公式詳細ページURL
 }
 ```

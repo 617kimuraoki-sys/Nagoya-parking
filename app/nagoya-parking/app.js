@@ -670,6 +670,91 @@
 
   // ---- リスト描画 ----
 
+  // ---- 詳細モーダル ----
+
+  let detailModal = null;
+
+  function buildDetailModal() {
+    const el = document.createElement("div");
+    el.id = "detail-modal";
+    el.innerHTML = `
+      <div class="detail-backdrop"></div>
+      <div class="detail-sheet">
+        <button class="detail-close" aria-label="閉じる">×</button>
+        <div class="detail-body"></div>
+      </div>
+    `;
+    document.body.appendChild(el);
+
+    el.querySelector(".detail-backdrop").addEventListener("click", closeDetail);
+    el.querySelector(".detail-close").addEventListener("click", closeDetail);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeDetail();
+    });
+
+    return el;
+  }
+
+  function closeDetail() {
+    if (!detailModal) return;
+    detailModal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  function openDetail(p) {
+    if (!detailModal) detailModal = buildDetailModal();
+
+    const sameRate = p.rates.weekday === p.rates.holiday;
+    const sameMax  = p.maxRate.weekday === p.maxRate.holiday;
+
+    const ratesHtml = sameRate
+      ? rateRow("料金", p.rates.weekday)
+      : rateRow("平日料金", p.rates.weekday) + rateRow("休日料金", p.rates.holiday);
+
+    const maxHtml = sameMax
+      ? rateRow("最大料金", `<strong class="max">${formatMax(p.maxRate.weekday)}</strong>`)
+      : rateRow("平日最大", `<strong class="max">${formatMax(p.maxRate.weekday)}</strong>`)
+        + rateRow("休日最大", `<strong class="max">${formatMax(p.maxRate.holiday)}</strong>`);
+
+    const pm = p.payment || {};
+    const payBadges = [
+      pm.cash    !== false ? '<span class="pay-badge pay-cash">現金</span>'    : '<span class="pay-badge pay-no">現金不可</span>',
+      pm.credit  !== false ? '<span class="pay-badge pay-credit">カード</span>' : "",
+      pm.qr      !== false ? '<span class="pay-badge pay-qr">QR</span>'        : "",
+    ].filter(Boolean).join("");
+
+    const capHtml = p.capacity ? `<div class="detail-row"><span class="detail-label">収容台数</span><span class="detail-value">${p.capacity}台</span></div>` : "";
+    const noteHtml = p.note ? `<p class="detail-note">※ ${p.note}</p>` : "";
+    const sourceLink = p.source ? `<a class="detail-link detail-link--sub" href="${p.source}" target="_blank" rel="noopener">公式サイトで確認する</a>` : "";
+
+    detailModal.querySelector(".detail-body").innerHTML = `
+      <div class="detail-header">
+        <span class="detail-area">${getArea(p)}</span>
+        <h2 class="detail-name">${p.name}</h2>
+        <p class="detail-address">${p.address}</p>
+      </div>
+      <div class="detail-section">
+        <div class="card__rates">${ratesHtml}${maxHtml}</div>
+        ${noteHtml}
+      </div>
+      <div class="detail-section">
+        <div class="detail-row"><span class="detail-label">営業時間</span><span class="detail-value">${p.hours || "—"}</span></div>
+        ${capHtml}
+        <div class="detail-row"><span class="detail-label">支払い</span><span class="detail-value detail-pay">${payBadges}</span></div>
+      </div>
+      <div class="detail-actions">
+        <a class="detail-link detail-link--map" href="${buildMapUrl(p)}" target="_blank" rel="noopener">Googleマップで見る</a>
+        ${sourceLink}
+      </div>
+    `;
+
+    detailModal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  // ---- カード描画 ----
+
   function renderCard(p) {
     const sameRate = p.rates.weekday === p.rates.holiday;
     const sameMax = p.maxRate.weekday === p.maxRate.holiday;
@@ -716,7 +801,7 @@
     }
 
     return `
-      <li class="card">
+      <li class="card card--clickable" data-name="${p.name.replace(/"/g, '&quot;')}">
         <div class="card__header">
           <h2 class="card__name">${p.name}</h2>
           <div class="card__header-right">
@@ -732,10 +817,7 @@
           ${ratesHtml}
           ${maxHtml}
         </div>
-        ${noteHtml}
-        <a class="card__map-link" href="${buildMapUrl(p)}" target="_blank" rel="noopener">
-          Googleマップで見る
-        </a>
+        <p class="card__detail-hint">タップして詳細を見る →</p>
       </li>
     `;
   }
@@ -876,12 +958,20 @@
     });
   });
 
-  // ---- ハートボタン（イベント委譲） ----
+  // ---- ハートボタン・カードクリック（イベント委譲） ----
   listEl.addEventListener("click", (e) => {
-    const btn = e.target.closest(".card__fav");
-    if (!btn) return;
-    e.preventDefault();
-    toggleFavorite(btn.dataset.name);
+    const favBtn = e.target.closest(".card__fav");
+    if (favBtn) {
+      e.preventDefault();
+      toggleFavorite(favBtn.dataset.name);
+      return;
+    }
+
+    const card = e.target.closest(".card--clickable");
+    if (card) {
+      const p = parkingData.find(x => x.name === card.dataset.name);
+      if (p) openDetail(p);
+    }
   });
 
   // ---- 料金モード切り替え ----

@@ -2,6 +2,8 @@
 // hourlyRate: 並び替え用に正規化した平日基準の1時間料金（円/h）
 // rates.weekday / rates.holiday: 表示用の料金テキスト
 // maxRate.weekday / maxRate.holiday: 最大料金（円）。「なし」は null
+// capacity: 収容台数（台）
+// payment.cash: 現金払い可否 / payment.credit: クレジットカード可否 / payment.qr: QRコード決済可否
 // placeFid: Google Maps の FID（"0x...:0x..." 形式。ピンポイントURL用、PC・モバイル共通）
 // placeCid: Google Maps の Place CID（10進数。フォールバック用）
 // note: 補足（時間帯別料金など）
@@ -17,13 +19,11 @@ const parkingData = [
       "weekday": "15分 300円（09:00-04:00）/ 40分 100円（04:00-09:00）",
       "holiday": "15分 300円（09:00-04:00）/ 40分 100円（04:00-09:00）"
     },
-    "maxRate": {
-      "weekday": 1800,
-      "holiday": 1800
-    },
+    "maxRate": { "weekday": 1800, "holiday": 1800 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 23,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "最大料金は駐車後12時間・繰り返し適用",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0063316/"
   },
@@ -37,13 +37,11 @@ const parkingData = [
       "weekday": "10分 400円",
       "holiday": "10分 400円"
     },
-    "maxRate": {
-      "weekday": 2200,
-      "holiday": 1500
-    },
+    "maxRate": { "weekday": 2200, "holiday": 1500 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 13,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "平日最大は3時間2200円・休日最大は3時間1500円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0073894/"
   },
@@ -57,13 +55,11 @@ const parkingData = [
       "weekday": "30分 110円",
       "holiday": "30分 110円"
     },
-    "maxRate": {
-      "weekday": 600,
-      "holiday": 600
-    },
+    "maxRate": { "weekday": 600, "holiday": 600 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 8,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0049812/"
   },
@@ -77,13 +73,11 @@ const parkingData = [
       "weekday": "20分 300円",
       "holiday": "20分 300円"
     },
-    "maxRate": {
-      "weekday": 1300,
-      "holiday": 900
-    },
+    "maxRate": { "weekday": 1300, "holiday": 900 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 7,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "平日昼(08-18時)最大1300円・夜600円 / 休日昼(08-18時)最大900円・夜600円",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0029052/"
   },
@@ -97,13 +91,11 @@ const parkingData = [
       "weekday": "15分 220円",
       "holiday": "15分 220円"
     },
-    "maxRate": {
-      "weekday": 1400,
-      "holiday": 900
-    },
+    "maxRate": { "weekday": 1400, "holiday": 900 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 14,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "平日昼(07-17時)最大1400円・夜600円 / 休日昼(07-17時)最大900円・夜600円",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0042007/"
   },
@@ -117,13 +109,11 @@ const parkingData = [
       "weekday": "15分 250円",
       "holiday": "15分 250円"
     },
-    "maxRate": {
-      "weekday": 1540,
-      "holiday": 1540
-    },
+    "maxRate": { "weekday": 1540, "holiday": 1540 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 7,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "昼(08-19時)最大1540円・夜(19-08時)最大440円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0038297/"
   },
@@ -137,13 +127,11 @@ const parkingData = [
       "weekday": "10分 500円（08:00-19:00）/ 30分 300円（19:00-08:00）",
       "holiday": "10分 500円（08:00-19:00）/ 30分 300円（19:00-08:00）"
     },
-    "maxRate": {
-      "weekday": 1100,
-      "holiday": 1100
-    },
+    "maxRate": { "weekday": 1100, "holiday": 1100 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 12,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "夜間(19-08時)のみ最大1100円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0010180/"
   },
@@ -157,13 +145,11 @@ const parkingData = [
       "weekday": "10分 250円（08:00-19:00）/ 30分 150円（19:00-08:00）",
       "holiday": "10分 250円（08:00-19:00）/ 30分 150円（19:00-08:00）"
     },
-    "maxRate": {
-      "weekday": 2000,
-      "holiday": 2000
-    },
+    "maxRate": { "weekday": 2000, "holiday": 2000 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 6,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "最大料金は駐車後4時間・繰り返し適用",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0041830/"
   },
@@ -177,13 +163,11 @@ const parkingData = [
       "weekday": "30分 300円",
       "holiday": "30分 300円"
     },
-    "maxRate": {
-      "weekday": 1400,
-      "holiday": 500
-    },
+    "maxRate": { "weekday": 1400, "holiday": 500 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 19,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "平日昼(08-18時)最大1400円 / 夜(18-08時)最大500円",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0045100/"
   },
@@ -197,13 +181,11 @@ const parkingData = [
       "weekday": "20分 220円",
       "holiday": "20分 220円"
     },
-    "maxRate": {
-      "weekday": 1900,
-      "holiday": 800
-    },
+    "maxRate": { "weekday": 1900, "holiday": 800 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 14,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "平日昼(07-19時)最大1900円・夜300円 / 休日昼(07-19時)最大800円・夜300円",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0045776/"
   },
@@ -217,13 +199,11 @@ const parkingData = [
       "weekday": "15分 250円",
       "holiday": "30分 250円"
     },
-    "maxRate": {
-      "weekday": 1600,
-      "holiday": 1600
-    },
+    "maxRate": { "weekday": 1600, "holiday": 1600 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 4,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "最大料金は駐車後12時間・繰り返し適用",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0048695/"
   },
@@ -237,13 +217,11 @@ const parkingData = [
       "weekday": "20分 220円（08:00-18:00）/ 30分 110円（18:00-08:00）",
       "holiday": "20分 220円（08:00-18:00）/ 30分 110円（18:00-08:00）"
     },
-    "maxRate": {
-      "weekday": 1320,
-      "holiday": 1320
-    },
+    "maxRate": { "weekday": 1320, "holiday": 1320 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 18,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "昼(08-18時)最大1320円・夜(18-08時)最大330円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0033015/"
   },
@@ -257,13 +235,11 @@ const parkingData = [
       "weekday": "30分 220円",
       "holiday": "30分 220円"
     },
-    "maxRate": {
-      "weekday": 1300,
-      "holiday": 1300
-    },
+    "maxRate": { "weekday": 1300, "holiday": 1300 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 10,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "24時間最大1300円・夜(18-08時)最大400円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0022809/"
   },
@@ -277,13 +253,11 @@ const parkingData = [
       "weekday": "30分 220円（08:00-18:00）/ 30分 110円（18:00-08:00）",
       "holiday": "30分 220円（08:00-18:00）/ 30分 110円（18:00-08:00）"
     },
-    "maxRate": {
-      "weekday": 1210,
-      "holiday": 1210
-    },
+    "maxRate": { "weekday": 1210, "holiday": 1210 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 4,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "昼(08-18時)最大1210円・夜(18-08時)最大330円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0055579/"
   },
@@ -297,13 +271,11 @@ const parkingData = [
       "weekday": "20分 350円（08:00-18:00）/ 60分 300円（18:00-08:00）",
       "holiday": "20分 350円（08:00-18:00）/ 60分 300円（18:00-08:00）"
     },
-    "maxRate": {
-      "weekday": 1600,
-      "holiday": 1600
-    },
+    "maxRate": { "weekday": 1600, "holiday": 1600 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 17,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "昼(08-18時)最大1600円・夜(18-08時)最大600円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0002575/"
   },
@@ -317,13 +289,11 @@ const parkingData = [
       "weekday": "20分 350円",
       "holiday": "20分 350円"
     },
-    "maxRate": {
-      "weekday": 1500,
-      "holiday": 1500
-    },
+    "maxRate": { "weekday": 1500, "holiday": 1500 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 4,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "最大料金は駐車後5時間・繰り返し適用",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0077065/"
   },
@@ -337,13 +307,11 @@ const parkingData = [
       "weekday": "60分 200円",
       "holiday": "60分 200円"
     },
-    "maxRate": {
-      "weekday": 550,
-      "holiday": 550
-    },
+    "maxRate": { "weekday": 550, "holiday": 550 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 5,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0029694/"
   },
@@ -357,13 +325,11 @@ const parkingData = [
       "weekday": "30分 110円",
       "holiday": "30分 110円"
     },
-    "maxRate": {
-      "weekday": null,
-      "holiday": null
-    },
+    "maxRate": { "weekday": null, "holiday": null },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 5,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "夜間(18-08時)最大110円のみ設定（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0029863/"
   },
@@ -377,13 +343,11 @@ const parkingData = [
       "weekday": "20分 110円",
       "holiday": "20分 110円"
     },
-    "maxRate": {
-      "weekday": 600,
-      "holiday": 600
-    },
+    "maxRate": { "weekday": 600, "holiday": 600 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "キャッシュレス専用 / 夜間(17-08時)最大300円",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0022712/"
   },
@@ -397,13 +361,11 @@ const parkingData = [
       "weekday": "60分 220円（08:00-18:00）/ 30分 110円（18:00-08:00）",
       "holiday": "60分 220円（08:00-18:00）/ 30分 110円（18:00-08:00）"
     },
-    "maxRate": {
-      "weekday": 660,
-      "holiday": 660
-    },
+    "maxRate": { "weekday": 660, "holiday": 660 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 9,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "24時間最大660円・夜(18-08時)最大220円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0020908/"
   },
@@ -417,13 +379,11 @@ const parkingData = [
       "weekday": "15分 220円（09:00-15:00）/ 60分 220円（15:00-09:00）",
       "holiday": "60分 220円"
     },
-    "maxRate": {
-      "weekday": 1650,
-      "holiday": 990
-    },
+    "maxRate": { "weekday": 1650, "holiday": 990 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 10,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "平日最大1650円(当日24時迄) / 休日最大990円(当日24時迄)",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0020223/"
   },
@@ -437,13 +397,11 @@ const parkingData = [
       "weekday": "60分 220円",
       "holiday": "60分 220円"
     },
-    "maxRate": {
-      "weekday": 500,
-      "holiday": 500
-    },
+    "maxRate": { "weekday": 500, "holiday": 500 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 4,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "夜間(19-08時)最大300円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0047820/"
   },
@@ -457,13 +415,11 @@ const parkingData = [
       "weekday": "60分 200円",
       "holiday": "60分 200円"
     },
-    "maxRate": {
-      "weekday": 900,
-      "holiday": 900
-    },
+    "maxRate": { "weekday": 900, "holiday": 900 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 8,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0022322/"
   },
@@ -477,13 +433,11 @@ const parkingData = [
       "weekday": "30分 220円（08:00-18:00）/ 60分 110円（18:00-08:00）",
       "holiday": "30分 220円（08:00-18:00）/ 60分 110円（18:00-08:00）"
     },
-    "maxRate": {
-      "weekday": 660,
-      "holiday": 660
-    },
+    "maxRate": { "weekday": 660, "holiday": 660 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 15,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "昼(08-18時)最大660円・夜(18-08時)最大220円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0016422/"
   },
@@ -497,13 +451,11 @@ const parkingData = [
       "weekday": "20分 250円",
       "holiday": "20分 250円"
     },
-    "maxRate": {
-      "weekday": 1320,
-      "holiday": 550
-    },
+    "maxRate": { "weekday": 1320, "holiday": 550 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 4,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "平日昼(08-19時)最大1320円 / 夜(19-08時)最大550円",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0027663/"
   },
@@ -517,13 +469,11 @@ const parkingData = [
       "weekday": "15分 300円",
       "holiday": "15分 300円"
     },
-    "maxRate": {
-      "weekday": 1400,
-      "holiday": 1400
-    },
+    "maxRate": { "weekday": 1400, "holiday": 1400 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 6,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "最大料金は駐車後5時間・繰り返し適用",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0030772/"
   },
@@ -537,13 +487,11 @@ const parkingData = [
       "weekday": "60分 220円",
       "holiday": "60分 220円"
     },
-    "maxRate": {
-      "weekday": 660,
-      "holiday": 660
-    },
+    "maxRate": { "weekday": 660, "holiday": 660 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 10,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0049291/"
   },
@@ -557,13 +505,11 @@ const parkingData = [
       "weekday": "30分 300円（08:00-18:00）/ 60分 110円（18:00-08:00）",
       "holiday": "30分 300円（08:00-18:00）/ 60分 110円（18:00-08:00）"
     },
-    "maxRate": {
-      "weekday": 1300,
-      "holiday": 1300
-    },
+    "maxRate": { "weekday": 1300, "holiday": 1300 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 10,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "24時間最大1300円・夜(18-08時)最大300円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0019010/"
   },
@@ -577,13 +523,11 @@ const parkingData = [
       "weekday": "60分 200円",
       "holiday": "60分 200円"
     },
-    "maxRate": {
-      "weekday": 400,
-      "holiday": 400
-    },
+    "maxRate": { "weekday": 400, "holiday": 400 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 24,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "夜間(18-08時)最大200円（繰り返し適用）",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0085990/"
   },
@@ -597,13 +541,11 @@ const parkingData = [
       "weekday": "40分 220円",
       "holiday": "40分 220円"
     },
-    "maxRate": {
-      "weekday": 1000,
-      "holiday": 1000
-    },
+    "maxRate": { "weekday": 1000, "holiday": 1000 },
     "hours": "24時間",
-    "placeCid": "",
-    "placeFid": "",
+    "capacity": 8,
+    "payment": { "cash": true, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "",
     "note": "",
     "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0037722/"
   }
