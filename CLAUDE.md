@@ -1,92 +1,160 @@
 # CarMotiva - 名古屋パーキング
 
 ## プロジェクト概要
-名古屋市中心部のコインパーキング料金比較サイト。
-CarMotivaブランドの第1弾アプリ。
+名古屋市のコインパーキング料金比較サイト。CarMotivaブランドの第1弾アプリ。
 
-**本番URL**: https://car-motiva.com  
+**本番URL**: https://car-motiva.com/nagoya-parking  
 **GitHub**: https://github.com/617kimuraoki-sys/Sakae-parking  
-**X（Twitter）**: @car_motiva
+**X（Twitter）**: @car_motiva  
+**ホスティング**: GitHub Pages  
+**ドメイン**: Squarespace（car-motiva.com）  
+**SSH鍵**: `~/.ssh/github_sakae`（ed25519）
+
+---
+
+## ⚠️ 現状の正確な情報（セッション開始時に必ず確認すること）
+
+| 項目 | 状態 |
+|------|------|
+| 駐車場登録数 | **30件**（タイムズ 名古屋市中村区 30件・2026-06-11） |
+| プライバシーポリシーページ | **作成済み** `/privacy-policy/index.html` |
+| お問い合わせページ | **作成済み** `/contact/index.html` |
+| Aboutページ | **作成済み** `/about/index.html` |
+| トップページ | **作成済み** `/top/index.html` |
+| コラムページ | **作成済み** `/column/index.html`（記事10本以上） |
+| Google Analytics | **設置済み** G-Y5DJKRQDPD（全ページ） |
+| Search Console | **登録済み** car-motiva.com |
+| sitemap.xml | **設置済み** |
+| インデックス登録リクエスト | **送信済み**（2026-05-23） |
+
+---
+
+## ファイル構成
+
+```
+car-motiva.com/               ← リポジトリルート
+├── index.html                # サイトトップ（リダイレクトまたはランディング）
+├── CNAME                     # car-motiva.com
+├── sitemap.xml
+├── robots.txt
+├── ads.txt
+├── app/
+│   └── nagoya-parking/       # 名古屋パーキングアプリ本体
+│       ├── index.html
+│       ├── style.css
+│       ├── app.js            # メインロジック（フィルター・ソート・地図・料金試算）
+│       ├── data.js           # 駐車場データ（公式サイト参照・sourceURL必須）
+│       └── maintenance_log.md # メンテナンス記録
+├── nagoya-parking/           # 旧パス（リダイレクト用?）
+├── nenpi-calc/               # 燃費カンリアプリ
+│   └── index.html
+├── privacy-policy/
+│   └── index.html
+├── contact/
+│   └── index.html
+├── about/
+│   └── index.html
+├── top/
+│   └── index.html
+└── column/                   # SEOコラム記事
+    ├── index.html
+    ├── sakae-parking-guide/
+    ├── osu-parking-guide/
+    ├── higashiyama-zoo-parking/
+    ├── nagoya-castle-parking/
+    ├── nagoya-port-parking/
+    ├── noritake-garden-parking/
+    ├── science-museum-parking/
+    ├── tokugawaen-parking/
+    ├── tsuruma-park-parking/
+    └── nagoya-parking-tips/
+```
 
 ---
 
 ## 技術スタック
 - **フロントエンド**: HTML / CSS / Vanilla JavaScript（フレームワークなし）
-- **地図**: Leaflet.js
-- **ホスティング**: GitHub Pages
-- **ドメイン**: Squarespace（car-motiva.com）
-
----
-
-## ファイル構成
-```
-sakae-parking/
-├── index.html   # メインHTML・UIコンポーネント
-├── style.css    # 全スタイル定義
-├── app.js       # アプリロジック（フィルター・ソート・地図・料金試算）
-├── data.js      # 駐車場データ（107件）
-├── sitemap.xml  # Google Search Console用
-└── CNAME        # カスタムドメイン設定（car-motiva.com）
-```
+- **地図**: Leaflet.js（OpenStreetMap）
+- **フォント**: システムフォント
+- **デザイン**: プライマリ `#2563eb`（青）、モバイルファースト
 
 ---
 
 ## デプロイ方法
-ローカルで編集後、以下で本番に反映される（数分で自動デプロイ）：
 
 ```bash
 git add <ファイル名>
 git commit -m "変更内容"
-git push origin main
+GIT_SSH_COMMAND="ssh -i ~/.ssh/github_sakae" git push origin main
+```
+→ 数分後に本番反映（GitHub Pages）
+
+---
+
+## data.js のデータ構造（実際のフィールド）
+
+```javascript
+{
+  name: "駐車場名",
+  address: "愛知県名古屋市...",
+  lat: 35.1234,
+  lng: 136.9012,
+  hourlyRate: 200,           // 並び替え用・平日基準の1時間料金（円/h）
+  rates: {
+    weekday: "30分 100円",   // 表示用テキスト
+    holiday: "30分 200円"
+  },
+  maxRate: {
+    weekday: 800,            // 最大料金（円）。なしはnull
+    holiday: 900
+  },
+  hours: "24時間",
+  placeCid: "123...",        // Google Maps Place CID（10進数）
+  placeFid: "0x...:0x...",   // Google Maps FID（ピンポイントURL用）
+  note: "補足（任意）",
+  source: "https://times-info.net/P23100xxxxxx/"  // 必須・公式詳細ページURL
+}
 ```
 
-**SSH設定済み**: `~/.ssh/github_sakae`（ed25519）
+※ `area` フィールドは **存在しない**。エリア判定は app.js の `getArea()` 関数が住所文字列から自動判定する。
+
+---
+
+## エリア一覧（getArea関数で自動判定）
+
+栄 / 錦・伏見 / 名駅 / 大須 / 久屋 / 矢場町 / 金山 / 熱田 / ドーム / 今池 / 鶴舞 / 覚王山 / 千種 / 星ヶ丘 / 名古屋港 / 八事 / 名古屋城 / 円頓寺 / 高岳 / 黒川 / 藤が丘 / 山王 / その他
 
 ---
 
 ## 主な機能
-- 駐車場一覧（料金が安い順・名前順・現在地から近い順）
-- エリアフィルター（全件・栄・錦伏見・名駅・大須・久屋・金山）
+- 駐車場一覧（料金が安い順・名前順・現在地から近い順・施設から近い順）
+- エリアフィルター（複数選択可）
 - 料金モード切替（自動・平日・休日）
-- 駐車時間指定の料金試算（1h・2h・3h・6h・12h・24h）
+- 駐車時間指定の料金試算
 - リスト表示 / 地図表示（Leaflet）
 - お気に入り機能（localStorage）
-- 現在地取得・ソート・地図マーカー表示
+- 現在地取得
+- 施設名検索（東山動植物園・名古屋城など周辺駐車場を絞り込み）
 
 ---
 
-## データ構造（data.js）
-```javascript
-{
-  name: "駐車場名",
-  area: "栄",                      // エリア名
-  address: "愛知県名古屋市...",
-  lat: 35.1234, lng: 136.9012,     // 座標
-  hours: "24時間",
-  rate: {
-    weekday: "60分100円",           // 平日料金テキスト
-    holiday: "60分200円",           // 休日料金テキスト
-    weekdayMax: 800,                // 平日最大料金（円）
-    holidayMax: 900,                // 休日最大料金（円）
-    per30min: 50,                   // 30分あたりの料金（試算用）
-    per30minHoliday: 100,           // 休日30分あたりの料金（試算用）
-  },
-  note: "補足情報（任意）",
-  mapUrl: "https://maps.google.com/..."
-}
-```
+## データ登録ルール（2026-06-11 改定）
+
+- 登録対象は**大手チェーンのみ**（タイムズ・名鉄協商・三井のリパーク・NPC24H）
+- 料金は必ず各社**公式サイト**から取得（Google マップ画像の読み取り禁止）
+- `source` フィールドに**公式詳細ページURLを必ず記録**する
+- メンテナンス時は `source` URLを開いて最新料金と比較する
+- メンテナンス結果は `maintenance_log.md` に記録する
+
+| 会社 | 公式検索URL |
+|------|------------|
+| タイムズ | https://times-info.net/park-search/ |
+| 名鉄協商 | https://mkp.jp/ |
+| 三井のリパーク | https://www.repark.jp/ |
+| NPC24H | https://parking.npc-npc.co.jp/ |
 
 ---
 
-## デザイン方針
-- モバイルファースト（max-width: 600px）
-- カラー: プライマリ `#2563eb`（青）
-- フォント: システムフォント（-apple-system, Hiragino Sans）
-- シンプルで使いやすいUI
+## 既知の問題・対応中
 
----
-
-## 今後の展開
-- car-motiva.com 配下で車関連アプリを順次リリース予定
-- 対象エリアの拡大（他都市への展開）
-- データの定期的なメンテナンス
+（なし）
