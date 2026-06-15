@@ -270,29 +270,23 @@
   let facilityMarker = null;
 
   const AREA_COLORS = {
-    "栄":       "#2563eb",
-    "錦・伏見": "#059669",
-    "名駅":     "#7c3aed",
-    "大須":     "#d97706",
-    "久屋":     "#0891b2",
-    "金山":     "#dc2626",
-    "熱田":     "#c2410c",
-    "ドーム":   "#db2777",
-    "矢場町":   "#6366f1",
-    "今池":     "#0d9488",
-    "鶴舞":     "#e11d48",
-    "覚王山":   "#b45309",
-    "千種":     "#0e7490",
-    "星ヶ丘":   "#be185d",
-    "名古屋港": "#1d4ed8",
-    "八事":     "#065f46",
-    "名古屋城": "#78350f",
-    "円頓寺":   "#4a044e",
-    "高岳":     "#1e40af",
-    "黒川":     "#166534",
-    "藤が丘":   "#7c2d12",
-    "山王":     "#713f12",
-    "その他":   "#6b7280"
+    "千種区": "#0e7490",
+    "東区":   "#1e40af",
+    "北区":   "#166534",
+    "西区":   "#4a044e",
+    "中村区": "#7c3aed",
+    "中区":   "#2563eb",
+    "昭和区": "#e11d48",
+    "瑞穂区": "#be185d",
+    "熱田区": "#c2410c",
+    "中川区": "#713f12",
+    "港区":   "#1d4ed8",
+    "南区":   "#dc2626",
+    "守山区": "#065f46",
+    "緑区":   "#059669",
+    "名東区": "#7c2d12",
+    "天白区": "#b45309",
+    "その他": "#6b7280"
   };
 
   let tileLayer = null;
@@ -534,28 +528,10 @@
   // 住所からエリアを判定
   function getArea(p) {
     const a = p.address;
-    if (a.includes("中村区")) return "名駅";
-    if (a.includes("金山") || a.includes("沢下町")) return "金山";
-    if (a.includes("大須") || a.includes("上前津") || a.includes("門前町")) return "大須";
-    if (/丸の内|東桜/.test(a) || /中区栄3丁目5(?!\d)/.test(a)) return "久屋";
-    if (/中区錦|中区栄1[\-丁]/.test(a)) return "錦・伏見";
-    if (a.includes("中区矢場町") || /中区栄[45]丁目/.test(a)) return "矢場町";
-    if (a.includes("中区栄") || a.includes("中区新栄")) return "栄";
-    if (a.includes("熱田区")) return "熱田";
-    if (a.includes("東区大幸") || a.includes("東区矢田") || a.includes("東区古出来") || a.includes("千種区萱場") || a.includes("北区大曽根") || a.includes("東区砂田橋")) return "ドーム";
-    if (a.includes("千種区今池")) return "今池";
-    if (a.includes("中区鶴舞") || a.includes("中区千代田") || a.includes("昭和区鶴舞") || a.includes("昭和区御器所") || a.includes("昭和区川名") || a.includes("昭和区檀渓通")) return "鶴舞";
-    if (a.includes("千種区覚王山") || a.includes("千種区末盛") || a.includes("千種区山門") || a.includes("千種区観月町")) return "覚王山";
-    if (a.includes("千種区千種") || a.includes("千種区吹上") || a.includes("千種区池下") || a.includes("千種区四谷通") || a.includes("千種区春岡")) return "千種";
-    if (a.includes("千種区星が丘") || a.includes("千種区井上町") || a.includes("千種区本山") || a.includes("千種区見附町") || a.includes("千種区稲舟通") || a.includes("千種区橋本町") || a.includes("千種区山添")) return "星ヶ丘";
-    if (a.includes("港区")) return "名古屋港";
-    if (a.includes("昭和区八事") || a.includes("天白区八事") || a.includes("昭和区山手通") || a.includes("昭和区山花") || a.includes("昭和区広路")) return "八事";
-    if (a.includes("西区名城") || a.includes("西区二の丸") || a.includes("西区城西") || a.includes("西区浅間") || a.includes("北区名城")) return "名古屋城";
-    if (a.includes("西区那古野") || a.includes("西区花の木") || a.includes("西区栄生")) return "円頓寺";
-    if (a.includes("東区泉") || a.includes("東区葵") || a.includes("東区筒井")) return "高岳";
-    if (a.includes("北区黒川") || a.includes("北区田幡")) return "黒川";
-    if (a.includes("名東区藤が丘") || a.includes("名東区藤見が丘") || a.includes("名東区上社") || a.includes("名東区一社")) return "藤が丘";
-    if (a.includes("南区山王") || a.includes("南区笠寺") || a.includes("南区笠寺町") || a.includes("南区立脇町") || a.includes("南区呼続")) return "山王";
+    const wards = ["千種区","東区","北区","西区","中村区","中区","昭和区","瑞穂区","熱田区","中川区","港区","南区","守山区","緑区","名東区","天白区"];
+    for (const w of wards) {
+      if (a.includes(w)) return w;
+    }
     return "その他";
   }
 
