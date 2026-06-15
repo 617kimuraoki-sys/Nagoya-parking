@@ -1,169 +1,13 @@
 [
   {
-    "name": "名古屋共立病院第1駐車場",
-    "address": "愛知県名古屋市中川区法華1-163",
-    "lat": 35.127384,
-    "lng": 136.848343,
-    "hourlyRate": 200,
+    "name": "タイムズ大曽根すずらん通",
+    "address": "愛知県名古屋市北区大曽根1-23",
+    "lat": 35.190479,
+    "lng": 136.928986,
+    "hourlyRate": 300,
     "rates": {
-      "weekday": "30分 100円",
-      "holiday": "30分 100円"
-    },
-    "maxRate": {
-      "weekday": null,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0049762/"
-  },
-  {
-    "name": "タイムズ掖済会病院北",
-    "address": "愛知県名古屋市中川区昭明町3-15",
-    "lat": 35.121784,
-    "lng": 136.871002,
-    "hourlyRate": 220,
-    "rates": {
-      "weekday": "30分 110円",
-      "holiday": "30分 110円"
-    },
-    "maxRate": {
-      "weekday": 660,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0039061/"
-  },
-  {
-    "name": "タイムズ尾頭橋3丁目",
-    "address": "愛知県名古屋市中川区尾頭橋3-9",
-    "lat": 35.146019,
-    "lng": 136.891312,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 650,
-      "holiday": 350
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0024561/"
-  },
-  {
-    "name": "タイムズ尾頭橋3丁目第4",
-    "address": "愛知県名古屋市中川区尾頭橋3-2",
-    "lat": 35.144913,
-    "lng": 136.892334,
-    "hourlyRate": 400,
-    "rates": {
-      "weekday": "30分 200円",
-      "holiday": "30分 200円"
-    },
-    "maxRate": {
-      "weekday": 330,
-      "holiday": 600
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0066487/"
-  },
-  {
-    "name": "タイムズ尾頭橋",
-    "address": "愛知県名古屋市中川区尾頭橋3-5",
-    "lat": 35.14415,
-    "lng": 136.891449,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 880,
-      "holiday": 1100
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0028537/"
-  },
-  {
-    "name": "タイムズ八熊2丁目",
-    "address": "愛知県名古屋市中川区八熊2-13",
-    "lat": 35.142342,
-    "lng": 136.890976,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 450,
-      "holiday": 500
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0035597/"
-  },
-  {
-    "name": "タイムズ尾頭橋3丁目第3",
-    "address": "愛知県名古屋市中川区尾頭橋3-8",
-    "lat": 35.145737,
-    "lng": 136.891937,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
+      "weekday": "20分 100円",
+      "holiday": "20分 100円"
     },
     "maxRate": {
       "weekday": 700,
@@ -179,20 +23,46 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0051766/"
+    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0021229/"
   },
   {
-    "name": "タイムズ野田1丁目",
-    "address": "愛知県名古屋市中川区野田1-75",
-    "lat": 35.144779,
-    "lng": 136.845825,
-    "hourlyRate": 880,
+    "name": "ＯＺパーキング",
+    "address": "愛知県名古屋市北区大曽根4-1",
+    "lat": 35.190762,
+    "lng": 136.930893,
+    "hourlyRate": 300,
     "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
+      "weekday": "20分 100円",
+      "holiday": "20分 100円"
     },
     "maxRate": {
-      "weekday": 550,
+      "weekday": 800,
+      "holiday": 400
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0029871/"
+  },
+  {
+    "name": "タイムズ名古屋タンメン若葉",
+    "address": "愛知県名古屋市北区若葉通1-12",
+    "lat": 35.196033,
+    "lng": 136.922226,
+    "hourlyRate": 2200,
+    "rates": {
+      "weekday": "15分 550円",
+      "holiday": "15分 550円"
+    },
+    "maxRate": {
+      "weekday": 770,
       "holiday": null
     },
     "hours": "24時間",
@@ -205,147 +75,17 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0036443/"
+    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0033994/"
   },
   {
-    "name": "タイムズ上飯田東町第2",
-    "address": "愛知県名古屋市北区上飯田東町5-42",
-    "lat": 35.205158,
-    "lng": 136.93486,
+    "name": "タイムズ九重町",
+    "address": "愛知県名古屋市中川区九重町11",
+    "lat": 35.156368,
+    "lng": 136.873215,
     "hourlyRate": 880,
     "rates": {
       "weekday": "15分 220円",
       "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 550,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0041655/"
-  },
-  {
-    "name": "タイムズ山田2丁目",
-    "address": "愛知県名古屋市北区山田2-1",
-    "lat": 35.194641,
-    "lng": 136.934525,
-    "hourlyRate": 220,
-    "rates": {
-      "weekday": "60分 220円",
-      "holiday": "60分 220円"
-    },
-    "maxRate": {
-      "weekday": 660,
-      "holiday": 440
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0035977/"
-  },
-  {
-    "name": "タイムズ金城町",
-    "address": "愛知県名古屋市北区金城町3-3",
-    "lat": 35.206333,
-    "lng": 136.906189,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 500,
-      "holiday": 200
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0034939/"
-  },
-  {
-    "name": "タイムズ杉村1丁目",
-    "address": "愛知県名古屋市北区杉村1-25",
-    "lat": 35.189655,
-    "lng": 136.923904,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 400,
-      "holiday": 300
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0029799/"
-  },
-  {
-    "name": "タイムズ大曽根3丁目",
-    "address": "愛知県名古屋市北区大曽根3-7",
-    "lat": 35.190647,
-    "lng": 136.935425,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 700,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0032383/"
-  },
-  {
-    "name": "タイムズデニーズ黒川店",
-    "address": "愛知県名古屋市北区黒川本通4-13",
-    "lat": 35.199684,
-    "lng": 136.911682,
-    "hourlyRate": 330,
-    "rates": {
-      "weekday": "60分 330円",
-      "holiday": "60分 330円"
     },
     "maxRate": {
       "weekday": 440,
@@ -361,150 +101,20 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0032352/"
+    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0034417/"
   },
   {
-    "name": "タイムズ弥富通",
-    "address": "愛知県名古屋市瑞穂区弥富通5-4",
-    "lat": 35.119797,
-    "lng": 136.956619,
-    "hourlyRate": 880,
+    "name": "タイムズ角割町3丁目",
+    "address": "愛知県名古屋市中村区角割町3-30",
+    "lat": 35.155769,
+    "lng": 136.866669,
+    "hourlyRate": 220,
     "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
+      "weekday": "60分 220円",
+      "holiday": "60分 220円"
     },
     "maxRate": {
-      "weekday": 300,
-      "holiday": 500
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0017835/"
-  },
-  {
-    "name": "タイムズ中根",
-    "address": "愛知県名古屋市瑞穂区弥富通5-54",
-    "lat": 35.119751,
-    "lng": 136.958145,
-    "hourlyRate": 660,
-    "rates": {
-      "weekday": "20分 220円",
-      "holiday": "20分 220円"
-    },
-    "maxRate": {
-      "weekday": 400,
-      "holiday": 300
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0020413/"
-  },
-  {
-    "name": "タイムズ弥富通第2",
-    "address": "愛知県名古屋市瑞穂区片坂町3-3",
-    "lat": 35.117325,
-    "lng": 136.946533,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 660,
-      "holiday": 330
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0019257/"
-  },
-  {
-    "name": "昭和郵便局駐車場",
-    "address": "愛知県名古屋市昭和区桜山町6",
-    "lat": 35.140579,
-    "lng": 136.933411,
-    "hourlyRate": 1000,
-    "rates": {
-      "weekday": "30分 500円",
-      "holiday": "30分 500円"
-    },
-    "maxRate": {
-      "weekday": 400,
-      "holiday": 700
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C107/park-detail-BUK0033044/"
-  },
-  {
-    "name": "タイムズ広見町第2",
-    "address": "愛知県名古屋市昭和区広見町6-63",
-    "lat": 35.141003,
-    "lng": 136.931549,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 700,
-      "holiday": 300
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C107/park-detail-BUK0045083/"
-  },
-  {
-    "name": "タイムズ名古屋港駅北",
-    "address": "愛知県名古屋市港区浜2-1",
-    "lat": 35.096275,
-    "lng": 136.882233,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 650,
+      "weekday": 440,
       "holiday": null
     },
     "hours": "24時間",
@@ -517,6 +127,110 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0051592/"
+    "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0044202/"
+  },
+  {
+    "name": "タイムズ露橋町",
+    "address": "愛知県名古屋市中川区露橋町46",
+    "lat": 35.151833,
+    "lng": 136.882675,
+    "hourlyRate": 220,
+    "rates": {
+      "weekday": "60分 220円",
+      "holiday": "60分 220円"
+    },
+    "maxRate": {
+      "weekday": 600,
+      "holiday": 300
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0040776/"
+  },
+  {
+    "name": "タイムズ瑞穂運動場西",
+    "address": "愛知県名古屋市瑞穂区膳棚町1-5",
+    "lat": 35.126038,
+    "lng": 136.936417,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 660,
+      "holiday": 220
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0033898/"
+  },
+  {
+    "name": "瑞穂郵便局駐車場",
+    "address": "愛知県名古屋市瑞穂区豊岡通2",
+    "lat": 35.125427,
+    "lng": 136.932831,
+    "hourlyRate": 600,
+    "rates": {
+      "weekday": "30分 300円",
+      "holiday": "30分 300円"
+    },
+    "maxRate": {
+      "weekday": 300,
+      "holiday": 700
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0072623/"
+  },
+  {
+    "name": "タイムズ内方町",
+    "address": "愛知県名古屋市瑞穂区内方町1-5",
+    "lat": 35.123432,
+    "lng": 136.936996,
+    "hourlyRate": 220,
+    "rates": {
+      "weekday": "60分 220円",
+      "holiday": "60分 220円"
+    },
+    "maxRate": {
+      "weekday": 550,
+      "holiday": 220
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0019759/"
   }
 ]
