@@ -13337,5 +13337,31 @@ const parkingData = [
     "placeFid": "",
     "note": "",
     "source": "https://times-info.net/P23-aichi/C101/park-detail-BUK0085026/"
+  },
+  {
+    "name": "タイムズ釜塚町２丁目",
+    "address": "愛知県名古屋市瑞穂区釜塚町2-44",
+    "lat": 35.115959,
+    "lng": 136.943314,
+    "hourlyRate": 300,
+    "rates": {
+      "weekday": "40分 200円",
+      "holiday": "40分 200円"
+    },
+    "maxRate": {
+      "weekday": 500,
+      "holiday": 500
+    },
+    "hours": "24時間",
+    "capacity": 9,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0080344/"
   }
 ];
