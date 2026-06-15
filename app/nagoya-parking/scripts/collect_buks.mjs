@@ -77,50 +77,36 @@ function extractBuks(html) {
   return [...new Set(matches.map(m => m.replace('park-detail-', '')))];
 }
 
-// ── 総ページ数取得 ────────────────────────────────
-function getTotalPages(html) {
-  // 「全XX件」または「XX件中」から総件数を取得してページ数を計算
-  const countM = html.match(/全\s*(\d+)\s*件/) || html.match(/(\d+)\s*件中/);
-  if (countM) {
-    const total = parseInt(countM[1]);
-    return Math.ceil(total / 20); // 1ページ20件
-  }
-  // ページネーションから最大ページ数を取得
-  const pageMatches = html.match(/[?&]page=(\d+)/g) || [];
-  if (pageMatches.length > 0) {
-    const pages = pageMatches.map(m => parseInt(m.match(/\d+/)[0]));
-    return Math.max(...pages);
-  }
-  return 1;
-}
-
 // ── メイン処理 ────────────────────────────────────
 const allBuks = []; // { buk, ward } のリスト
+const MAX_PAGES = 30; // 1区あたり最大30ページまで試行
 
 for (const ward of targetWards) {
   const code = WARD_CODE[ward];
   const baseUrl = `https://times-info.net/P23-aichi/${code}/`;
   console.log(`📍 ${ward}（${code}）を収集中...`);
 
+  const wardBuks = new Set();
+
   try {
-    // 1ページ目を取得して総ページ数を確認
+    // 1ページ目
     const firstHtml = await fetchHtml(baseUrl);
-    const buks1 = extractBuks(firstHtml);
-    const totalPages = getTotalPages(firstHtml);
-    console.log(`   総ページ数: ${totalPages}`);
+    extractBuks(firstHtml).forEach(b => wardBuks.add(b));
 
-    const wardBuks = new Set(buks1);
-
-    // 2ページ目以降
-    for (let page = 2; page <= totalPages; page++) {
+    // 2ページ目以降 - BUKが0件になるまで続ける
+    for (let page = 2; page <= MAX_PAGES; page++) {
       await sleep(400);
       const url = `${baseUrl}?page=${page}`;
       try {
         const html = await fetchHtml(url);
         const buks = extractBuks(html);
+        if (buks.length === 0) break; // 新しいBUKがなければ終了
         buks.forEach(b => wardBuks.add(b));
+        process.stdout.write(`   page ${page}: ${buks.length}件\n`);
       } catch(e) {
+        if (e.message.includes('404')) break; // 404なら終了
         console.warn(`   ⚠️  page ${page} 取得失敗: ${e.message}`);
+        break;
       }
     }
 
