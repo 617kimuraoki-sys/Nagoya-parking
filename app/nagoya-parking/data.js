@@ -13151,4 +13151,85 @@ const parkingData = [
     "note": "",
     "source": "https://times-info.net/P23-aichi/C106/park-detail-BUK0075039/"
   }
+,
+  {
+    "name": "タイムズ出来町",
+    "address": "愛知県名古屋市東区出来町3-3",
+    "lat": 35.181992,
+    "lng": 136.938477,
+    "hourlyRate": 330,
+    "rates": {
+      "weekday": "20分 110円",
+      "holiday": "20分 110円"
+    },
+    "maxRate": {
+      "weekday": 500,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C102/park-detail-BUK0016214/"
+  }
+,
+  {
+    "name": "タイムズ矢田南3丁目",
+    "address": "愛知県名古屋市東区矢田南3-7",
+    "lat": 35.185444,
+    "lng": 136.943497,
+    "hourlyRate": 220,
+    "rates": {
+      "weekday": "30分 110円",
+      "holiday": "30分 110円"
+    },
+    "maxRate": {
+      "weekday": 300,
+      "holiday": 2200
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C102/park-detail-BUK0043828/"
+  }
+,
+  {
+    "name": "タイムズ矢田4丁目第2",
+    "address": "愛知県名古屋市東区矢田4-4",
+    "lat": 35.194344,
+    "lng": 136.942169,
+    "hourlyRate": 500,
+    "rates": {
+      "weekday": "30分 250円",
+      "holiday": "30分 250円"
+    },
+    "maxRate": {
+      "weekday": 700,
+      "holiday": 300
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C102/park-detail-BUK0048249/"
+  }
 ];
