@@ -1,17 +1,17 @@
 [
   {
-    "name": "タイムズ入船2丁目",
-    "address": "愛知県名古屋市港区入船2-1",
-    "lat": 35.094471,
-    "lng": 136.880783,
+    "name": "タイムズ新道1丁目",
+    "address": "愛知県名古屋市西区新道1-14",
+    "lat": 35.182148,
+    "lng": 136.887802,
     "hourlyRate": 880,
     "rates": {
       "weekday": "15分 220円",
       "holiday": "15分 220円"
     },
     "maxRate": {
-      "weekday": 700,
-      "holiday": 800
+      "weekday": 850,
+      "holiday": 330
     },
     "hours": "24時間",
     "capacity": 10,
@@ -23,21 +23,21 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0028250/"
+    "source": "https://times-info.net/P23-aichi/C104/park-detail-BUK0040559/"
   },
   {
-    "name": "タイムズ名港西倉",
-    "address": "愛知県名古屋市港区西倉町1",
-    "lat": 35.095039,
-    "lng": 136.878494,
-    "hourlyRate": 300,
+    "name": "タイムズ新道1丁目第3",
+    "address": "愛知県名古屋市西区新道1-13",
+    "lat": 35.181683,
+    "lng": 136.887848,
+    "hourlyRate": 400,
     "rates": {
-      "weekday": "40分 200円",
-      "holiday": "40分 200円"
+      "weekday": "30分 200円",
+      "holiday": "30分 200円"
     },
     "maxRate": {
-      "weekday": 700,
-      "holiday": 900
+      "weekday": 800,
+      "holiday": 400
     },
     "hours": "24時間",
     "capacity": 10,
@@ -49,21 +49,21 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0035860/"
+    "source": "https://times-info.net/P23-aichi/C104/park-detail-BUK0082386/"
   },
   {
-    "name": "タイムズ名港",
-    "address": "愛知県名古屋市港区名港1-2",
-    "lat": 35.098198,
-    "lng": 136.885422,
-    "hourlyRate": 880,
+    "name": "タイムズ丸の内2丁目第10",
+    "address": "愛知県名古屋市中区丸の内2-2",
+    "lat": 35.177032,
+    "lng": 136.898376,
+    "hourlyRate": 1400,
     "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
+      "weekday": "15分 350円",
+      "holiday": "15分 350円"
     },
     "maxRate": {
-      "weekday": 600,
-      "holiday": 200
+      "weekday": 2000,
+      "holiday": 400
     },
     "hours": "24時間",
     "capacity": 10,
@@ -75,6 +75,6 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0022406/"
+    "source": "https://times-info.net/P23-aichi/C106/park-detail-BUK0076464/"
   }
 ]
