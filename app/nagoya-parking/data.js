@@ -12275,4 +12275,162 @@ const parkingData = [
     "note": "",
     "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0022396/"
   }
+,
+  {
+    "name": "タイムズ喜多の湯・山王温泉",
+    "address": "愛知県名古屋市中川区山王1-6",
+    "lat": 35.153137,
+    "lng": 136.89035,
+    "hourlyRate": 330,
+    "rates": {
+      "weekday": "60分 330円",
+      "holiday": "60分 330円"
+    },
+    "maxRate": {
+      "weekday": 700,
+      "holiday": 1000
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0039282/"
+  },
+  {
+    "name": "タイムズ妙音通",
+    "address": "愛知県名古屋市瑞穂区妙音通2-46",
+    "lat": 35.116814,
+    "lng": 136.927124,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 550,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0034027/"
+  }
+,
+  {
+    "name": "タイムズ苗代町",
+    "address": "愛知県名古屋市瑞穂区苗代町11",
+    "lat": 35.118629,
+    "lng": 136.925415,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 500,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0035219/"
+  },
+  {
+    "name": "タイムズ呼続元町",
+    "address": "愛知県名古屋市南区呼続元町9",
+    "lat": 35.114994,
+    "lng": 136.931854,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 660,
+      "holiday": 220
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C112/park-detail-BUK0033327/"
+  },
+  {
+    "name": "タイムズ塩入町",
+    "address": "愛知県名古屋市瑞穂区塩入町6",
+    "lat": 35.118938,
+    "lng": 136.920364,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 660,
+      "holiday": 440
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0030408/"
+  },
+  {
+    "name": "タイムズ露橋1丁目",
+    "address": "愛知県名古屋市中川区露橋1-24",
+    "lat": 35.152836,
+    "lng": 136.886093,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 660,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0034840/"
+  }
 ];
