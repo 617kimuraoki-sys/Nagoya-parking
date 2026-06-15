@@ -1,120 +1,16 @@
 [
   {
-    "name": "タイムズ志賀町",
-    "address": "愛知県名古屋市北区志賀町5-26",
-    "lat": 35.202267,
-    "lng": 136.917618,
-    "hourlyRate": 880,
+    "name": "タイムズ松重町",
+    "address": "愛知県名古屋市中村区松重町4",
+    "lat": 35.158894,
+    "lng": 136.892105,
+    "hourlyRate": 220,
     "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
+      "weekday": "60分 220円",
+      "holiday": "60分 220円"
     },
     "maxRate": {
-      "weekday": 550,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0034114/"
-  },
-  {
-    "name": "タイムズ大野町",
-    "address": "愛知県名古屋市北区大野町2-5",
-    "lat": 35.204338,
-    "lng": 136.915894,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 440,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0031026/"
-  },
-  {
-    "name": "タイムズ城北町",
-    "address": "愛知県名古屋市西区城北町2-12",
-    "lat": 35.197628,
-    "lng": 136.895233,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 550,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C104/park-detail-BUK0017647/"
-  },
-  {
-    "name": "タイムズ香呑町",
-    "address": "愛知県名古屋市西区香呑町4-112",
-    "lat": 35.20401,
-    "lng": 136.895065,
-    "hourlyRate": 300,
-    "rates": {
-      "weekday": "40分 200円",
-      "holiday": "40分 200円"
-    },
-    "maxRate": {
-      "weekday": 400,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C104/park-detail-BUK0083435/"
-  },
-  {
-    "name": "タイムズ東片端第2",
-    "address": "愛知県名古屋市東区東片端町13",
-    "lat": 35.178795,
-    "lng": 136.911926,
-    "hourlyRate": 800,
-    "rates": {
-      "weekday": "15分 200円",
-      "holiday": "15分 200円"
-    },
-    "maxRate": {
-      "weekday": 1400,
+      "weekday": 800,
       "holiday": 300
     },
     "hours": "24時間",
@@ -127,72 +23,20 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C102/park-detail-BUK0044409/"
+    "source": "https://times-info.net/P23-aichi/C105/park-detail-BUK0058704/"
   },
   {
-    "name": "タイムズ泉1丁目第4",
-    "address": "愛知県名古屋市東区泉1-4",
-    "lat": 35.178078,
-    "lng": 136.911972,
-    "hourlyRate": 880,
+    "name": "タイムズコメダ珈琲店日置橋店",
+    "address": "愛知県名古屋市中区松原1-1",
+    "lat": 35.15823,
+    "lng": 136.893143,
+    "hourlyRate": 200,
     "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
+      "weekday": "60分 200円",
+      "holiday": "60分 200円"
     },
     "maxRate": {
-      "weekday": 1400,
-      "holiday": 500
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C102/park-detail-BUK0027656/"
-  },
-  {
-    "name": "タイムズ大津通",
-    "address": "愛知県名古屋市中区丸の内3-4",
-    "lat": 35.177502,
-    "lng": 136.90538,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 2000,
-      "holiday": 1800
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C106/park-detail-BUK0030917/"
-  },
-  {
-    "name": "タイムズ泉1丁目第6",
-    "address": "愛知県名古屋市東区泉1-14",
-    "lat": 35.175491,
-    "lng": 136.909119,
-    "hourlyRate": 1400,
-    "rates": {
-      "weekday": "15分 350円",
-      "holiday": "15分 350円"
-    },
-    "maxRate": {
-      "weekday": 1900,
+      "weekday": 700,
       "holiday": null
     },
     "hours": "24時間",
@@ -205,20 +49,20 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C102/park-detail-BUK0065843/"
+    "source": "https://times-info.net/P23-aichi/C106/park-detail-BUK0068108/"
   },
   {
-    "name": "タイムズ高岳北",
-    "address": "愛知県名古屋市東区泉2-15",
-    "lat": 35.176472,
-    "lng": 136.915634,
-    "hourlyRate": 600,
+    "name": "タイムズ運河町",
+    "address": "愛知県名古屋市中川区運河町210",
+    "lat": 35.15958,
+    "lng": 136.885101,
+    "hourlyRate": 300,
     "rates": {
-      "weekday": "20分 200円",
-      "holiday": "20分 200円"
+      "weekday": "40分 200円",
+      "holiday": "40分 200円"
     },
     "maxRate": {
-      "weekday": 500,
+      "weekday": 900,
       "holiday": 500
     },
     "hours": "24時間",
@@ -231,17 +75,43 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C102/park-detail-BUK0049895/"
+    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0083223/"
   },
   {
-    "name": "タイムズ城西",
-    "address": "愛知県名古屋市西区城西2-19",
-    "lat": 35.186726,
-    "lng": 136.893845,
-    "hourlyRate": 880,
+    "name": "タイムズ柳堀町",
+    "address": "愛知県名古屋市中川区柳堀町1",
+    "lat": 35.156647,
+    "lng": 136.88652,
+    "hourlyRate": 300,
     "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
+      "weekday": "40分 200円",
+      "holiday": "40分 200円"
+    },
+    "maxRate": {
+      "weekday": 700,
+      "holiday": 400
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0034200/"
+  },
+  {
+    "name": "タイムズ松原2丁目第2",
+    "address": "愛知県名古屋市中区松原2-20",
+    "lat": 35.1548,
+    "lng": 136.895676,
+    "hourlyRate": 220,
+    "rates": {
+      "weekday": "60分 220円",
+      "holiday": "60分 220円"
     },
     "maxRate": {
       "weekday": 700,
@@ -257,6 +127,58 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C104/park-detail-BUK0017515/"
+    "source": "https://times-info.net/P23-aichi/C106/park-detail-BUK0042443/"
+  },
+  {
+    "name": "タイムズヤマナカ松原店",
+    "address": "愛知県名古屋市中区松原2-21",
+    "lat": 35.154621,
+    "lng": 136.896667,
+    "hourlyRate": 440,
+    "rates": {
+      "weekday": "30分 220円",
+      "holiday": "30分 220円"
+    },
+    "maxRate": {
+      "weekday": 800,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C106/park-detail-BUK0044310/"
+  },
+  {
+    "name": "タイムズ大須スケートリンク",
+    "address": "愛知県名古屋市中区門前町1-60",
+    "lat": 35.157749,
+    "lng": 136.898727,
+    "hourlyRate": 600,
+    "rates": {
+      "weekday": "30分 300円",
+      "holiday": "30分 300円"
+    },
+    "maxRate": {
+      "weekday": 700,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C106/park-detail-BUK0081319/"
   }
 ]
