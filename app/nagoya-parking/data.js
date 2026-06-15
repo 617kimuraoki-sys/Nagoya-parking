@@ -13232,4 +13232,110 @@ const parkingData = [
     "note": "",
     "source": "https://times-info.net/P23-aichi/C102/park-detail-BUK0048249/"
   }
+,
+  {
+    "name": "愛知学院大学歯学部附属病院北",
+    "address": "愛知県名古屋市千種区姫池通3-6",
+    "lat": 35.16721,
+    "lng": 136.957214,
+    "hourlyRate": 800,
+    "rates": {
+      "weekday": "30分 400円",
+      "holiday": "30分 400円"
+    },
+    "maxRate": {
+      "weekday": 300,
+      "holiday": 1000
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C101/park-detail-BUK0056949/"
+  },
+  {
+    "name": "愛知学院大学歯学部附属病院南",
+    "address": "愛知県名古屋市千種区田代本通1-5",
+    "lat": 35.165302,
+    "lng": 136.956818,
+    "hourlyRate": 800,
+    "rates": {
+      "weekday": "30分 400円",
+      "holiday": "30分 400円"
+    },
+    "maxRate": {
+      "weekday": 300,
+      "holiday": 1000
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C101/park-detail-BUK0056951/"
+  }
+,
+  {
+    "name": "タイムズ園山町1丁目",
+    "address": "愛知県名古屋市千種区園山町1-14",
+    "lat": 35.159019,
+    "lng": 136.967728,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 1000,
+      "holiday": 300
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C101/park-detail-BUK0051751/"
+  },
+  {
+    "name": "タイムズ朝岡団地",
+    "address": "愛知県名古屋市千種区朝岡町3-92",
+    "lat": 35.160576,
+    "lng": 136.966599,
+    "hourlyRate": 400,
+    "rates": {
+      "weekday": "30分 200円",
+      "holiday": "30分 200円"
+    },
+    "maxRate": {
+      "weekday": 1300,
+      "holiday": 300
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C101/park-detail-BUK0085026/"
+  }
 ];
