@@ -1,16 +1,16 @@
 [
   {
-    "name": "タイムズ大杉町",
-    "address": "愛知県名古屋市北区大杉町1-8",
-    "lat": 35.19101,
-    "lng": 136.915894,
-    "hourlyRate": 880,
+    "name": "タイムズモール9番街 中央",
+    "address": "愛知県名古屋市港区七番町1-3",
+    "lat": 35.117603,
+    "lng": 136.886353,
+    "hourlyRate": 200,
     "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
+      "weekday": "30分 100円",
+      "holiday": "30分 100円"
     },
     "maxRate": {
-      "weekday": 550,
+      "weekday": 500,
       "holiday": null
     },
     "hours": "24時間",
@@ -23,58 +23,6 @@
     "placeCid": "",
     "placeFid": "",
     "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0034007/"
-  },
-  {
-    "name": "タイムズ大蔵町第3",
-    "address": "愛知県名古屋市北区大蔵町34",
-    "lat": 35.195564,
-    "lng": 136.919586,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 400,
-      "holiday": null
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0047711/"
-  },
-  {
-    "name": "タイムズ大蔵町第2",
-    "address": "愛知県名古屋市北区大蔵町10",
-    "lat": 35.195267,
-    "lng": 136.91954,
-    "hourlyRate": 880,
-    "rates": {
-      "weekday": "15分 220円",
-      "holiday": "15分 220円"
-    },
-    "maxRate": {
-      "weekday": 550,
-      "holiday": 440
-    },
-    "hours": "24時間",
-    "capacity": 10,
-    "payment": {
-      "cash": true,
-      "credit": true,
-      "qr": true
-    },
-    "placeCid": "",
-    "placeFid": "",
-    "note": "",
-    "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0046938/"
+    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0022396/"
   }
 ]

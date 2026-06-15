@@ -12115,4 +12115,164 @@ const parkingData = [
     "note": "",
     "source": "https://times-info.net/P23-aichi/C103/park-detail-BUK0046938/"
   }
+,
+  {
+    "name": "タイムズ桜本町",
+    "address": "愛知県名古屋市南区桜本町37",
+    "lat": 35.102146,
+    "lng": 136.935181,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": null,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C112/park-detail-BUK0048614/"
+  }
+,
+  {
+    "name": "タイムズ植田東1丁目",
+    "address": "愛知県名古屋市天白区植田東1-1013",
+    "lat": 0,
+    "lng": 0,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 600,
+      "holiday": 300
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C116/park-detail-BUK0047381/"
+  }
+,
+  {
+    "name": "タイムズ南十番町ショッピングプラザ",
+    "address": "愛知県名古屋市港区南十番町1-1",
+    "lat": 35.117973,
+    "lng": 136.882858,
+    "hourlyRate": 220,
+    "rates": {
+      "weekday": "60分 220円",
+      "holiday": "60分 220円"
+    },
+    "maxRate": {
+      "weekday": 550,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0024828/"
+  },
+  {
+    "name": "タイムズモール9番街 北",
+    "address": "愛知県名古屋市港区七番町1-3",
+    "lat": 35.117603,
+    "lng": 136.886353,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 500,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0022397/"
+  },
+  {
+    "name": "タイムズ金城ふ頭大型車",
+    "address": "愛知県名古屋市港区金城ふ頭3-2",
+    "lat": 35.047249,
+    "lng": 136.849808,
+    "hourlyRate": 0,
+    "rates": {
+      "weekday": "",
+      "holiday": ""
+    },
+    "maxRate": {
+      "weekday": 3960,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0026695/"
+  }
+,
+  {
+    "name": "タイムズモール9番街 中央",
+    "address": "愛知県名古屋市港区七番町1-3",
+    "lat": 35.117603,
+    "lng": 136.886353,
+    "hourlyRate": 200,
+    "rates": {
+      "weekday": "30分 100円",
+      "holiday": "30分 100円"
+    },
+    "maxRate": {
+      "weekday": 500,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0022396/"
+  }
 ];
