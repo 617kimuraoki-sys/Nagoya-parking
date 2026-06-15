@@ -7,7 +7,7 @@ description: >
   「〇〇エリアに何件追加して」「タイムズの中村区を追加して」などの指示があれば必ずこのスキルを使う。
 ---
 
-# 駐車場データ追加スキル（公式サイト参照版）
+# 駐車場データ追加スキル（スクリプト自動化版）
 
 ## 基本ルール
 
@@ -19,109 +19,122 @@ description: >
 
 ---
 
-## 各社公式サイト（駐車場検索URL）
+## スクリプト構成（タイムズ専用）
+
+```
+app/nagoya-parking/scripts/
+├── collect_buks.mjs   ← 区名指定でBUKコードを自動収集 → buk_list.txt生成 → add_parkings.mjsを自動実行
+├── add_parkings.mjs   ← BUKコードリストからtimes-info.netを取得・GSI座標取得 → output.json生成
+├── apply_output.mjs   ← output.jsonをdata.jsに追記
+├── buk_list.txt       ← 収集したBUKコードリスト（自動生成）
+└── output.json        ← 取得結果（自動生成）
+```
+
+---
+
+## 区コード一覧
+
+| 区名 | コード |
+|------|--------|
+| 千種区 | C101 |
+| 東区 | C102 |
+| 北区 | C103 |
+| 西区 | C104 |
+| 中村区 | C105 |
+| 中区 | C106 |
+| 昭和区 | C107 |
+| 瑞穂区 | C108 |
+| 熱田区 | C109 |
+| 中川区 | C110 |
+| 港区 | C111 |
+| 南区 | C112 |
+| 守山区 | C113 |
+| 緑区 | C114 |
+| 名東区 | C115 |
+| 天白区 | C116 |
+
+---
+
+## 手順（タイムズの場合）
+
+### Step 1: collect_buks.mjs を実行
+
+```bash
+cd /Users/k25040kk/car_motiva/car-motiva.com/app/nagoya-parking
+node scripts/collect_buks.mjs 千種区 昭和区 守山区
+```
+
+全区一括の場合：
+```bash
+node scripts/collect_buks.mjs --all
+```
+
+これだけで以下が自動実行される：
+1. 指定区の times-info.net ページを全ページスクレイピング
+2. BUKコードを抽出（登録済みは自動スキップ）
+3. `scripts/buk_list.txt` を生成
+4. `scripts/add_parkings.mjs` を自動実行 → `scripts/output.json` を生成
+
+---
+
+### Step 2: apply_output.mjs を実行
+
+```bash
+node scripts/apply_output.mjs
+```
+
+`output.json` の内容を `data.js` の末尾に追記する。
+
+---
+
+### Step 3: CLAUDE.md の登録件数を更新
+
+`/Users/k25040kk/car_motiva/car-motiva.com/CLAUDE.md` の「駐車場登録数」を更新する。
+
+---
+
+### Step 4: git push
+
+```bash
+cd /Users/k25040kk/car_motiva/car-motiva.com
+git add app/nagoya-parking/data.js app/nagoya-parking/scripts/ CLAUDE.md
+git commit -m "feat: 駐車場を追加（タイムズ <区名> <N>件）"
+GIT_SSH_COMMAND="ssh -i ~/.ssh/github_sakae" git push origin main
+```
+
+---
+
+### Step 5: 完了報告
+
+```
+✅ <区名>エリアに<N>件追加しました（合計 XXX 件）
+─────────────────
+1. タイムズ〇〇 (400円/h) 愛知県名古屋市...
+2. ...
+─────────────────
+数分後に car-motiva.com/nagoya-parking に反映されます
+```
+
+---
+
+## 名鉄協商・三井のリパーク・NPC24H の場合
+
+スクリプト未対応のため、手動で以下を行う：
 
 | 会社 | 検索URL |
 |------|---------|
-| タイムズ | https://times-info.net/park-search/ |
 | 名鉄協商 | https://mkp.jp/ |
 | 三井のリパーク | https://www.repark.jp/ |
 | NPC24H | https://parking.npc-npc.co.jp/ |
 
----
-
-## タイムズのURL構造（2026-06-11 確認済み）
-
-タイムズの公式一覧ページはJavaScript描画のため WebFetch では取得できない。
-以下の方法で個別詳細ページURLを収集する：
-
-```
-WebSearch: site:times-info.net "名古屋市中村区" park-detail BUK
-```
-
-個別詳細ページの形式：
-```
-https://times-info.net/P23-aichi/C105/park-detail-BUK0063316/
-```
-
-- `P23-aichi`：愛知県
-- `C105`：名古屋市中村区（市区町村コード）
-- `BUK0063316`：駐車場固有コード
-
-詳細ページは**サーバーサイドレンダリング**なのでWebFetchで全情報が取得できる。
+1. 公式サイトで対象エリアの駐車場一覧を取得
+2. WebFetch で各詳細ページから料金・住所を取得
+3. GSI API で座標取得（`https://msearch.gsi.go.jp/address-search/AddressSearch?q=<住所>`）
+4. data.js に直接追記
 
 ---
 
-## 手順
-
-### Step 1: 対象駐車場のURLリストを収集
-
-WebSearch で以下のようなクエリを複数発行して詳細ページURLを30件以上収集する：
-
-```
-site:times-info.net "名古屋市中村区名駅" park-detail BUK
-site:times-info.net "名古屋市中村区太閤" park-detail BUK
-site:times-info.net "名古屋市中村区烏森" park-detail BUK
-```
-
-- 同じBUKコードが重複しないよう管理する
-- 既にdata.jsに登録済みのsourceURLはスキップ
-
----
-
-### Step 2: 各詳細ページから料金・情報を取得
-
-WebFetch で各詳細ページを開き、以下を取得する：
-
-| 項目 | 内容 |
-|------|------|
-| 正式名称 | ページタイトル（Googleマップと一致させる） |
-| 住所 | 番地まで取得（例：名駅4-16） |
-| 料金（平日・休日） | 料金表テキスト |
-| 最大料金 | 料金表テキスト |
-| 営業時間 | 詳細ページ |
-| 収容台数 | 詳細ページ |
-| 支払い方法 | 現金・クレジット・QR（キャッシュレス専用と記載があれば cash: false） |
-| source URL | その駐車場の詳細ページURL（BUKコード付き） |
-
-⚠️ **times-info.netのJavaScript内の座標は旧日本測地系（Tokyo Datum）のため使用禁止**。
-座標は必ず下記Step 3のGSI APIで取得する。
-
----
-
-### Step 3: 座標を国土地理院（GSI）APIで取得
-
-住所から WGS84 座標を取得する。**Nominatimは精度が低いため使用禁止**。
-
-```
-https://msearch.gsi.go.jp/address-search/AddressSearch?q=<住所>
-```
-
-Python での一括取得例：
-
-```python
-import urllib.request, urllib.parse, json, time
-
-url = f"https://msearch.gsi.go.jp/address-search/AddressSearch?q={urllib.parse.quote('愛知県名古屋市中村区名駅4-16')}"
-req = urllib.request.Request(url)
-with urllib.request.urlopen(req, timeout=10) as r:
-    data = json.loads(r.read())
-lng, lat = data[0]['geometry']['coordinates']  # [longitude, latitude] の順に注意
-```
-
-- レスポンスは `[longitude, latitude]` の順（逆なので注意）
-- 丁目レベルでなく**番地まで**クエリに含める（例：`名駅4-16`）
-- 0.3秒以上インターバルを空ける
-- 結果が空の場合は丁目レベルで再試行（例：`名駅4丁目`）
-
----
-
-### Step 4: data.js に追記
-
-**ファイルパス：**
-`/Users/k25040kk/car_motiva/car-motiva.com/app/nagoya-parking/data.js`
-
-末尾の `];` の直前に追記する。フォーマット：
+## data.js フォーマット
 
 ```js
   {
@@ -149,50 +162,10 @@ lng, lat = data[0]['geometry']['coordinates']  # [longitude, latitude] の順に
 ```
 
 **hourlyRate の計算：**
-- 「30分 200円」→ hourlyRate: 400
-- 「20分 100円」→ hourlyRate: 300
-- 「15分 250円」→ hourlyRate: 1000
-- 「60分 300円」→ hourlyRate: 300
-- 料金不明 → hourlyRate: 0
-
-**チェックリスト：**
-- [ ] source に公式詳細ページURL（BUKコード付き）が入っている
-- [ ] 数字はすべて半角
-- [ ] lat/lng が GSI API で取得した WGS84 座標である（times-info.netのJS座標は使わない）
-- [ ] capacity が入っている
-- [ ] payment.cash/credit/qr が入っている（キャッシュレス専用なら cash: false）
-- [ ] `];` が1つだけ存在する
-
----
-
-### Step 5: CLAUDE.md の登録件数を更新
-
-`/Users/k25040kk/car_motiva/car-motiva.com/CLAUDE.md` の「駐車場登録数」を更新する。
-
----
-
-### Step 6: git push
-
-```bash
-cd /Users/k25040kk/car_motiva/car-motiva.com
-git add app/nagoya-parking/data.js CLAUDE.md
-git commit -m "feat: 駐車場を追加（<会社名> <エリア名> <N>件）"
-GIT_SSH_COMMAND="ssh -i ~/.ssh/github_sakae" git push origin main
-```
-
----
-
-### Step 7: 完了報告
-
-```
-✅ <会社名> <エリア名>に<N>件追加しました
-─────────────────
-1. タイムズ名古屋中村第1 料金: 30分200円 最大1200円
-   source: https://times-info.net/P23-aichi/C105/park-detail-BUK0063316/
-2. ...
-─────────────────
-数分後に car-motiva.com/nagoya-parking に反映されます
-```
+- 「30分 200円」→ 400
+- 「20分 100円」→ 300
+- 「15分 250円」→ 1000
+- 料金不明 → 0（note: "料金要確認"）
 
 ---
 
@@ -200,8 +173,8 @@ GIT_SSH_COMMAND="ssh -i ~/.ssh/github_sakae" git push origin main
 
 | 問題 | 対処 |
 |------|------|
-| タイムズ一覧ページがWebFetchで取得できない | WebSearch で site:times-info.net "エリア名" park-detail BUK を使う |
-| GSI APIで住所が見つからない | 番地を省いて丁目レベルで再試行（例：`名駅4-16` → `名駅4丁目`） |
-| times-info.netのJS座標が地図上でズレる | 旧日本測地系のため使用禁止。GSI APIを使う |
-| 料金が取得できない | `hourlyRate: 0, note: "料金要確認"` で登録 |
-| 名前が全角数字 | 半角に変換してから登録（「第１」→「第1」） |
+| collect_buks で BUK が0件 | times-info.net のページ構造変化の可能性。URLを手動確認 |
+| add_parkings で 404 が多い | 区コードが合っていない。スクリプトは全区コードを自動試行するので基本不要 |
+| GSI APIで住所が見つからない | 番地を省いて丁目レベルで再試行（スクリプト内で自動実行） |
+| times-info.netのJS座標がズレる | 旧日本測地系のため使用禁止。GSI APIを使う（スクリプトで対応済み） |
+| 料金が取得できない | `hourlyRate: 0, note: "料金要確認"` で登録済み |
