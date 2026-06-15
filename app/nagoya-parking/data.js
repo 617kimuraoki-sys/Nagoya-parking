@@ -12433,4 +12433,58 @@ const parkingData = [
     "note": "",
     "source": "https://times-info.net/P23-aichi/C110/park-detail-BUK0034840/"
   }
+,
+  {
+    "name": "タイムズ山王通",
+    "address": "愛知県名古屋市昭和区福江1-7",
+    "lat": 35.149822,
+    "lng": 136.913696,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 700,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C107/park-detail-BUK0029659/"
+  }
+,
+  {
+    "name": "クルーズパーキング白金",
+    "address": "愛知県名古屋市昭和区白金2-4",
+    "lat": 35.146633,
+    "lng": 136.917252,
+    "hourlyRate": 400,
+    "rates": {
+      "weekday": "30分 200円",
+      "holiday": "30分 200円"
+    },
+    "maxRate": {
+      "weekday": 700,
+      "holiday": 200
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C107/park-detail-BUK0086635/"
+  }
 ];
