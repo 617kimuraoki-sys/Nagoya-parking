@@ -4046,4 +4046,83 @@ const parkingData = [
     "note": "",
     "source": "https://times-info.net/P23-aichi/C111/park-detail-BUK0042256/"
   }
+,
+  {
+    "name": "タイムズ駒場町7丁目",
+    "address": "愛知県名古屋市瑞穂区駒場町7-5",
+    "lat": 35.136215,
+    "lng": 136.932617,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 770,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0043896/"
+  },
+  {
+    "name": "タイムズ北原町1丁目",
+    "address": "愛知県名古屋市瑞穂区北原町1-28",
+    "lat": 35.13139,
+    "lng": 136.928757,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 500,
+      "holiday": null
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0031459/"
+  },
+  {
+    "name": "タイムズ名古屋市博物館前",
+    "address": "愛知県名古屋市瑞穂区瑞穂通1-9",
+    "lat": 35.13665,
+    "lng": 136.933517,
+    "hourlyRate": 880,
+    "rates": {
+      "weekday": "15分 220円",
+      "holiday": "15分 220円"
+    },
+    "maxRate": {
+      "weekday": 660,
+      "holiday": 220
+    },
+    "hours": "24時間",
+    "capacity": 10,
+    "payment": {
+      "cash": true,
+      "credit": true,
+      "qr": true
+    },
+    "placeCid": "",
+    "placeFid": "",
+    "note": "",
+    "source": "https://times-info.net/P23-aichi/C108/park-detail-BUK0044494/"
+  }
 ];
