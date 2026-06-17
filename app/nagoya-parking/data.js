@@ -14497,5 +14497,435 @@ const parkingData = [
     "payment": { "cash": false, "credit": true, "qr": false },
     "placeCid": "", "placeFid": "", "note": "24時間最大600円",
     "source": "https://mkp.jp/search/detail/005066-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 山田３丁目",
+    "address": "愛知県名古屋市北区山田3-13",
+    "lat": 35.197792, "lng": 136.939987,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 3,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大400円（18:00-08:00）",
+    "source": "https://mkp.jp/search/detail/005187-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 大曽根駅前",
+    "address": "愛知県名古屋市北区大曽根3-10",
+    "lat": 35.190384, "lng": 136.936111,
+    "hourlyRate": 600, "rates": { "weekday": "20分 200円", "holiday": "20分 200円" },
+    "maxRate": { "weekday": null, "holiday": null }, "hours": "24時間", "capacity": 10,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "3時間最大1000円",
+    "source": "https://mkp.jp/search/detail/004116-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 山田２丁目",
+    "address": "愛知県名古屋市北区山田2-3-45",
+    "lat": 35.194992, "lng": 136.93515,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 6,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大700円",
+    "source": "https://mkp.jp/search/detail/004924-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 志賀公園南",
+    "address": "愛知県名古屋市北区西志賀町5-49",
+    "lat": 35.201401, "lng": 136.906296,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 500, "holiday": 500 }, "hours": "24時間", "capacity": 7,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（18:00-08:00）",
+    "source": "https://mkp.jp/search/detail/003677-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 大曽根第１４",
+    "address": "愛知県名古屋市北区山田1-1803",
+    "lat": 35.194454, "lng": 136.936142,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 800, "holiday": 800 }, "hours": "24時間", "capacity": 14,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大400円（20:00-08:00）",
+    "source": "https://mkp.jp/search/detail/003962-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 清水５丁目",
+    "address": "愛知県名古屋市北区清水5-28",
+    "lat": 35.192574, "lng": 136.915161,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 24,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円",
+    "source": "https://mkp.jp/search/detail/003354-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 大曽根３丁目",
+    "address": "愛知県名古屋市北区大曽根3-1304",
+    "lat": 35.191853, "lng": 136.93512,
+    "hourlyRate": 600, "rates": { "weekday": "20分 200円", "holiday": "20分 200円" },
+    "maxRate": { "weekday": null, "holiday": null }, "hours": "24時間", "capacity": 7,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "",
+    "source": "https://mkp.jp/search/detail/005730-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 安井１丁目",
+    "address": "愛知県名古屋市北区安井1丁目25-5",
+    "lat": 35.209747, "lng": 136.916901,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 6,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円",
+    "source": "https://mkp.jp/search/detail/005420-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 東志賀小学校前",
+    "address": "愛知県名古屋市北区長喜町1-6",
+    "lat": 35.202969, "lng": 136.915894,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 9,
+    "payment": { "cash": false, "credit": true, "qr": true },
+    "placeCid": "", "placeFid": "", "note": "夜間最大400円（18:00-08:00）",
+    "source": "https://mkp.jp/search/detail/005419-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 西区役所前",
+    "address": "愛知県名古屋市西区花の木2-17",
+    "lat": 35.189499, "lng": 136.890793,
+    "hourlyRate": 400, "rates": { "weekday": "30分 200円", "holiday": "30分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 6,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（20:00-08:00）",
+    "source": "https://mkp.jp/search/detail/003058-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 名西１丁目",
+    "address": "愛知県名古屋市西区名西1-20",
+    "lat": 35.18845, "lng": 136.878418,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（18:00-08:00）",
+    "source": "https://mkp.jp/search/detail/003175-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 名駅２丁目第１１",
+    "address": "愛知県名古屋市西区名駅2-25",
+    "lat": 35.176559, "lng": 136.883484,
+    "hourlyRate": 400, "rates": { "weekday": "30分 200円", "holiday": "30分 200円" },
+    "maxRate": { "weekday": 1000, "holiday": 1000 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "昼最大1000円（08:00-18:00）、夜最大400円",
+    "source": "https://mkp.jp/search/detail/001967-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 上名古屋３丁目",
+    "address": "愛知県名古屋市西区上名古屋3-15",
+    "lat": 35.195938, "lng": 136.89296,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 500, "holiday": 400 }, "hours": "24時間", "capacity": 14,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大200円（19:00-08:00）",
+    "source": "https://mkp.jp/search/detail/003923-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 名西２丁目第３",
+    "address": "愛知県名古屋市西区名西2-28",
+    "lat": 35.191193, "lng": 136.881226,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 10,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（18:00-08:00）",
+    "source": "https://mkp.jp/search/detail/004113-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 上名古屋１丁目",
+    "address": "愛知県名古屋市西区上名古屋1丁目10",
+    "lat": 35.193676, "lng": 136.896622,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 10,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円（12時間最大500円）",
+    "source": "https://mkp.jp/search/detail/005353-0/"
+  },
+  {
+    "name": "名鉄協商パーキング ルーセントタワー駐車場",
+    "address": "愛知県名古屋市西区牛島町6",
+    "lat": 35.174583, "lng": 136.881226,
+    "hourlyRate": 600, "rates": { "weekday": "30分 300円", "holiday": "30分 300円" },
+    "maxRate": { "weekday": 1600, "holiday": 1600 }, "hours": "24時間", "capacity": 354,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大1600円",
+    "source": "https://mkp.jp/search/detail/002565-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 名鉄病院北駐車場",
+    "address": "愛知県名古屋市西区栄生2-25",
+    "lat": 35.185677, "lng": 136.871094,
+    "hourlyRate": 100, "rates": { "weekday": "60分 100円", "holiday": "60分 100円" },
+    "maxRate": { "weekday": 1000, "holiday": 1000 }, "hours": "24時間", "capacity": 98,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "12時間最大1000円",
+    "source": "https://mkp.jp/search/detail/002900-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 東片端北",
+    "address": "愛知県名古屋市東区橦木町1-19",
+    "lat": 35.179459, "lng": 136.913239,
+    "hourlyRate": 400, "rates": { "weekday": "30分 200円", "holiday": "30分 200円" },
+    "maxRate": { "weekday": 1400, "holiday": 1400 }, "hours": "24時間", "capacity": 5,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大1400円",
+    "source": "https://mkp.jp/search/detail/003320-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 新出来第３",
+    "address": "愛知県名古屋市東区新出来2-8",
+    "lat": 35.182472, "lng": 136.932877,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 9,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円",
+    "source": "https://mkp.jp/search/detail/003215-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 東大手駅前",
+    "address": "愛知県名古屋市東区三の丸4-3",
+    "lat": 35.184006, "lng": 136.908691,
+    "hourlyRate": 600, "rates": { "weekday": "20分 200円", "holiday": "20分 200円" },
+    "maxRate": { "weekday": 1200, "holiday": 1200 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大1200円",
+    "source": "https://mkp.jp/search/detail/003248-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 東片端北第２",
+    "address": "愛知県名古屋市東区橦木町1-16",
+    "lat": 35.179459, "lng": 136.913239,
+    "hourlyRate": 400, "rates": { "weekday": "30分 200円", "holiday": "30分 200円" },
+    "maxRate": { "weekday": 1200, "holiday": 1200 }, "hours": "24時間", "capacity": 5,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "昼最大1200円/夜最大400円（18:00-08:00）",
+    "source": "https://mkp.jp/search/detail/005592-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 芳野３丁目",
+    "address": "愛知県名古屋市東区芳野3-16",
+    "lat": 35.188332, "lng": 136.927231,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円（昼）/ 180分 100円（夜）", "holiday": "60分 200円（昼）/ 180分 100円（夜）" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円",
+    "source": "https://mkp.jp/search/detail/003768-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 代官町第９",
+    "address": "愛知県名古屋市東区代官町23",
+    "lat": 35.176991, "lng": 136.923706,
+    "hourlyRate": 400, "rates": { "weekday": "30分 200円", "holiday": "30分 200円" },
+    "maxRate": { "weekday": 1000, "holiday": 1000 }, "hours": "24時間", "capacity": 5,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大400円（18:00-08:00）",
+    "source": "https://mkp.jp/search/detail/004698-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 代官町第３",
+    "address": "愛知県名古屋市東区代官町25",
+    "lat": 35.176956, "lng": 136.92482,
+    "hourlyRate": 400, "rates": { "weekday": "30分 200円", "holiday": "30分 200円" },
+    "maxRate": { "weekday": 800, "holiday": 800 }, "hours": "24時間", "capacity": 11,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（22:00-08:00）",
+    "source": "https://mkp.jp/search/detail/002220-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 東大手駅前第２",
+    "address": "愛知県名古屋市東区三の丸4丁目",
+    "lat": 35.185791, "lng": 136.907898,
+    "hourlyRate": 600, "rates": { "weekday": "20分 200円", "holiday": "20分 200円" },
+    "maxRate": { "weekday": 1300, "holiday": 1300 }, "hours": "24時間", "capacity": 12,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大1300円",
+    "source": "https://mkp.jp/search/detail/005640-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 大幸東団地第２",
+    "address": "愛知県名古屋市東区砂田橋3-2-2",
+    "lat": 35.187958, "lng": 136.959778,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 13,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円",
+    "source": "https://mkp.jp/search/detail/005164-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 名鉄桜駅東",
+    "address": "愛知県名古屋市南区桜本町2-12-2",
+    "lat": 35.107033, "lng": 136.935806,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 800, "holiday": 800 }, "hours": "24時間", "capacity": 5,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大800円",
+    "source": "https://mkp.jp/search/detail/005584-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 東又兵ヱ町",
+    "address": "愛知県名古屋市南区東又兵ヱ町4-39",
+    "lat": 35.098137, "lng": 136.921341,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 500, "holiday": 500 }, "hours": "24時間", "capacity": 5,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大500円",
+    "source": "https://mkp.jp/search/detail/003779-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 明円町",
+    "address": "愛知県名古屋市南区明円町13",
+    "lat": 35.100945, "lng": 136.9431,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（20:00-08:00）",
+    "source": "https://mkp.jp/search/detail/005006-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 呼続第２",
+    "address": "愛知県名古屋市南区呼続2-1",
+    "lat": 35.113445, "lng": 136.93071,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円",
+    "source": "https://mkp.jp/search/detail/003345-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 宝生荘東",
+    "address": "愛知県名古屋市南区中割町1-10",
+    "lat": 35.088078, "lng": 136.915329,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円",
+    "source": "https://mkp.jp/search/detail/005063-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 鶴里駅前第２",
+    "address": "愛知県名古屋市南区元桜田町4-14",
+    "lat": 35.105293, "lng": 136.943726,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 17,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大700円",
+    "source": "https://mkp.jp/search/detail/002656-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 東又兵ヱ町第２",
+    "address": "愛知県名古屋市南区東又兵ヱ町2-41",
+    "lat": 35.098137, "lng": 136.921341,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 7,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大700円",
+    "source": "https://mkp.jp/search/detail/005255-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 中島新町",
+    "address": "愛知県名古屋市中川区中島新町3-1903",
+    "lat": 35.125858, "lng": 136.850021,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 15,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大700円",
+    "source": "https://mkp.jp/search/detail/005096-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 西日置２丁目",
+    "address": "愛知県名古屋市中川区西日置2-7",
+    "lat": 35.156544, "lng": 136.891174,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 15,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（20:00-08:00）",
+    "source": "https://mkp.jp/search/detail/003095-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 名港第２",
+    "address": "愛知県名古屋市港区名港2-11",
+    "lat": 35.096474, "lng": 136.88298,
+    "hourlyRate": 400, "rates": { "weekday": "30分 200円", "holiday": "30分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 9,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（22:00-08:00）",
+    "source": "https://mkp.jp/search/detail/002868-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 名港",
+    "address": "愛知県名古屋市港区浜2-7",
+    "lat": 35.096264, "lng": 136.881607,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 550, "holiday": 550 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "12時間最大550円",
+    "source": "https://mkp.jp/search/detail/002716-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 港区役所駅西",
+    "address": "愛知県名古屋市港区港栄1-6",
+    "lat": 35.106049, "lng": 136.883118,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 6,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大600円",
+    "source": "https://mkp.jp/search/detail/002597-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 港区役所駅東第３",
+    "address": "愛知県名古屋市港区港楽2-6",
+    "lat": 35.104301, "lng": 136.885376,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 600, "holiday": 600 }, "hours": "24時間", "capacity": 13,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "夜間最大300円（20:00-08:00）",
+    "source": "https://mkp.jp/search/detail/004738-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 港北町２丁目",
+    "address": "愛知県名古屋市港区港北町2-40",
+    "lat": 35.107224, "lng": 136.860062,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 700, "holiday": 700 }, "hours": "24時間", "capacity": 7,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大700円",
+    "source": "https://mkp.jp/search/detail/005466-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 港北駅前",
+    "address": "愛知県名古屋市港区川西通5-8",
+    "lat": 35.113876, "lng": 136.862076,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 800, "holiday": 800 }, "hours": "24時間", "capacity": 8,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大800円",
+    "source": "https://mkp.jp/search/detail/005631-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 東海通駅前",
+    "address": "愛知県名古屋市港区七番町4-13",
+    "lat": 35.115017, "lng": 136.886734,
+    "hourlyRate": 300, "rates": { "weekday": "40分 200円", "holiday": "40分 200円" },
+    "maxRate": { "weekday": 800, "holiday": 800 }, "hours": "24時間", "capacity": 20,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大800円",
+    "source": "https://mkp.jp/search/detail/002331-0/"
+  },
+  {
+    "name": "名鉄協商パーキング 港楽２丁目",
+    "address": "愛知県名古屋市港区港楽2-1",
+    "lat": 35.103928, "lng": 136.887207,
+    "hourlyRate": 200, "rates": { "weekday": "60分 200円", "holiday": "60分 200円" },
+    "maxRate": { "weekday": 500, "holiday": 500 }, "hours": "24時間", "capacity": 10,
+    "payment": { "cash": false, "credit": true, "qr": false },
+    "placeCid": "", "placeFid": "", "note": "24時間最大500円",
+    "source": "https://mkp.jp/search/detail/005051-0/"
   }
 ];
