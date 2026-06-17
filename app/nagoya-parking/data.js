@@ -13771,4 +13771,3 @@ const parkingData = [
     "source": "https://mkp.jp/search/detail/005913-0/"
   }
 ];
-];
