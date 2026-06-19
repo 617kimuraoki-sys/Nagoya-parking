@@ -17871,3 +17871,4 @@ const parkingData = [
     "source": "https://mkp.jp/search/detail/004090-0/"
   }
 ];
+const PARKING_COUNT = parkings.length;

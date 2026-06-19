@@ -171,7 +171,7 @@
     <div class="hero-bg" id="heroBg"></div>
     <span class="hero-eyebrow">🅿️ 無料Webアプリ</span>
     <h1>名古屋の駐車場、<br><span class="accent">すぐ比べられる。</span></h1>
-    <p class="hero-sub">名古屋市中心部400か所以上のコインパーキング料金を一覧比較。エリア・時間を指定して最安値をすぐに確認できます。</p>
+    <p class="hero-sub">名古屋市中心部<span id="parking-count-hero">400</span>か所以上のコインパーキング料金を一覧比較。エリア・時間を指定して最安値をすぐに確認できます。</p>
     <div class="hero-btns">
       <a class="btn-primary" href="/app/nagoya-parking/">アプリを無料で使う →</a>
       <a class="btn-secondary" href="#features">詳しく見る ↓</a>
@@ -188,7 +188,7 @@
         <div class="feature-card">
           <div class="feature-icon" style="display:flex;">📋</div>
           <h3>料金一覧比較</h3>
-          <p>400か所以上の駐車場を料金の安い順・名前順・現在地順で並べ替え。一目で比較できます。</p>
+          <p><span id="parking-count-features">400</span>か所以上の駐車場を料金の安い順・名前順・現在地順で並べ替え。一目で比較できます。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon" style="display:flex;">🔍</div>
@@ -224,7 +224,7 @@
     <div class="section-inner">
       <p class="section-label">Areas</p>
       <h2 class="section-title">対応エリア</h2>
-      <p class="section-desc">名古屋市中心部の主要エリアに対応。400か所以上のデータを掲載しています。</p>
+      <p class="section-desc">名古屋市中心部の主要エリアに対応。<span id="parking-count-area">400</span>か所以上のデータを掲載しています。</p>
       <div class="area-groups">
         <div>
           <p class="area-group-label">中心部</p>
@@ -387,6 +387,21 @@
   <script>
     const bg = document.getElementById('heroBg');
     if (bg) { const img = new Image(); img.onload = () => bg.classList.add('loaded'); img.src = 'hero-bg.jpg'; }
+  </script>
+  <script>
+    (function() {
+      const s = document.createElement('script');
+      s.src = '/app/nagoya-parking/data.js';
+      s.onload = function() {
+        if (typeof PARKING_COUNT !== 'undefined') {
+          ['parking-count-hero','parking-count-features','parking-count-area'].forEach(function(id) {
+            const el = document.getElementById(id);
+            if (el) el.textContent = PARKING_COUNT;
+          });
+        }
+      };
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>
