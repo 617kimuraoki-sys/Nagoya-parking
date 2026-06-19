@@ -1030,7 +1030,7 @@
           <div class="app-body">
             <span class="app-tag app-tag-parking">🅿️ 駐車場</span>
             <p class="app-name">名古屋パーキング</p>
-            <p class="app-desc">名古屋市中心部400か所のコインパーキング料金を比較。エリア絞り込み・料金試算・地図表示対応。</p>
+            <p class="app-desc">名古屋市中心部<span id="parking-count-top">400</span>か所のコインパーキング料金を比較。エリア絞り込み・料金試算・地図表示対応。</p>
             <div class="app-chips">
               <span class="app-chip">エリア絞り込み</span>
               <span class="app-chip">料金試算</span>
@@ -1289,6 +1289,19 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // 件数を動的表示
+    (function() {
+      const s = document.createElement('script');
+      s.src = '/app/nagoya-parking/data.js';
+      s.onload = function() {
+        if (typeof parkingData !== 'undefined') {
+          const el = document.getElementById('parking-count-top');
+          if (el) el.textContent = parkingData.length;
+        }
+      };
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>
