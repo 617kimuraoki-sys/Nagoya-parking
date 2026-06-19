@@ -130,7 +130,7 @@
       <div class="guide-hero">
         <div class="guide-hero-icon">🅿️</div>
         <p class="guide-hero-title">名古屋パーキング</p>
-        <p class="guide-hero-sub">名古屋市中心部400か所の<br>コインパーキング料金をかんたん比較</p>
+        <p class="guide-hero-sub">名古屋市中心部<span id="parking-count-app">400</span>か所の<br>コインパーキング料金をかんたん比較</p>
       </div>
 
       <div class="guide-section">
@@ -365,6 +365,11 @@
   <script src="data.js"></script>
   <script src="app.js"></script>
   <script>
+    // 件数を動的表示
+    if (typeof PARKING_COUNT !== 'undefined') {
+      const el = document.getElementById('parking-count-app');
+      if (el) el.textContent = PARKING_COUNT;
+    }
     // 絞り込みパネル開閉
     const filterBtn   = document.getElementById('filter-toggle-btn');
     const controlsEl  = document.getElementById('controls-panel');
