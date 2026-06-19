@@ -1,4 +1,11 @@
 (function () {
+  // 件数スパンを全て実データ件数で更新
+  const count = parkingData.length;
+  ['parking-count-header','parking-count-app'].forEach(function(id) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = count;
+  });
+
   const listEl = document.getElementById("parking-list");
   const countEl = document.getElementById("result-count");
   const emptyEl = document.getElementById("empty-msg");
