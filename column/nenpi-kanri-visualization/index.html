@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5DJKRQDPD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y5DJKRQDPD');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>燃費管理を可視化するメリットと方法【グラフで一目でわかる】| CarMotiva</title>
+  <meta name="description" content="燃費管理を可視化することで何が変わる？グラフや数値で燃費をトラッキングする方法、おすすめアプリ、節約効果の実例をわかりやすく解説します。">
+  <link rel="canonical" href="https://car-motiva.com/column/nenpi-kanri-visualization/">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6350822748465611" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#f8fafc;--bg-mid:#f1f5f9;--blue:#2563eb;--blue-light:#3b82f6;--text:#0f172a;--text-sub:#475569;--border:rgba(0,0,0,.08);--card-bg:rgba(255,255,255,.8);--radius-lg:20px;--radius-md:14px;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',-apple-system,'Hiragino Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100svh;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-size:17px;font-weight:900;letter-spacing:-.03em;color:var(--text);text-decoration:none;}
+    .nav-logo span{color:var(--blue-light);}
+    .nav-links{display:flex;align-items:center;gap:20px;}
+    .nav-links a{font-size:13px;font-weight:600;color:var(--text-sub);text-decoration:none;transition:color .15s;}
+    .nav-links a:hover{color:var(--blue);}
+    .nav-cta{font-size:12px!important;font-weight:700!important;color:#fff!important;background:var(--blue);padding:7px 14px;border-radius:999px;}
+    .article-header{padding:120px 24px 48px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(37,99,235,.15) 0%,transparent 60%);}
+    .breadcrumb{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--text-sub);margin-bottom:20px;max-width:720px;margin-left:auto;margin-right:auto;}
+    .breadcrumb a{color:var(--text-sub);text-decoration:none;}
+    .breadcrumb a:hover{color:var(--blue);}
+    .breadcrumb span{opacity:.4;}
+    .article-cat{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light);background:rgba(37,99,235,.12);border-radius:999px;padding:4px 12px;display:inline-block;margin-bottom:16px;}
+    .article-title{font-size:clamp(24px,5vw,40px);font-weight:900;letter-spacing:-.04em;color:var(--text);line-height:1.25;margin-bottom:16px;max-width:720px;margin-left:auto;margin-right:auto;}
+    .article-meta{font-size:13px;color:var(--text-sub);max-width:720px;margin:0 auto;}
+    article{max-width:720px;margin:0 auto;padding:40px 24px 80px;}
+    .lead{font-size:16px;color:var(--text-sub);line-height:1.9;padding:24px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);margin-bottom:40px;}
+    h2{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.03em;margin:40px 0 16px;padding-left:14px;border-left:3px solid var(--blue-light);}
+    h3{font-size:17px;font-weight:700;color:var(--text);margin:24px 0 10px;}
+    p{font-size:15px;color:var(--text-sub);line-height:1.9;margin-bottom:16px;}
+    ul,ol{padding-left:20px;margin-bottom:16px;}
+    ul li,ol li{font-size:15px;color:var(--text-sub);line-height:1.8;margin-bottom:8px;}
+    strong{color:var(--text);}
+    .tip-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04);}
+    .tip-num{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--blue-light);margin-bottom:8px;}
+    .tip-title{font-size:19px;font-weight:800;color:var(--text);letter-spacing:-.03em;margin-bottom:12px;}
+    .tip-card p{margin-bottom:0;}
+    .highlight-box{background:linear-gradient(135deg,rgba(37,99,235,.08),rgba(59,130,246,.05));border:1px solid rgba(37,99,235,.2);border-radius:var(--radius-md);padding:20px 24px;margin:24px 0;}
+    .highlight-box p{margin-bottom:0;font-size:15px;}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0;}
+    .stat-item{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px 16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+    .stat-num{font-size:28px;font-weight:900;color:var(--blue);letter-spacing:-.04em;}
+    .stat-label{font-size:12px;color:var(--text-sub);margin-top:4px;}
+    .cta-box{background:linear-gradient(135deg,rgba(37,99,235,.15),rgba(59,130,246,.08));border:1px solid rgba(37,99,235,.25);border-radius:var(--radius-lg);padding:28px;text-align:center;margin:40px 0;}
+    .cta-box h3{font-size:18px;font-weight:800;color:var(--text);margin-bottom:10px;}
+    .cta-box p{font-size:14px;color:var(--text-sub);margin-bottom:20px;}
+    .btn-primary{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:#fff;background:var(--blue);padding:13px 26px;border-radius:999px;text-decoration:none;transition:background .15s,transform .15s;box-shadow:0 0 24px rgba(37,99,235,.3);}
+    .btn-primary:hover{background:var(--blue-light);transform:translateY(-2px);}
+    .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+    .faq-item:last-child{border-bottom:none;}
+    .faq-q{font-size:16px;font-weight:700;color:var(--text);margin-bottom:10px;display:flex;gap:10px;}
+    .faq-q::before{content:"Q.";color:var(--blue-light);font-weight:900;flex-shrink:0;}
+    .faq-a{font-size:15px;color:var(--text-sub);line-height:1.8;padding-left:26px;}
+    .related-section{margin-top:48px;padding-top:40px;border-top:1px solid var(--border);}
+    .related-section h3{font-size:16px;font-weight:800;color:var(--text);margin-bottom:16px;}
+    .related-list{display:flex;flex-direction:column;gap:10px;}
+    .related-item{display:flex;gap:12px;align-items:center;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 16px;text-decoration:none;color:inherit;transition:background .2s;}
+    .related-item:hover{background:var(--bg-mid);}
+    .related-item span{font-size:14px;color:var(--text);}
+    .related-item small{font-size:12px;color:var(--text-sub);}
+    footer{background:#1e293b;padding:40px 24px;text-align:center;}
+    .footer-logo{font-size:18px;font-weight:900;color:#fff;letter-spacing:-.03em;margin-bottom:6px;}
+    .footer-logo span{color:var(--blue-light);}
+    .footer-tagline{font-size:12px;color:#94a3b8;margin-bottom:20px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:20px;}
+    .footer-links a{font-size:13px;color:#94a3b8;text-decoration:none;}
+    .footer-links a:hover{color:#fff;}
+    .footer-copy{font-size:12px;color:#94a3b8;opacity:.5;}
+    @media(max-width:600px){.nav-links .hide-sp{display:none;}.article-header,.article{padding-left:16px;padding-right:16px;}.stat-grid{grid-template-columns:repeat(2,1fr);}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="/">Car<span>Motiva</span></a>
+    <div class="nav-links">
+      <a href="/column/">コラム</a>
+      <a class="hide-sp" href="/#apps">アプリ</a>
+      <a class="nav-cta" href="/nenpi-calc/">燃費を記録する →</a>
+    </div>
+  </nav>
+
+  <div class="article-header">
+    <div class="breadcrumb">
+      <a href="/">CarMotiva</a><span>›</span>
+      <a href="/column/">コラム</a><span>›</span>
+      <span>燃費管理を可視化する方法</span>
+    </div>
+    <div class="article-cat">燃費管理</div>
+    <h1 class="article-title">燃費管理を可視化するメリットと方法<br>【グラフで一目でわかる】</h1>
+    <div class="article-meta">2026年6月30日 ｜ CarMotiva編集部</div>
+  </div>
+
+  <article>
+    <p class="lead">「なんとなく燃費が悪い気がする」と思いながら、具体的な数字を把握していないドライバーは多い。燃費管理を<strong>可視化</strong>すると、ガソリン代の節約はもちろん、車の異常の早期発見にもつながる。この記事では、燃費を数値・グラフで見える化する方法と、そのメリットをわかりやすく解説する。</p>
+
+    <h2>燃費管理を「可視化」するとは？</h2>
+    <p>燃費管理の可視化とは、給油のたびに記録した走行距離・給油量をもとに燃費（km/L）を計算し、<strong>グラフや数値で時系列に並べて見ること</strong>だ。</p>
+    <p>「先月より燃費が悪くなった」「夏はエアコンの影響で2km/L下がる」といった変化を視覚的に把握できるため、ただ数字を記録するだけよりはるかに有益な情報になる。</p>
+
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-num">約15%</div>
+        <div class="stat-label">燃費記録で改善できる<br>ガソリン代の目安</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3回</div>
+        <div class="stat-label">傾向をつかむために<br>必要な給油回数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1分</div>
+        <div class="stat-label">給油後の記録に<br>かかる時間</div>
+      </div>
+    </div>
+
+    <h2>可視化することで得られる4つのメリット</h2>
+
+    <div class="tip-card">
+      <div class="tip-num">MERIT 01</div>
+      <div class="tip-title">ガソリン代の節約につながる運転習慣が身につく</div>
+      <p>グラフで燃費の変化を見ると、「急加速・急ブレーキをやめた週は燃費が良い」「高速道路メインの週は燃費が高い」など、<strong>自分の運転との相関</strong>が見えてくる。数字が上がると嬉しくなるため、自然とエコドライブを意識するようになる。</p>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">MERIT 02</div>
+      <div class="tip-title">車の不調を早期に発見できる</div>
+      <p>タイヤの空気圧低下・エンジンオイルの劣化・冷却水漏れなどは、<strong>燃費の急激な悪化</strong>として最初に数字に現れることが多い。「先月より3km/L下がった」と気づけば、整備士に相談するきっかけになり、大きな故障を未然に防げる。</p>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">MERIT 03</div>
+      <div class="tip-title">季節・ルートごとの燃費傾向が把握できる</div>
+      <p>夏のエアコン使用期・冬のアイドリング・渋滞の多い通勤ルートと休日の郊外ドライブ——可視化することで<strong>季節や走行パターンによる燃費の差</strong>が明確になる。「夏は燃費が下がるから給油頻度を増やす」など、計画も立てやすくなる。</p>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">MERIT 04</div>
+      <div class="tip-title">年間のガソリン代を正確に把握できる</div>
+      <p>記録を積み重ねると、<strong>年間のガソリン費用・走行距離・給油回数</strong>がひと目でわかる。車の維持費管理や、次の車購入時の燃費比較にも役立つ実用的なデータになる。</p>
+    </div>
+
+    <h2>燃費を可視化する3つの方法</h2>
+
+    <h3>① スマホアプリで記録・グラフ化する（おすすめ）</h3>
+    <p>最もかんたんな方法。給油のたびに走行距離と給油量を入力するだけで、アプリが自動でグラフを生成してくれる。CarMotivaの「<a href="/nenpi-calc/" style="color:var(--blue);">燃費カンリ</a>」は、入力した給油データをもとにグラフで燃費推移を確認できる無料アプリだ。</p>
+
+    <div class="highlight-box">
+      <p>📱 <strong>燃費カンリの使い方はシンプル：</strong>給油時に「走行距離」「給油量」「ガソリン単価」を入力するだけ。グラフで燃費の推移が一目でわかる。</p>
+    </div>
+
+    <h3>② スプレッドシートで自分で管理する</h3>
+    <p>Google スプレッドシートやExcelに給油データを記録し、グラフ機能で可視化する方法。カスタマイズの自由度が高いが、グラフ設定に多少の手間がかかる。こだわって管理したい人向け。</p>
+
+    <h3>③ 車のトリップメーターと手帳で記録する</h3>
+    <p>アナログだが確実な方法。給油のたびにトリップメーターをリセットし、次回給油時の値をメモする。グラフ化しない分、傾向の把握は難しいが、「燃費を計算する習慣」をつける第一歩として有効だ。</p>
+
+    <h2>燃費の計算方法</h2>
+    <p>燃費の計算式はシンプルだ。</p>
+    <div class="highlight-box">
+      <p>🔢 <strong>燃費（km/L）＝ 走行距離（km）÷ 給油量（L）</strong></p>
+      <p style="margin-top:12px;font-size:14px;">例：300km走って30L給油した場合 → 300 ÷ 30 ＝ <strong>10km/L</strong></p>
+    </div>
+    <p>これを毎回記録してグラフにすることで、「いつもより燃費が落ちた」「運転スタイルを変えたら改善した」という変化が一目でわかるようになる。</p>
+
+    <h2>燃費改善のためにチェックすべきポイント</h2>
+    <ul>
+      <li><strong>タイヤの空気圧</strong>：適正値より低いだけで燃費が3〜5%悪化する</li>
+      <li><strong>急加速・急ブレーキを避ける</strong>：滑らかな加速減速でエンジンの負荷を下げる</li>
+      <li><strong>エアコンの使い方</strong>：設定温度を1〜2度上げるだけで燃費が改善</li>
+      <li><strong>不要な荷物を下ろす</strong>：車重が増えると燃費が悪化する</li>
+      <li><strong>エンジンオイルの交換</strong>：劣化したオイルはエンジンの摩擦を増やし燃費を悪化させる</li>
+    </ul>
+
+    <div class="cta-box">
+      <h3>燃費管理、今日から始めてみよう</h3>
+      <p>CarMotivaの「燃費カンリ」は入力30秒。グラフで燃費の推移が一目でわかる無料アプリです。</p>
+      <a class="btn-primary" href="/nenpi-calc/">燃費カンリを使ってみる →</a>
+    </div>
+
+    <h2>よくある質問</h2>
+    <div class="faq-item">
+      <div class="faq-q">燃費管理は何回給油すれば傾向がわかりますか？</div>
+      <div class="faq-a">最低3回の記録があると傾向がつかめてきます。季節変化まで把握したい場合は3ヶ月〜半年の継続が理想です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">カタログ燃費と実燃費はなぜ違うのですか？</div>
+      <div class="faq-a">カタログ燃費は理想的な条件下での数値です。実際の走行では渋滞・エアコン使用・積載物など様々な要因が加わるため、カタログ値の70〜85%程度になるのが一般的です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">急に燃費が悪くなった場合は何が原因ですか？</div>
+      <div class="faq-a">タイヤの空気圧低下・エンジンオイルの劣化・点火プラグの消耗・燃料系統のトラブルなどが考えられます。1〜2割以上悪化した場合は早めに整備工場で点検を受けることをおすすめします。</div>
+    </div>
+
+    <div class="related-section">
+      <h3>関連記事</h3>
+      <div class="related-list">
+        <a class="related-item" href="/column/nenpi-kanri-gps/">
+          <span>🛰️ GPS連携で燃費管理をもっとかんたんに【自動記録の方法】</span>
+        </a>
+        <a class="related-item" href="/column/nagoya-parking-tips/">
+          <span>🅿️ 名古屋中心部で駐車場を安く止める5つのコツ</span>
+        </a>
+        <a class="related-item" href="/column/">
+          <span>📋 コラム一覧を見る</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-logo">Car<span>Motiva</span></div>
+    <div class="footer-tagline">クルマ生活をもっと便利に</div>
+    <div class="footer-links">
+      <a href="/">ホーム</a>
+      <a href="/nagoya-parking/">名古屋パーキング</a>
+      <a href="/nenpi-calc/">燃費カンリ</a>
+      <a href="/column/">コラム</a>
+      <a href="/about/">About</a>
+      <a href="/privacy-policy/">プライバシーポリシー</a>
+    </div>
+    <div class="footer-copy">© 2026 CarMotiva. All rights reserved.</div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "燃費管理を可視化するメリットと方法【グラフで一目でわかる】",
+    "description": "燃費管理を可視化することで何が変わる？グラフや数値で燃費をトラッキングする方法、おすすめアプリ、節約効果の実例をわかりやすく解説します。",
+    "datePublished": "2026-06-30",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CarMotiva",
+      "url": "https://car-motiva.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "燃費管理は何回給油すれば傾向がわかりますか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "最低3回の記録があると傾向がつかめてきます。季節変化まで把握したい場合は3ヶ月〜半年の継続が理想です。"}
+      },
+      {
+        "@type": "Question",
+        "name": "カタログ燃費と実燃費はなぜ違うのですか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "カタログ燃費は理想的な条件下での数値です。実際の走行では渋滞・エアコン使用・積載物など様々な要因が加わるため、カタログ値の70〜85%程度になるのが一般的です。"}
+      },
+      {
+        "@type": "Question",
+        "name": "急に燃費が悪くなった場合は何が原因ですか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "タイヤの空気圧低下・エンジンオイルの劣化・点火プラグの消耗・燃料系統のトラブルなどが考えられます。1〜2割以上悪化した場合は早めに整備工場で点検を受けることをおすすめします。"}
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

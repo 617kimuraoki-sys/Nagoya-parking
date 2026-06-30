@@ -347,6 +347,19 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://car-motiva.com/column/nenpi-kanri-visualization/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://car-motiva.com/column/nenpi-kanri-gps/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- サイト情報 -->
   <url>
     <loc>https://car-motiva.com/about/</loc>
